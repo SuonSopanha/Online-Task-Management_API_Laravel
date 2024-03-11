@@ -26,7 +26,7 @@ This project aims to provide a comprehensive solution for managing tasks online.
 
 - **Backend:** Laravel (PHP)
 - **Database:** Supabase
-- **Authentication:** JWT (JSON Web Tokens) and Laravel Passport for OAuth2 integration
+- **Authentication:** Laravel Sanctum and Laravel Socailize
 - **Frontend:** React.js
 - **Styling:** Tailwind CSS
 
