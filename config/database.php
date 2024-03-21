@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -74,7 +74,7 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
-            'search_path' => 'public',
+            'search_path' => 'laravel',
             'sslmode' => 'prefer',
         ],
 
