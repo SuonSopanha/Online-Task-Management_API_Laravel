@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return ('welcome to Online Task Management System with Laravel API Server');
 });
+
+Route::get('/home', function () {
+    return ('This Home');
+});
