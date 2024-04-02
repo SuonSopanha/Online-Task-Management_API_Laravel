@@ -13,46 +13,48 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     /**
      * Validate and update the given user's profile information.
      *
-     * @param  array<string, string>  $input
+     * @param  array<string, mixed>  $input
      */
     public function update(User $user, array $input): void
     {
         Validator::make($input, [
-            'name' => ['required', 'string', 'max:255'],
-
+            'name' => ['nullable', 'string', 'max:255'],
             'email' => [
-                'required',
+                'nullable',
                 'string',
                 'email',
                 'max:255',
                 Rule::unique('users')->ignore($user->id),
             ],
+            'photo_url' => ['nullable', 'url'],
+            'additional_info' => ['nullable', 'array'], // Validate as array
         ])->validateWithBag('updateProfileInformation');
 
-        if ($input['email'] !== $user->email &&
-            $user instanceof MustVerifyEmail) {
-            $this->updateVerifiedUser($user, $input);
+        // Convert additional_info array to JSON string
+        $additionalInfo = isset($input['additional_info']) ? json_encode($input['additional_info']) : $user->additional_info;
+
+        $userData = [
+            'full_name' => $input['name'] ?? $user->name,
+            'email' => $input['email'] ?? $user->email,
+            'photo_url' => $input['photo_url'] ?? $user->photo_url,
+            'additional_info' => $additionalInfo,
+        ];
+
+        if (isset($input['email']) && $input['email'] !== $user->email && $user instanceof MustVerifyEmail) {
+            $this->updateVerifiedUser($user, $userData);
         } else {
-            $user->forceFill([
-                'name' => $input['name'],
-                'email' => $input['email'],
-            ])->save();
+            $user->forceFill($userData)->save();
         }
     }
 
     /**
      * Update the given verified user's profile information.
      *
-     * @param  array<string, string>  $input
+     * @param  array<string, mixed>  $userData
      */
-    protected function updateVerifiedUser(User $user, array $input): void
+    protected function updateVerifiedUser(User $user, array $userData): void
     {
-        $user->forceFill([
-            'name' => $input['name'],
-            'email' => $input['email'],
-            'email_verified_at' => null,
-        ])->save();
-
+        $user->forceFill($userData + ['email_verified_at' => null])->save();
         $user->sendEmailVerificationNotification();
     }
 }
