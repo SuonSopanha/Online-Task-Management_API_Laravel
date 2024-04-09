@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('project_id')->nullable();
             $table->unsignedBigInteger('milestone_id')->nullable();
             $table->unsignedBigInteger('owner_id');
-            $table->unsignedBigInteger('tracking_id')->nullable();
+            $table->boolean('on_tracking')->default(false);
             $table->string('task_name', 255);
             $table->text('description')->nullable();
             $table->date('start_date');
