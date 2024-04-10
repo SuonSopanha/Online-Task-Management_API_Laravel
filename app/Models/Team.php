@@ -2,9 +2,19 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Relations\Pivot;
+use App\Models\User;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Team extends Pivot
+class Team extends Model
 {
-    //
+    use HasFactory;
+
+    protected $fillable = ['name', 'description', 'owner_id'];
+
+    // Define the relationship with the User model
+    public function owner()
+    {
+        return $this->belongsTo(User::class, 'owner_id');
+    }
 }
