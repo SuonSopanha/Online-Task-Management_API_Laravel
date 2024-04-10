@@ -34,11 +34,11 @@ return new class extends Migration
             $table->date('complete_date')->nullable();
             $table->timestamps();
 
-            // $table->foreign('project_id')->references('id')->on('projects');
-            // $table->foreign('milestone_id')->references('id')->on('milestones');
-            // $table->foreign('owner_id')->references('id')->on('users');
-            // $table->foreign('assignee_id')->references('user_id')->on('users');
-            //$table->foreign('tracking_id')->references('id')->on('trackings');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+            $table->foreign('milestone_id')->references('id')->on('milestones')->onDelete('cascade');
+            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('assignee_id')->references('id')->on('users')->onDelete('cascade');
+
         });
     }
 
