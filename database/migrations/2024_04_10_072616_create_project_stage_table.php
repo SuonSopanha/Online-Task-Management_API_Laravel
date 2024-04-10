@@ -11,18 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('projects', function (Blueprint $table) {
+        Schema::create('project_stages', function (Blueprint $table) {
             $table->id();
-            $table->string('project_name', 255);
-            $table->unsignedBigInteger('owner_id');
+            $table->unsignedBigInteger('project_id');
+            $table->string('stage_name', 255);
             $table->date('start_date');
+            $table->integer('period');
             $table->date('end_date');
-            $table->string('team_id', 255)->nullable();
-            $table->string('project_status', 255);
-            $table->string('project_priority', 255);
+            $table->boolean('completed')->default(false);
+            $table->date('completion_date')->nullable();
             $table->timestamps();
 
-            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
         });
     }
 
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('projects');
+        Schema::dropIfExists('project_stages');
     }
 };
