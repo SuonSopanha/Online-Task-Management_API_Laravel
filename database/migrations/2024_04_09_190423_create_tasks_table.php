@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('project_id')->nullable();
             $table->unsignedBigInteger('milestone_id')->nullable();
+            $table->unsignedBigInteger('stage_id')->nullable();
             $table->unsignedBigInteger('owner_id');
             $table->boolean('on_tracking')->default(false);
             $table->string('task_name', 255);
@@ -34,10 +35,12 @@ return new class extends Migration
             $table->date('complete_date')->nullable();
             $table->timestamps();
 
+
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
             $table->foreign('milestone_id')->references('id')->on('milestones')->onDelete('cascade');
             $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('assignee_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('stage_id')->references('id')->on('project_stages')->onDelete('cascade');
 
         });
     }
