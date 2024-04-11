@@ -5,6 +5,8 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 use App\Models\Team;
+use App\Models\Project;
+use App\Models\ProjectMember;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -55,5 +57,13 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function team_members(){
         return $this->hasMany(TeamMember::class);
+    }
+
+    public function project_members(){
+        return $this->hasMany(ProjectMember::class);
+    }
+
+    public function projects(){
+        return $this->hasMany(Project::class);
     }
 }
