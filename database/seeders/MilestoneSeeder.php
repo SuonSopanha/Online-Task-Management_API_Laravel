@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Milestone;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,6 @@ class MilestoneSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Milestone::factory(10)->create();
     }
 }

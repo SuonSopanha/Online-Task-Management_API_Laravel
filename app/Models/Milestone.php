@@ -2,9 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Relations\Pivot;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class Milestone extends Pivot
+class Milestone extends Model
 {
-    //
+    use HasFactory;
+
+    protected $fillable = [
+        'milestone_name',
+        'start_date',
+        'end_date',
+    ];
 }

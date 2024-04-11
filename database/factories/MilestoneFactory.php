@@ -2,22 +2,30 @@
 
 namespace Database\Factories;
 
+use App\Models\Milestone;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Faker\Provider\DateTime as DateTimeProvider;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Milestone>
- */
 class MilestoneFactory extends Factory
 {
     /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Milestone::class;
+
+    /**
      * Define the model's default state.
      *
-     * @return array<string, mixed>
+     * @return array
      */
-    public function definition(): array
+    public function definition()
     {
         return [
-            //
+            'milestone_name' => $this->faker->sentence,
+            'start_date' => DateTimeProvider::dateTimeBetween('2024-01-01', '2024-12-31')->format('Y-m-d'),
+            'end_date' => DateTimeProvider::dateTimeBetween('2024-01-01', '2024-12-31')->format('Y-m-d'),
         ];
     }
 }
