@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Goal;
 use App\Models\User;
+use App\Models\Project;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -25,5 +26,9 @@ class Team extends Model
 
     public function members(){
         return $this->hasMany(TeamMember::class);
+    }
+
+    public function projects(){
+        return $this->hasMany(Project::class);
     }
 }
