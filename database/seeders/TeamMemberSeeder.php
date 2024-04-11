@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Team;
+use App\Models\TeamMember;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class TeamMemberSeeder extends Seeder
 {
@@ -12,6 +14,6 @@ class TeamMemberSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        TeamMember::factory(30)->create();
     }
 }
