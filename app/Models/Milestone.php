@@ -14,4 +14,8 @@ class Milestone extends Model
         'start_date',
         'end_date',
     ];
+
+    public function tasks(){
+        return $this->hasMany(Task::class);
+    }
 }
