@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\V1\UserController;
+
 
 
 /*
@@ -25,3 +27,18 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], funct
     Route::post('/logout', 'AuthController@logout');
     // Other routes for version 1...
 });
+
+
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], function () {
+    Route::get('/users/{id}', [UserController::class, 'getUserById']);
+    Route::get('/users/email/{email}', [UserController::class, 'getUserByEmail']);
+    Route::get('/users', [UserController::class, 'index']);
+    Route::post('/users', [UserController::class, 'store']);
+    Route::put('/users/{id}', [UserController::class, 'update']);
+    Route::delete('/users/{id}', [UserController::class, 'destroy']);
+    // Other routes for version 1...
+
+    // Route::apiResource('users', UserController::class);
+});
+
+
