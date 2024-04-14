@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\V1\TaskController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\V1\UserController;
@@ -39,6 +40,8 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], funct
     // Other routes for version 1...
 
     // Route::apiResource('users', UserController::class);
+
+    Route::get('/tasks', [TaskController::class, 'index']);
 });
 
 
