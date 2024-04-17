@@ -2,21 +2,24 @@
 
 namespace App\Services\V1;
 
-use App\Models\Task;
+use App\Models\MileStone;
 use Illuminate\Http\Request;
 
-class TaskQuery {
+
+class MileStoneQuery{
 
     protected $safeParams = [
         'id' => ['eq'],
-
     ];
 
     protected $columnMap = [
-        'id' => 'id'
+
+        'id' => 'id',
     ];
 
+
     protected $operatorMap = [
+
         'eq' => '=',
         'lt' => '<',
         'lte' => '<=',
@@ -25,10 +28,9 @@ class TaskQuery {
         'ne' => '!=',
     ];
 
-    public function transform(Request $request)
-    {
+    public function transform(Request $request){
 
-        $eloQuery = Task::query();
+        $eloQuery = MileStone::query();
 
         foreach ($this->safeParams as $param => $operators) {
             $query = $request->query($param);
@@ -47,6 +49,8 @@ class TaskQuery {
         }
 
         return $eloQuery;
-
     }
+
+
+
 }
