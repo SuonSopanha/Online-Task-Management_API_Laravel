@@ -64,6 +64,20 @@ class TaskController extends Controller
         return $this->success(new TaskResource($task));
     }
 
+    // Delete a task
+    public function destroy($id)
+    {
+        $task = Task::find($id);
+
+        if (!$task) {
+            return $this->error(null, 'Task not found', 404);
+        }
+
+        $task->delete();
+
+        return $this->success(null, 'Task deleted successfully');
+    }
+
     // Get tasks by owner ID
     // public function getTaskbyOwnerID($owner_id)
     // {
