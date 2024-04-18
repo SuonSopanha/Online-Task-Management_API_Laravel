@@ -49,6 +49,8 @@ class MileStoneController extends Controller
         if (!$milestones) {
             return $this->error(null, 'MileStone not found', 404);
         }
+
+        $request->validated();
         $milestones->update($request->all());
 
         return $this->success([]);

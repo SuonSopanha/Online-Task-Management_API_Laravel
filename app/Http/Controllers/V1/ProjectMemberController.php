@@ -61,6 +61,8 @@ class ProjectMemberController extends Controller
             return $this->error('', 'Project member not found', 404);
         }
 
+        $request->validated();
+
         $project_member->update($request->all());
 
         return $this->success(new ProjectMemberResource($project_member));

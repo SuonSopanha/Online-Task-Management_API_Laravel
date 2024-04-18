@@ -56,6 +56,7 @@ class ProjectStageController extends Controller
             return $this->error(null, 'Project Stage not found', 404);
         }
 
+        $request->validated();
         $project_stage->update($request->all());
 
         return $this->success(new ProjectStageResource($project_stage));
