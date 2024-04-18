@@ -59,6 +59,8 @@ class TaskController extends Controller
             return $this->error(null, 'Task not found', 404);
         }
 
+        $request->validated();
+
         $task->update($request->all());
 
         return $this->success(new TaskResource($task));

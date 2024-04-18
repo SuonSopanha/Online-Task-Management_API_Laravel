@@ -87,6 +87,8 @@ class ProjectController extends Controller
             return $this->error('', 'Project not found', 404);
         }
 
+        $request->validated();
+
         $project->update($request->all());
 
         return $this->success(new ProjectResource($project));
