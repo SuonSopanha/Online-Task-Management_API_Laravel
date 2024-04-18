@@ -6,6 +6,8 @@ use App\Models\Task;
 use Illuminate\Http\Request;
 use App\Traits\HttpResponses;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\V1\StoreTaskRequest;
+use App\Http\Requests\V1\UpdateTaskRequest;
 use App\Http\Resources\V1\TaskCollection;
 use App\Http\Resources\V1\TaskResource;
 use App\Services\V1\TaskQuery;
@@ -27,11 +29,9 @@ class TaskController extends Controller
         return $this->success(new TaskCollection($tasks));
     }
     // Create a new task
-    public function store(Request $request)
+    public function store(StoreTaskRequest $request)
     {
-        $request->validate([
-            // Add validation rules here based on your requirements
-        ]);
+        $request->validate();
 
         $task = Task::create($request->all());
 
@@ -51,7 +51,7 @@ class TaskController extends Controller
     }
 
     // Update a task
-    public function update(Request $request, $id)
+    public function update(UpdateTaskRequest $request, $id)
     {
         $task = Task::find($id);
 
@@ -64,24 +64,38 @@ class TaskController extends Controller
         return $this->success(new TaskResource($task));
     }
 
+    // Delete a task
+    public function destroy($id)
+    {
+        $task = Task::find($id);
+
+        if (!$task) {
+            return $this->error(null, 'Task not found', 404);
+        }
+
+        $task->delete();
+
+        return $this->success(null, 'Task deleted successfully');
+    }
+
     // Get tasks by owner ID
-    public function getTaskbyOwnerID($owner_id)
-    {
-        $tasks = new TaskCollection(Task::where('owner_id', $owner_id)->get());
-        return $this->success($tasks);
-    }
+    // public function getTaskbyOwnerID($owner_id)
+    // {
+    //     $tasks = new TaskCollection(Task::where('owner_id', $owner_id)->get());
+    //     return $this->success($tasks);
+    // }
 
-    // Get tasks by assignee ID
-    public function getTaskbyAssigneeID($assignee_id)
-    {
-        $tasks = new TaskCollection(Task::where('assignee_id', $assignee_id)->get());
-        return $this->success($tasks);
-    }
+    // // Get tasks by assignee ID
+    // public function getTaskbyAssigneeID($assignee_id)
+    // {
+    //     $tasks = new TaskCollection(Task::where('assignee_id', $assignee_id)->get());
+    //     return $this->success($tasks);
+    // }
 
-    // Get tasks by project ID
-    public function getTaskbyProjectID($project_id)
-    {
-        $tasks = new TaskCollection(Task::where('project_id', $project_id)->get());
-        return $this->success($tasks);
-    }
+    // // Get tasks by project ID
+    // public function getTaskbyProjectID($project_id)
+    // {
+    //     $tasks = new TaskCollection(Task::where('project_id', $project_id)->get());
+    //     return $this->success($tasks);
+    // }
 }
