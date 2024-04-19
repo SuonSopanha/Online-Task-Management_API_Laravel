@@ -8,12 +8,14 @@ use Illuminate\Http\Request;
 class TaskQuery {
 
     protected $safeParams = [
-        'id' => ['eq'],
+        'id' => ['eq', 'lt', 'lte', 'gt', 'gte', 'ne'],
+        'task_name' => ['eq'],
 
     ];
 
     protected $columnMap = [
-        'id' => 'id'
+        'id' => 'id',
+        'task_name' => 'task_name',
     ];
 
     protected $operatorMap = [

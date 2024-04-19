@@ -14,6 +14,16 @@ class TaskCollection extends ResourceCollection
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        // return parent::toArray($request);
+
+        return [
+            $this->collection->map(function ($task) {
+                return [
+                    'id' => $task->id,
+                    'project_id' => $task->project_id,
+                    'milestone_id' => $task->milestone_id,
+                ];
+            }),
+        ];
     }
 }

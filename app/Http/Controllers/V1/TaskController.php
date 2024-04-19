@@ -21,7 +21,7 @@ class TaskController extends Controller
     public function index(Request $request)
     {
         $filter = new TaskQuery();
-        $query = $filter->transform($request, Task::class); // Get the filtered query
+        $query = $filter->transform($request); // Get the filtered query
 
         // Get the filtered tasks
         $tasks = $query->get(); // Retrieve the filtered data without pagination
