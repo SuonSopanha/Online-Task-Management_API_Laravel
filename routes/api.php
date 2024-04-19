@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\V1\ProjectController;
+use App\Http\Controllers\V1\ProjectMemberController;
+use App\Http\Controllers\V1\ProjectStageController;
 use App\Http\Controllers\V1\TaskController;
+use App\Http\Controllers\V1\TeamController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\V1\UserController;
@@ -42,6 +46,10 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], funct
     // Route::apiResource('users', UserController::class);
 
     Route::get('/tasks', [TaskController::class, 'index']);
+    Route::get('/projects', [ProjectController::class, 'index']);
+    Route::get('/teams', [TeamController::class, 'index']);
+    Route::get('/project_members', [ProjectMemberController::class, 'index']);
+    Route::get('/project_stages', [ProjectStageController::class, 'index']);
 });
 
 
