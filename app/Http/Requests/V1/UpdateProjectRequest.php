@@ -22,7 +22,13 @@ class UpdateProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'project_name' => 'string|max:255',
+            'owner_id' => 'exists:users,id',
+            'start_date' => 'date',
+            'end_date' => 'date|after_or_equal:start_date',
+            'team_id' => 'nullable|string|max:255',
+            'project_status' => 'string|max:255',
+            'project_priority' => 'string|max:255',
         ];
     }
 }

@@ -22,7 +22,26 @@ class UpdateTaskRequest extends FormRequest
     public function rules(): array
     {
         return [
-
+            'project_id' => 'nullable|exists:projects,id',
+            'milestone_id' => 'nullable|exists:milestones,id',
+            'stage_id' => 'nullable|exists:project_stages,id',
+            'owner_id' => 'exists:users,id',
+            'on_tracking' => 'boolean',
+            'task_name' => 'string|max:255',
+            'description' => 'nullable|string',
+            'start_date' => 'date',
+            'due_date' => 'date',
+            'task_category' => 'string|max:255',
+            'work_hour_required' => 'integer',
+            'work_hour' => 'integer',
+            'status' => 'string|max:255',
+            'priority' => 'string|max:255',
+            'severity' => 'string|max:255',
+            'tag' => 'nullable|string|max:255',
+            'assignee_id' => 'nullable|exists:users,id',
+            'assignee_dates' => 'date',
+            'complete' => 'boolean',
+            'complete_date' => 'nullable|date',
         ];
     }
 }

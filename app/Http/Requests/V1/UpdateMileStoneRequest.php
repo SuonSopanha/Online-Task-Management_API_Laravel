@@ -11,7 +11,7 @@ class UpdateMileStoneRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class UpdateMileStoneRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'milestone_name' => 'string|max:255',
+            'start_date' => 'date',
+            'end_date' => 'date|after_or_equal:start_date',
         ];
     }
 }

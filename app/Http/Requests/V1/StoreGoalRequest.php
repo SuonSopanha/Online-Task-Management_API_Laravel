@@ -22,7 +22,10 @@ class StoreGoalRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'team_id' => 'required|exists:teams,id',
+            'goal_name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'completed' => 'boolean',
         ];
     }
 }

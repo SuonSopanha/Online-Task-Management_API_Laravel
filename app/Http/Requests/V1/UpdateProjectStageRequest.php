@@ -22,7 +22,13 @@ class UpdateProjectStageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'project_id' => 'exists:projects,id',
+            'stage_name' => 'string|max:255',
+            'start_date' => 'date',
+            'period' => 'integer',
+            'end_date' => 'date|after_or_equal:start_date',
+            'completed' => 'boolean',
+            'completion_date' => 'nullable|date|after_or_equal:start_date',
         ];
     }
 }

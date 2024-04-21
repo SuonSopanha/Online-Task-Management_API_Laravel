@@ -22,7 +22,10 @@ class UpdateGoalRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'team_id' => 'exists:teams,id',
+            'goal_name' => 'string|max:255',
+            'description' => 'nullable|string',
+            'completed' => 'boolean',
         ];
     }
 }
