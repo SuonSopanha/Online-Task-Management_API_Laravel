@@ -22,7 +22,9 @@ class StoreTeamMemberRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'team_id' => 'required|exists:teams,id',
+            'user_id' => 'required|exists:users,id',
+            'role' => 'required|string|max:255',
         ];
     }
 }

@@ -22,7 +22,9 @@ class UpdateProjectMemberRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'team_id' => 'exists:teams,id',
+            'user_id' => 'exists:users,id',
+            'role' => 'string|max:255',
         ];
     }
 }

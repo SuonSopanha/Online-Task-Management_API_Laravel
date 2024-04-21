@@ -22,7 +22,13 @@ class StoreProjectStageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'project_id' => 'required|exists:projects,id',
+            'stage_name' => 'required|string|max:255',
+            'start_date' => 'required|date',
+            'period' => 'required|integer',
+            'end_date' => 'required|date|after_or_equal:start_date',
+            'completed' => 'boolean',
+            'completion_date' => 'nullable|date|after_or_equal:start_date',
         ];
     }
 }
