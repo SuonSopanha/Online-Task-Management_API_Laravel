@@ -9,11 +9,10 @@ class TeamQuery
 {
 
     protected $safeParams = [
-        'id' => ['eq'],
-        'name' => ['eq'],
-        'description' => ['eq'],
-        'created_at' => ['eq', 'gt', 'lt'],
-        'updated_at' => ['eq', 'gt', 'lt'],
+        'id' => ['eq', 'lt', 'lte', 'gt', 'gte', 'ne'],
+        'name' => ['eq', 'like'],
+        'description' => ['eq', 'like'],
+        'owner_id' => ['eq'],
     ];
 
 
@@ -21,8 +20,7 @@ class TeamQuery
         'id' => 'id',
         'name' => 'name',
         'description' => 'description',
-        'created_at' => 'created_at',
-        'updated_at' => 'updated_at',
+        'owner_id' => 'owner_id',
     ];
 
 
@@ -33,6 +31,7 @@ class TeamQuery
         'gt' => '>',
         'gte' => '>=',
         'ne' => '!=',
+        'like' => 'like',
     ];
 
 
