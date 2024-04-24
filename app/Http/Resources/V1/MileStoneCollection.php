@@ -14,6 +14,19 @@ class MileStoneCollection extends ResourceCollection
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        // return parent::toArray($request);
+
+        return [
+            $this->collection->map(function ($milestone) {
+                return [
+                    'id' => $milestone->id,
+                    'milestone_name' => $milestone->milestone_name,
+                    'start_date' => $milestone->start_date,
+                    'end_date' => $milestone->end_date,
+                    'created_at' => $milestone->created_at,
+                    'updated_at' => $milestone->updated_at
+                ];
+            }),
+        ];
     }
 }
