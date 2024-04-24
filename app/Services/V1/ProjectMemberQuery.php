@@ -11,16 +11,28 @@ class ProjectMemberQuery
 {
 
     protected $safeParams = [
-        'id' => ['eq'],
+        'id' => ['eq', 'lt', 'lte', 'gt', 'gte', 'ne'],
+        'project_id' => ['eq'],
+        'user_id' => ['eq'],
+        'role' => ['eq', 'like'],
     ];
 
     protected $columnMap = [
-        'id' => 'id'
+        'id' => 'id',
+        'project_id' => 'project_id',
+        'user_id' => 'user_id',
+        'role' => 'role',
     ];
 
 
     protected $operatorMap = [
         'eq' => '=',
+        'lt' => '<',
+        'lte' => '<=',
+        'gt' => '>',
+        'gte' => '>=',
+        'ne' => '!=',
+        'like' => 'like',
     ];
 
 
