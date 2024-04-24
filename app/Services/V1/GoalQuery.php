@@ -10,17 +10,30 @@ class GoalQuery
 {
 
     protected $safeParams = [
-        'id' => ['eq'],
-
+        'id' => ['eq', 'lt', 'lte', 'gt', 'gte', 'ne'],
+        'team_id' => ['eq'],
+        'goal_name' => ['eq', 'like'],
+        'description' => ['eq', 'like'],
+        'completed' => ['eq'],
     ];
 
     protected $columnMap = [
-        'id' => 'id'
+        'id' => 'id',
+        'team_id' => 'team_id',
+        'goal_name' => 'goal_name',
+        'description' => 'description',
+        'completed' => 'completed',
     ];
 
 
     protected $operatorMap = [
         'eq' => '=',
+        'lt' => '<',
+        'lte' => '<=',
+        'gt' => '>',
+        'gte' => '>=',
+        'ne' => '!=',
+        'like' => 'like',
     ];
 
 
@@ -45,7 +58,7 @@ class GoalQuery
                     $eloQuery->where($column, $this->operatorMap[$operator] ?? $operator, $query[$operator]);
 
                 }
-                
+
             }
         }
 
