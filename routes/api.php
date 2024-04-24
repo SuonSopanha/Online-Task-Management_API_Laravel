@@ -27,12 +27,12 @@ Route::middleware('auth:sanctum')->get('/users/{user}', function (Request $reque
     return $request->user();
 });
 
-// Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], function () {
-//     Route::post('/login', 'AuthController@login');
-//     Route::post('/register', 'AuthController@register');
-//     Route::post('/logout', 'AuthController@logout');
-//     // Other routes for version 1...
-// });
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], function () {
+    Route::post('/login', 'AuthController@login');
+    Route::post('/register', 'AuthController@register');
+    Route::post('/logout', 'AuthController@logout');
+    // Other routes for version 1...
+});
 
 
 // Routes for version 1 User
