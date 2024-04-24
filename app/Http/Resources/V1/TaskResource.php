@@ -37,9 +37,7 @@ class TaskResource extends JsonResource
             'assignee_id' => $this->assignee_id,
             'assignee_dates' => $this->assignee_dates,
             'complete' => $this->complete,
-            'complete_date' => $this->complete_date,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at
+            'complete_date' => $this->complete_date
         ];
     }
 }

@@ -39,9 +39,7 @@ class TaskCollection extends ResourceCollection
                     'assignee_id' => $task->assignee_id,
                     'assignee_dates' => $task->assignee_dates,
                     'complete' => $task->complete,
-                    'complete_date' => $task->complete_date,
-                    'created_at' => $task->created_at,
-                    'updated_at' => $task->updated_at
+                    'complete_date' => $task->complete_date
                 ];
             }),
         ];

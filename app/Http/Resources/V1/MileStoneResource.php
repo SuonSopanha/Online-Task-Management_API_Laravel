@@ -20,9 +20,7 @@ class MileStoneResource extends JsonResource
             'id' => $this->id,
             'milestone_name' => $this->milestone_name,
             'start_date' => $this->start_date,
-            'end_date' => $this->end_date,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at
+            'end_date' => $this->end_date
         ];
     }
 }
