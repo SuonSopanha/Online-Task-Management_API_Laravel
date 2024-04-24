@@ -29,9 +29,9 @@ class TeamMemberController extends Controller
 
     public function store(StoreTeamMemberRequest $request){
 
-        $request->validate();
+        $validatedData = $request->validate();
 
-        $task_member = TeamMember::create($request->all());
+        $task_member = TeamMember::create($validatedData);
 
 
         return $this->success(new TeamMemberResource($task_member));
@@ -58,7 +58,8 @@ class TeamMemberController extends Controller
             return $this->error('', 'Team member not found', 404);
         }
 
-        $team_member->update($request->all());
+        $validatedData = $request->validate();
+        $team_member->update($validatedData);
 
 
         return $this->success(new TeamMemberResource($team_member));

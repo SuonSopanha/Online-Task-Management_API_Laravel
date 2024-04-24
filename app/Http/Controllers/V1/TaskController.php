@@ -31,9 +31,9 @@ class TaskController extends Controller
     // Create a new task
     public function store(StoreTaskRequest $request)
     {
-        $request->validate();
+        $validatedData = $request->validated();
 
-        $task = Task::create($request->all());
+        $task = Task::create($validatedData);
 
         return $this->success(new TaskResource($task));
     }
@@ -59,9 +59,10 @@ class TaskController extends Controller
             return $this->error(null, 'Task not found', 404);
         }
 
-        $request->validated();
 
-        $task->update($request->all());
+        $validateData = $request->validated();
+
+        $task->update($validateData);
 
         return $this->success(new TaskResource($task));
     }

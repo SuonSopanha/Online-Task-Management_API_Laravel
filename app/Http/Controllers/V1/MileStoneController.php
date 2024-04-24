@@ -26,9 +26,9 @@ class MileStoneController extends Controller
 
     public function store(StoreMileStoneRequest $request)
     {
-        $request->validate();
+        $validatedData = $request->validate();
 
-        $milestones = MileStone::create($request->all());
+        $milestones = MileStone::create($validatedData);
         return $this->success(new MileStoneResource($milestones));
     }
 
@@ -50,8 +50,8 @@ class MileStoneController extends Controller
             return $this->error(null, 'MileStone not found', 404);
         }
 
-        $request->validated();
-        $milestones->update($request->all());
+        $validatedData = $request->validated();
+        $milestones->update($validatedData);
 
         return $this->success([]);
     }
