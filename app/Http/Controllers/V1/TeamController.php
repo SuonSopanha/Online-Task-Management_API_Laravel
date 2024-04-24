@@ -30,9 +30,9 @@ class TeamController extends Controller
     }
 
     public function store(StoreTeamRequest $request){
-        $request->validated();
+        $validatedData = $request->validated();
 
-        $team = Team::create($request->all());
+        $team = Team::create($validatedData);
 
         return $this->success(new TeamResource($team));
     }
@@ -57,9 +57,9 @@ class TeamController extends Controller
             return $this->error('', 'Team not found', 404);
         }
 
-        $request->validated();
+        $validatedData = $request->validated();
 
-        $team->update($request->all());
+        $team->update($validatedData);
 
         return $this->success(new TeamResource($team));
 

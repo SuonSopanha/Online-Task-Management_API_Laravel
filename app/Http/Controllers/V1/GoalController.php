@@ -26,9 +26,9 @@ class GoalController extends Controller
     }
 
     public function store(StoreGoalRequest $request){
-        $request->validate();
+        $validatedData = $request->validate();
 
-        $goal = Goal::create($request->all());
+        $goal = Goal::create($validatedData);
         return $this->success(new GoalResource($goal));
 
     }
@@ -53,9 +53,9 @@ class GoalController extends Controller
             return $this->error('', 'Goal not found', 404);
         }
 
-        $request->validate();
+        $validatedData = $request->validate();
 
-        $goal->update($request->all());
+        $goal->update($validatedData);
 
         return $this->success(new GoalResource($goal));
 

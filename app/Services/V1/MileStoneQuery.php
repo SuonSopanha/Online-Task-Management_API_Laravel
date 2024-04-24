@@ -9,23 +9,28 @@ use Illuminate\Http\Request;
 class MileStoneQuery{
 
     protected $safeParams = [
-        'id' => ['eq'],
+        'id' => ['eq', 'lt', 'lte', 'gt', 'gte', 'ne'],
+        'milestone_name' => ['eq', 'like'],
+        'start_date' => ['eq', 'lt', 'lte', 'gt', 'gte', 'ne'],
+        'end_date' => ['eq', 'lt', 'lte', 'gt', 'gte', 'ne'],
     ];
 
     protected $columnMap = [
-
         'id' => 'id',
+        'milestone_name' => 'milestone_name',
+        'start_date' => 'start_date',
+        'end_date' => 'end_date',
     ];
 
 
     protected $operatorMap = [
-
         'eq' => '=',
         'lt' => '<',
         'lte' => '<=',
         'gt' => '>',
         'gte' => '>=',
         'ne' => '!=',
+        'like' => 'like',
     ];
 
     public function transform(Request $request){
