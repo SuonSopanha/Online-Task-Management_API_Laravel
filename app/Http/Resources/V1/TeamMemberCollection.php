@@ -22,8 +22,8 @@ class TeamMemberCollection extends ResourceCollection
                     'team_id' => $teamMember->team_id,
                     'user_id' => $teamMember->user_id,
                     'role' => $teamMember->role,
-                    'create_at' => $teamMember->create_at,
-                    'update_at' => $teamMember->update_at,
+                    'create_at' => $teamMember->create_at->format('Y-m-d H:i:s'),
+                    'update_at' => $teamMember->update_at->format('Y-m-d H:i:s')
                 ];
             }),
         ];
