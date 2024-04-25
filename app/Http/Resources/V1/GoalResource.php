@@ -15,13 +15,16 @@ class GoalResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id' => $this->id,
-            'team_id' => $this->team_id,
-            'goal_name' => $this->goal_name,
-            'description' => $this->description,
-            'completed' => $this->completed,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at
+            $this->resource->map(function ($goal){
+                return [
+                    'id' => $this->id,
+                    'team_id' => $this->team_id,
+                    'goal_name' => $this->goal_name,
+                    'description' => $this->description,
+                    'completed' => $this->completed
+                ];
+            }),
         ];
+        
     }
 }
