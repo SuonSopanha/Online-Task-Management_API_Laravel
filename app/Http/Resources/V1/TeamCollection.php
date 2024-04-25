@@ -20,16 +20,13 @@ class TeamCollection extends ResourceCollection
     public function toArray(Request $request): array
      {
         // return parent::toArray($request);
-        return [
-            
-            $this->collection->map(function ($team){
-                return [
-                    'id' => $team->id,
-                    'name' => $team->name,
-                    'description' => $team->description,
-                    'owner_id' => $team->owner_id,
-                ];
-            }),
-        ];
+        return $this->collection->map(function ($team) {
+            return [
+                'id' => $team->id,
+                'name' => $team->name,
+                'description' => $team->description,
+                'owner_id' => $team->owner_id,
+            ];
+        })->toArray();
      }
 }

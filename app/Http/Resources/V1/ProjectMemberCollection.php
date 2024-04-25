@@ -14,18 +14,28 @@ class ProjectMemberCollection extends ResourceCollection
      */
     public function toArray(Request $request): array
     {
-        return [
+        // return [
 
-            $this->collection->map(function ($projectMember) {
+        //     $this->collection->map(function ($projectMember) {
 
-                return [
-                    'id' => $projectMember->id,
-                    'project_id' => $projectMember->project_id,
-                    'user_id' => $projectMember->user_id,
-                    'role' => $projectMember->role,
+        //         return [
+        //             'id' => $projectMember->id,
+        //             'project_id' => $projectMember->project_id,
+        //             'user_id' => $projectMember->user_id,
+        //             'role' => $projectMember->role,
 
-                ];
-            }),
-        ];
+        //         ];
+        //     }),
+        // ];
+
+        return $this->collection->map(function ($projectMember) {
+            return [
+                'id' => $projectMember->id,
+                'project_id' => $projectMember->project_id,
+                'user_id' => $projectMember->user_id,
+                'role' => $projectMember->role,
+
+            ];
+        })->toArray();
     }
 }

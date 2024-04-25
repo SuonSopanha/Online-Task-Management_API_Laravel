@@ -14,20 +14,34 @@ class ProjectStageCollection extends ResourceCollection
      */
     public function toArray(Request $request): array
     {
-        return [
-            $this->collection->map(function ($projectStage) {
-                return [
-                    'id' => $projectStage->id,
-                    'project_id' => $projectStage->project_id,
-                    'stage_name' => $projectStage->stage_name,
-                    'start_date' => $projectStage->start_date,
-                    'period' => $projectStage->period,
-                    'end_date' => $projectStage->end_date,
-                    'completed' => $projectStage->completed,
-                    'completion_date' => $projectStage->completion_date,
+        // return [
+        //     $this->collection->map(function ($projectStage) {
+        //         return [
+        //             'id' => $projectStage->id,
+        //             'project_id' => $projectStage->project_id,
+        //             'stage_name' => $projectStage->stage_name,
+        //             'start_date' => $projectStage->start_date,
+        //             'period' => $projectStage->period,
+        //             'end_date' => $projectStage->end_date,
+        //             'completed' => $projectStage->completed,
+        //             'completion_date' => $projectStage->completion_date,
 
-                ];
-            }),
-        ];
+        //         ];
+        //     }),
+        // ];
+
+
+        return $this->collection->map(function ($projectStage) {
+            return [
+                'id' => $projectStage->id,
+                'project_id' => $projectStage->project_id,
+                'stage_name' => $projectStage->stage_name,
+                'start_date' => $projectStage->start_date,
+                'period' => $projectStage->period,
+                'end_date' => $projectStage->end_date,
+                'completed' => $projectStage->completed,
+                'completion_date' => $projectStage->completion_date,
+            ];
+        })->toArray();
     }
 }

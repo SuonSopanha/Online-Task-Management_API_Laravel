@@ -16,15 +16,24 @@ class MileStoneCollection extends ResourceCollection
     {
         // return parent::toArray($request);
 
-        return [
-            $this->collection->map(function ($milestone) {
-                return [
-                    'id' => $milestone->id,
-                    'milestone_name' => $milestone->milestone_name,
-                    'start_date' => $milestone->start_date,
-                    'end_date' => $milestone->end_date
-                ];
-            }),
-        ];
+        // return [
+        //     $this->collection->map(function ($milestone) {
+        //         return [
+        //             'id' => $milestone->id,
+        //             'milestone_name' => $milestone->milestone_name,
+        //             'start_date' => $milestone->start_date,
+        //             'end_date' => $milestone->end_date
+        //         ];
+        //     }),
+        // ];
+
+        return $this->collection->map(function ($milestone) {
+            return [
+                'id' => $milestone->id,
+                'milestone_name' => $milestone->milestone_name,
+                'start_date' => $milestone->start_date,
+                'end_date' => $milestone->end_date
+            ];
+        })->toArray();
     }
 }

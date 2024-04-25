@@ -14,18 +14,17 @@ class GoalCollection extends ResourceCollection
      */
     public function toArray(Request $request): array
     {
-        return [
-            $this->collection->map(function ($goal){
-                return [
-                    'id' => $goal->id,
-                    'team_id' => $goal->team_id,
-                    'goal_name' => $goal->goal_name,
-                    'description' => $goal->description,
-                    'completed' => $goal->completed,
-                ];
-            }),
-        ];
-    }
 
-    
+        return $this->collection->map(function ($goal) {
+            return [
+                'id' => $goal->id,
+                'team_id' => $goal->team_id,
+                'goal_name' => $goal->goal_name,
+                'description' => $goal->description,
+                'completed' => $goal->completed,
+            ];
+        })->toArray();
+
+
+    }
 }
