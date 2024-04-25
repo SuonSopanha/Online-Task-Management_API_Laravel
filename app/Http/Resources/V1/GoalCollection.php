@@ -17,11 +17,11 @@ class GoalCollection extends ResourceCollection
         return [
             $this->collection->map(function ($goal){
                 return [
-                    'id' => $this->id,
-                    'team_id' => $this->team_id,
-                    'goal_name' => $this->goal_name,
-                    'description' => $this->description,
-                    'completed' => $this->completed
+                    'id' => $goal->id,
+                    'team_id' => $goal->team_id,
+                    'goal_name' => $goal->goal_name,
+                    'description' => $goal->description,
+                    'completed' => $goal->completed
                 ];
             }),
         ];

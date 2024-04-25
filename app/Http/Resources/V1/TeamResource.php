@@ -15,15 +15,10 @@ class TeamResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            
-            $this->resource->map(function ($team){
-                return [
-                    'id' => $team->id,
-                    'name' => $team->name,
-                    'description' => $team->description,
-                    'owner_id' => $team->owner_id
-                ];
-            }),
+                'id' => $this->id,
+                'name' => $this->name,
+                'description' => $this->description,
+                'owner_id' => $this->owner_id
         ];
     }
 }
