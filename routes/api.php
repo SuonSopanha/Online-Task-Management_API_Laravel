@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\V1\GoalController;
 use App\Http\Controllers\V1\TaskController;
 use App\Http\Controllers\V1\TeamController;
+use App\Http\Controllers\V1\MileStoneController;
 use App\Http\Controllers\V1\UserController;
 use App\Http\Controllers\V1\ProjectController;
 use App\Http\Controllers\V1\TeamMemberController;
@@ -74,11 +75,11 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], funct
 
 // Routes for version 1 Milestone
 Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], function () {
-    Route::get('/milestones', [Milestone::class, 'index']);
-    Route::post('/milestones', [Milestone::class, 'store']);
-    Route::get('/milestones/{id}', [Milestone::class, 'show']);
-    Route::put('/milestones/{id}', [Milestone::class, 'update']);
-    Route::delete('/milestones/{id}', [Milestone::class, 'destroy']);
+    Route::get('/milestones', [MileStoneController::class, 'index']);
+    Route::post('/milestones', [MileStoneController::class, 'store']);
+    Route::get('/milestones/{id}', [MileStoneController::class, 'show']);
+    Route::put('/milestones/{id}', [MileStoneController::class, 'update']);
+    Route::delete('/milestones/{id}', [MileStoneController::class, 'destroy']);
 });
 
 // Routes for version 1 Project Stage

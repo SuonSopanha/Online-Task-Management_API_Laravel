@@ -47,9 +47,9 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        $request->validated();
+        $validatedData = $request->validated();
 
-        $project = Project::create($request->all());
+        $project = Project::create($validatedData);
 
         return $this->success(new ProjectResource($project));
     }
@@ -87,9 +87,9 @@ class ProjectController extends Controller
             return $this->error('', 'Project not found', 404);
         }
 
-        $request->validated();
+        $validatedData = $request->validated();
 
-        $project->update($request->all());
+        $project->update($validatedData);
 
         return $this->success(new ProjectResource($project));
     }

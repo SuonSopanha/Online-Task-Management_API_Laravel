@@ -10,6 +10,7 @@ use App\Services\V1\ProjectStageQuery;
 use App\Http\Resources\V1\ProjectStageResource;
 use App\Http\Resources\V1\ProjectStageCollection;
 use App\Http\Requests\V1\StoreProjectStageRequest;
+use App\Http\Requests\V1\UpdateProjectStageRequest;
 
 class ProjectStageController extends Controller
 {
@@ -28,9 +29,9 @@ class ProjectStageController extends Controller
 
     public function store(StoreProjectStageRequest $request){
 
-        $request->validate();
+        $validatedData = $request->validate();
 
-        $project_stage = ProjectStage::create($request->all());
+        $project_stage = ProjectStage::create($validatedData);
 
         return $this->success(new ProjectStageResource($project_stage));
 
@@ -48,7 +49,7 @@ class ProjectStageController extends Controller
         return $this->success(new ProjectStageResource($project_stage));
     }
 
-    public function update(Request $request, $id){
+    public function update(UpdateProjectStageRequest $request, $id){
 
         $project_stage = ProjectStage::find($id);
 
@@ -56,8 +57,8 @@ class ProjectStageController extends Controller
             return $this->error(null, 'Project Stage not found', 404);
         }
 
-        $request->validated();
-        $project_stage->update($request->all());
+        $validatedData = $request->validated();
+        $project_stage->update($validatedData);
 
         return $this->success(new ProjectStageResource($project_stage));
 

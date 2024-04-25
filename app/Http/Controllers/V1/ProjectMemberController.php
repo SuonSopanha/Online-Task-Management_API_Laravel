@@ -32,10 +32,10 @@ class ProjectMemberController extends Controller
 
     public function store(StoreProjectMemberRequest $request)
     {
-        $request->validated();
+        $validatedData = $request->validated();
 
 
-        $project_member = ProjectMember::create($request->all());
+        $project_member = ProjectMember::create($validatedData);
 
         return $this->success(new ProjectMemberResource($project_member));
     }
@@ -61,9 +61,9 @@ class ProjectMemberController extends Controller
             return $this->error('', 'Project member not found', 404);
         }
 
-        $request->validated();
+        $validatedData = $request->validated();
 
-        $project_member->update($request->all());
+        $project_member->update($validatedData);
 
         return $this->success(new ProjectMemberResource($project_member));
     }
