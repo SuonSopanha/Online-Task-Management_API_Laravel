@@ -19,9 +19,11 @@ class TeamMemberCollection extends ResourceCollection
             'data' => $this->collection->map(function ($teamMember) {
                 return [
                     'id' => $teamMember->id,
-                    'email' => $teamMember->email,
-                    'full_name' => $teamMember->full_name,
-                    'photo_url' => $teamMember->photo_url,
+                    'team_id' => $teamMember->team_id,
+                    'user_id' => $teamMember->user_id,
+                    'role' => $teamMember->role,
+                    'create_at' => $teamMember->create_at,
+                    'update_at' => $teamMember->update_at,
                 ];
             }),
         ];
