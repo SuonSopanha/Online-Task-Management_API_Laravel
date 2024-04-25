@@ -23,8 +23,7 @@ class ProjectMemberCollection extends ResourceCollection
                     'project_id' => $projectMember->project_id,
                     'user_id' => $projectMember->user_id,
                     'role' => $projectMember->role,
-                    'create_at' => $projectMember->create_at->format('Y-m-d H:i:s'),
-                    'update_at' => $projectMember->update_at->format('Y-m-d H:i:s')
+
                 ];
             }),
         ];

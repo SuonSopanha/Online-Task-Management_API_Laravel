@@ -19,8 +19,7 @@ class ProjectMemberResource extends JsonResource
             'project_id' => $this->project_id,
             'user_id' => $this->user_id,
             'role' => $this->role,
-            'created_at' => $this->created_at->format('Y-m-d H:i:s'),
-            'updated_at' => $this->updated_at->format('Y-m-d H:i:s'),
+
         ];
     }
 }
