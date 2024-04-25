@@ -12,8 +12,24 @@ class TeamCollection extends ResourceCollection
      *
      * @return array<int|string, mixed>
      */
+    // public function toArray(Request $request): array
+    // {
+    //     return parent::toArray($request);
+    // }
+
     public function toArray(Request $request): array
-    {
-        return parent::toArray($request);
-    }
+     {
+        // return parent::toArray($request);
+        return [
+            
+            $this->collection->map(function ($team){
+                return [
+                    'id' => $team->id,
+                    'name' => $team->name,
+                    'description' => $team->description,
+                    'owner_id' => $team->owner_id,
+                ];
+            }),
+        ];
+     }
 }
