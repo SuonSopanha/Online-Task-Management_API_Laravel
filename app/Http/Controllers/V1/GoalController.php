@@ -8,6 +8,7 @@ use App\Services\V1\GoalQuery;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\StoreGoalRequest;
 use App\Http\Requests\V1\UpdateGoalRequest;
+use App\Http\Resources\V1\GoalCollection;
 use App\Http\Resources\V1\GoalResource;
 use App\Models\Goal;
 
@@ -22,7 +23,7 @@ class GoalController extends Controller
 
         $goal = $query->get();
 
-        return $this->success(new GoalResource($goal));
+        return $this->success(new GoalCollection($goal));
     }
 
     public function store(StoreGoalRequest $request){
