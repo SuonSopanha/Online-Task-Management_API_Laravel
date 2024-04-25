@@ -27,9 +27,7 @@ class TeamCollection extends ResourceCollection
                     'id' => $team->id,
                     'name' => $team->name,
                     'description' => $team->description,
-                    'owner_id' => $team->owner_id,
-                    'created_at' => $team->created_at,
-                    'updated_at' => $team->updated_at
+                    'owner_id' => $team->owner_id
                 ];
             }),
         ];
