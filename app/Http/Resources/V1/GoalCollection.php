@@ -22,6 +22,8 @@ class GoalCollection extends ResourceCollection
                     'goal_name' => $goal->goal_name,
                     'description' => $goal->description,
                     'completed' => $goal->completed,
+                    'created_at' => $this->created_at,
+                    'updated_at' => $this->updated_at,
                 ];
             }),
         ];
