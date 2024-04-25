@@ -21,7 +21,7 @@ class GoalCollection extends ResourceCollection
                     'team_id' => $goal->team_id,
                     'goal_name' => $goal->goal_name,
                     'description' => $goal->description,
-                    'completed' => $goal->completed
+                    'completed' => $goal->completed,
                 ];
             }),
         ];
