@@ -15,17 +15,15 @@ class TeamMemberCollection extends ResourceCollection
      */
     public function toArray(Request $request): array
     {
-        return [  
-            
+        return [
+
             $this->collection->map(function ($teamMember) {
-                
+
                 return [
                     'id' => $teamMember->id,
                     'team_id' => $teamMember->team_id,
                     'user_id' => $teamMember->user_id,
                     'role' => $teamMember->role,
-                    'create_at' => $teamMember->create_at->format('Y-m-d H:i:s'),
-                    'update_at' => $teamMember->update_at->format('Y-m-d H:i:s')
                 ];
             }),
         ];
