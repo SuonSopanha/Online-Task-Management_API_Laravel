@@ -25,7 +25,7 @@ class TeamCollection extends ResourceCollection
             'id' => $this->id,
             'name' => $this->name,
             'description' => $this->description,
-            'owner_id' => $this->owner_at,
+            'owner_id' => $this->owner_id,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
         ];
