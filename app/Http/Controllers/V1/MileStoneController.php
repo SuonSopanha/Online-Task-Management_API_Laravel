@@ -24,9 +24,17 @@ class MileStoneController extends Controller
         return $this->success(new MileStoneCollection($milestones));
     }
 
+    // public function store(StoreMileStoneRequest $request)
+    // {
+    //     $validatedData = $request->validate();
+
+    //     $milestones = MileStone::create($validatedData);
+    //     return $this->success(new MileStoneResource($milestones));
+    // }
+
     public function store(StoreMileStoneRequest $request)
     {
-        $validatedData = $request->validate();
+        $validatedData = $request->validated();
 
         $milestones = MileStone::create($validatedData);
         return $this->success(new MileStoneResource($milestones));
