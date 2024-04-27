@@ -29,7 +29,7 @@ class ProjectStageController extends Controller
 
     public function store(StoreProjectStageRequest $request){
 
-        $validatedData = $request->validate();
+        $validatedData = $request->validated();
 
         $project_stage = ProjectStage::create($validatedData);
 

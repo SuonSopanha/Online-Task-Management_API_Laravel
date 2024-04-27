@@ -27,7 +27,7 @@ class GoalController extends Controller
     }
 
     public function store(StoreGoalRequest $request){
-        $validatedData = $request->validate();
+        $validatedData = $request->validated();
 
         $goal = Goal::create($validatedData);
         return $this->success(new GoalResource($goal));
@@ -54,7 +54,7 @@ class GoalController extends Controller
             return $this->error('', 'Goal not found', 404);
         }
 
-        $validatedData = $request->validate();
+        $validatedData = $request->validated();
 
         $goal->update($validatedData);
 
