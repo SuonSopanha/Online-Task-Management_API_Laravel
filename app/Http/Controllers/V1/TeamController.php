@@ -11,6 +11,7 @@ use App\Http\Resources\V1\TeamResource;
 use App\Http\Resources\V1\TeamCollection;
 use App\Http\Requests\V1\StoreTeamRequest;
 use App\Http\Requests\V1\UpdateTaskRequest;
+use App\Http\Requests\V1\UpdateTeamRequest;
 
 class TeamController extends Controller
 {
@@ -50,7 +51,7 @@ class TeamController extends Controller
 
     }
 
-    public function update(UpdateTaskRequest $request, $id){
+    public function update(UpdateTeamRequest $request, $id){
         $team = Team::find($id);
 
         if (!$team) {
