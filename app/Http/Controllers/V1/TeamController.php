@@ -10,11 +10,16 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\TeamResource;
 use App\Http\Resources\V1\TeamCollection;
 use App\Http\Requests\V1\StoreTeamRequest;
-use App\Http\Requests\V1\UpdateTaskRequest;
+use App\Http\Requests\V1\UpdateTeamRequest;
 
 class TeamController extends Controller
 {
     use HttpResponses;
+
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum');
+    }
 
     public function index(Request $request)
     {
@@ -30,11 +35,14 @@ class TeamController extends Controller
     }
 
     public function store(StoreTeamRequest $request){
+
         $validatedData = $request->validated();
+        $validatedData['owner_id'] = auth()->user()->id;
 
         $team = Team::create($validatedData);
 
         return $this->success(new TeamResource($team));
+
     }
 
 
@@ -50,7 +58,7 @@ class TeamController extends Controller
 
     }
 
-    public function update(UpdateTaskRequest $request, $id){
+    public function update(UpdateTeamRequest $request, $id){
         $team = Team::find($id);
 
         if (!$team) {

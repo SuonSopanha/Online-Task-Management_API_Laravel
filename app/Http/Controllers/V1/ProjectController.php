@@ -17,6 +17,11 @@ class ProjectController extends Controller
 
     use HttpResponses;
 
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum');
+    }
+
     /**
      * Display a listing of the resource.
      */

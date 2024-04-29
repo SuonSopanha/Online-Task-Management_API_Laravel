@@ -37,7 +37,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], funct
 
 
 // Routes for version 1 User
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
     Route::get('/users', [UserController::class, 'index']);
     Route::post('/users', [UserController::class, 'store']);
     Route::get('/users/{id}', [UserController::class, 'show']);
@@ -46,7 +46,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], funct
 });
 
 // Routes for version 1 Team
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
     Route::get('/teams', [TeamController::class, 'index']);
     Route::post('/teams', [TeamController::class, 'store']);
     Route::get('/teams/{id}', [TeamController::class, 'show']);
@@ -55,7 +55,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], funct
 });
 
 // Routes for version 1 Task
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
     Route::get('/tasks', [TaskController::class, 'index']);
     Route::post('/tasks', [TaskController::class, 'store']);
     Route::get('/tasks/{id}', [TaskController::class, 'show']);
@@ -64,7 +64,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], funct
 });
 
 // Routes for version 1 Project
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
     Route::get('/projects', [ProjectController::class, 'index']);
     Route::post('/projects', [ProjectController::class, 'store']);
     Route::get('/projects/{id}', [ProjectController::class, 'show']);
@@ -74,7 +74,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], funct
 
 
 // Routes for version 1 Milestone
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
     Route::get('/milestones', [MileStoneController::class, 'index']);
     Route::post('/milestones', [MileStoneController::class, 'store']);
     Route::get('/milestones/{id}', [MileStoneController::class, 'show']);
@@ -83,7 +83,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], funct
 });
 
 // Routes for version 1 Project Stage
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
     Route::get('/project-stages', [ProjectStageController::class, 'index']);
     Route::post('/project-stages', [ProjectStageController::class, 'store']);
     Route::get('/project-stages/{id}', [ProjectStageController::class, 'show']);
@@ -92,7 +92,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], funct
 });
 
 // Routes for version 1 Project Member
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
     Route::get('/project-members', [ProjectMemberController::class, 'index']);
     Route::post('/project-members', [ProjectMemberController::class, 'store']);
     Route::get('/project-members/{id}', [ProjectMemberController::class, 'show']);
@@ -102,7 +102,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], funct
 
 
 // Routes for version 1 Team Member
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
     Route::get('/team-members', [TeamMemberController::class, 'index']);
     Route::post('/team-members', [TeamMemberController::class, 'store']);
     Route::get('/team-members/{id}', [TeamMemberController::class, 'show']);
@@ -111,7 +111,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], funct
 });
 
 // Routes for version 1 Goal
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
     Route::get('/goals', [GoalController::class, 'index']);
     Route::post('/goals', [GoalController::class, 'store']);
     Route::get('/goals/{id}', [GoalController::class, 'show']);
