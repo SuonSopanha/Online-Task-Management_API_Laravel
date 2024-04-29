@@ -24,7 +24,6 @@ class StoreTeamRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'owner_id' => 'required|exists:users,id',
         ];
     }
 }

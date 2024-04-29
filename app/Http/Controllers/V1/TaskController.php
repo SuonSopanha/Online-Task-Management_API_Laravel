@@ -17,6 +17,11 @@ class TaskController extends Controller
 {
     use HttpResponses;
 
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum');
+    }
+
     // Get all tasks    // Get all tasks
     public function index(Request $request)
     {
