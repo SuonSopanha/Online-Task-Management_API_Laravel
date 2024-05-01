@@ -37,6 +37,7 @@ class TaskController extends Controller
     public function store(StoreTaskRequest $request)
     {
         $validatedData = $request->validated();
+        $validatedData['owner_id'] = auth()->user()->id;
 
         $task = Task::create($validatedData);
 

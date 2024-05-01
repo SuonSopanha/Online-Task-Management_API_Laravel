@@ -25,7 +25,6 @@ class StoreTaskRequest extends FormRequest
             'project_id' => 'nullable|exists:projects,id',
             'milestone_id' => 'nullable|exists:milestones,id',
             'stage_id' => 'nullable|exists:project_stages,id',
-            'owner_id' => 'required|exists:users,id',
             'on_tracking' => 'boolean',
             'task_name' => 'required|string|max:255',
             'description' => 'nullable|string',
