@@ -16,6 +16,10 @@ return new class extends Migration
             $table->unsignedBigInteger('project_id');
             $table->unsignedBigInteger('user_id');
             $table->string('role', 255);
+            $table->integer('assigned_tasks')->default(0);
+            $table->integer('completed_tasks')->default(0);
+            $table->integer('overdue_tasks')->default(0);
+            $table->integer('worked_hour')->default(0);
             $table->timestamps();
 
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');

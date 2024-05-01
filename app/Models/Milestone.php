@@ -13,9 +13,14 @@ class Milestone extends Model
         'milestone_name',
         'start_date',
         'end_date',
+        'owner_id',
     ];
 
     public function tasks(){
         return $this->hasMany(Task::class);
+    }
+
+    public function owner(){
+        return $this->belongsTo(User::class, 'owner_id');
     }
 }
