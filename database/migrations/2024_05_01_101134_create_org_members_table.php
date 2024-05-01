@@ -14,6 +14,10 @@ class CreateOrgMembersTable extends Migration
             $table->unsignedBigInteger('org_id');
             $table->string('role'); // Assuming role is a string, you can adjust this as needed
             $table->boolean('is_admin')->default(false);
+            $table->integer('assigned_tasks')->default(0);
+            $table->integer('completed_tasks')->default(0);
+            $table->integer('overdue_tasks')->default(0);
+            $table->integer('worked_hour')->default(0);
             $table->timestamps();
 
             // Define foreign key constraints

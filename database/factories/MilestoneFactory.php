@@ -2,9 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use App\Models\Milestone;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Faker\Provider\DateTime as DateTimeProvider;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class MilestoneFactory extends Factory
 {
@@ -26,6 +27,7 @@ class MilestoneFactory extends Factory
             'milestone_name' => $this->faker->sentence,
             'start_date' => DateTimeProvider::dateTimeBetween('2024-01-01', '2024-12-31')->format('Y-m-d'),
             'end_date' => DateTimeProvider::dateTimeBetween('2024-01-01', '2024-12-31')->format('Y-m-d'),
+            'owner_id' => User::inRandomOrder()->first()->id
         ];
     }
 }

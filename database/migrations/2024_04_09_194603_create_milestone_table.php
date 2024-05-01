@@ -16,7 +16,10 @@ return new class extends Migration
             $table->string('milestone_name', 255);
             $table->date('start_date');
             $table->date('end_date');
+            $table->date('owner_id');
             $table->timestamps();
+
+            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -32,7 +32,8 @@ class MileStoneCollection extends ResourceCollection
                 'id' => $milestone->id,
                 'milestone_name' => $milestone->milestone_name,
                 'start_date' => $milestone->start_date,
-                'end_date' => $milestone->end_date
+                'end_date' => $milestone->end_date,
+                'owner_id' => $milestone->owner_id
             ];
         })->toArray();
     }

@@ -26,5 +26,9 @@ class Organization extends Model
     public function members(){
         return $this->hasMany(OrgMember::class, 'org_id');
     }
+
+    public function metrics(){
+        return $this->hasMany(OrganizationMetric::class, 'organization_id');
+    }
 }
 
