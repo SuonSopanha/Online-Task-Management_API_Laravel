@@ -42,6 +42,7 @@ class ProjectController extends Controller
     {
         $request->validated();
 
+
         $project = Project::create($request->all());
 
         return $this->success(new ProjectResource($project));
@@ -53,6 +54,8 @@ class ProjectController extends Controller
     public function store(StoreProjectRequest $request)
     {
         $validatedData = $request->validated();
+        $validatedData['owner_id'] = auth()->user()->id;
+
 
         $project = Project::create($validatedData);
 
