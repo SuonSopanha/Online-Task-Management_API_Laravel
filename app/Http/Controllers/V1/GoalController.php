@@ -25,6 +25,7 @@ class GoalController extends Controller
     {
         $filter = new GoalQuery();
         $query = $filter->transform($request);
+        
 
         $goal = $query->get();
 
