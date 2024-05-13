@@ -11,7 +11,7 @@ class UpdateOrganizationRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class UpdateOrganizationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'string|max:255',
+            'description' => 'nullable|string',
+            'industry' => 'nullable|string|max:255',
+            'owner_id' => 'exists:users,id',
+            'email' => 'nullable|string|email|max:255|unique:organizations,email,' . $this->route('organization')->id,
         ];
     }
 }

@@ -11,7 +11,7 @@ class StoreOrganizationRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class StoreOrganizationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'industry' => 'nullable|string|max:255',
+            'owner_id' => 'required|exists:users,id',
+            'email' => 'nullable|string|email|max:255|unique:organizations,email',
         ];
     }
 }

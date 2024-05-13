@@ -11,7 +11,7 @@ class UpdateOrgMemberRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,14 @@ class UpdateOrgMemberRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'user_id' => 'exists:users,id',
+            'org_id' => 'exists:organizations,id',
+            'role' => 'string|max:255',
+            'is_admin' => 'nullable|boolean',
+            'assigned_tasks' => 'nullable|integer|min:0',
+            'completed_tasks' => 'nullable|integer|min:0',
+            'overdue_tasks' => 'nullable|integer|min:0',
+            'worked_hour' => 'nullable|integer|min:0',
         ];
     }
 }
