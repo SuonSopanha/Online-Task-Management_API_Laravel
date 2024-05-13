@@ -11,7 +11,7 @@ class StoreOrgMemberRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,14 @@ class StoreOrgMemberRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'user_id' => 'required|exists:users,id',
+            'org_id' => 'required|exists:organizations,id',
+            'role' => 'required|string|max:255',
+            'is_admin' => 'nullable|boolean',
+            'assigned_tasks' => 'nullable|integer|min:0',
+            'completed_tasks' => 'nullable|integer|min:0',
+            'overdue_tasks' => 'nullable|integer|min:0',
+            'worked_hour' => 'nullable|integer|min:0',
         ];
     }
 }
