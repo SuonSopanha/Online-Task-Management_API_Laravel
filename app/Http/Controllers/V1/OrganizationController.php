@@ -6,45 +6,74 @@ use App\Models\Organization;
 use Illuminate\Http\Request;
 use App\Traits\HttpResponses;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\V1\StoreOrganizationRequest;
+use App\Http\Requests\V1\UpdateOrganizationRequest;
 use App\Services\V1\OrganizationQuery;
+use App\Http\Resources\V1\OrganizationCollection;
+use App\Http\Resources\V1\OrganizationResource;
 
 class OrganizationController extends Controller
 {
     use HttpResponses;
 
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum');
+    }
 
     public function index(Request $request)
     {
         $filter = new OrganizationQuery();
         $query = $filter->transform($request);
-        return $this->success($query);
+        $organization = $query->get();
+        return $this->success(new OrganizationCollection($organization));
     }
 
-    public function store(Request $request)
+    public function store(StoreOrganizationRequest $request)
     {
-        $data = $request->validate([
-            'name' => 'required|string',
-            'description' => 'nullable|string',
-        ]);
-        $organization = Organization::create($data);
-        return $this->success($organization, 'Organization created successfully');
+        $validatedData = $request->validated();
+        $validatedData['owner_id'] = auth()->user()->id;
+
+
+        $organization = Organization::create($validatedData);
+        return $this->success(new OrganizationResource($organization));
+    }
+
+    public function show($id)
+    {
+        $organization = Organization::find($id);
+
+        if (!$organization) {
+            return $this->error('', 'Organization not found', 404);
+        }
+        return $this->success(new OrganizationResource($organization));
+
     }
 
 
-    public function update(Request $request, Organization $organization)
+    public function update(UpdateOrganizationRequest $request,$id)
     {
-        $data = $request->validate([
-            'name' => 'required|string',
-            'description' => 'nullable|string',
-        ]);
-        $organization->update($data);
-        return $this->success($organization, 'Organization updated successfully');
+        $organization = Organization::find($id);
+
+        if (!$organization) {
+            return $this->error('', 'Organization not found', 404);
+        }
+        $validatedData = $request->validated();
+        $organization->fill($validatedData);
+        $organization->save();
+        return $this->success(new OrganizationResource($organization));
+
     }
 
 
-    public function destroy(Organization $organization)
+    public function destroy($id)
     {
-        $organization->delete();
+        $orgranization = Organization::find($id);
+
+        if (!$orgranization) {
+            return $this->error('', 'Organization not found', 404);
+        }
+        $orgranization->delete();
         return $this->success([], 'Organization deleted successfully');
     }
 
