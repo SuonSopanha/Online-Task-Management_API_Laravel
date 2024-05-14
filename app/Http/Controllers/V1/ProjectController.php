@@ -35,18 +35,6 @@ class ProjectController extends Controller
         return $this->success(new ProjectCollection($project));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create(StoreProjectRequest $request)
-    {
-        $request->validated();
-
-
-        $project = Project::create($request->all());
-
-        return $this->success(new ProjectResource($project));
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -76,13 +64,6 @@ class ProjectController extends Controller
         return $this->success(new ProjectResource($project));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
