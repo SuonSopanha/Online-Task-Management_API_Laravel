@@ -6,12 +6,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\V1\GoalController;
 use App\Http\Controllers\V1\TaskController;
 use App\Http\Controllers\V1\TeamController;
-use App\Http\Controllers\V1\MileStoneController;
 use App\Http\Controllers\V1\UserController;
 use App\Http\Controllers\V1\ProjectController;
+use App\Http\Controllers\V1\MileStoneController;
+use App\Http\Controllers\V1\OrgMemberController;
 use App\Http\Controllers\V1\TeamMemberController;
+use App\Http\Controllers\V1\OrganizationController;
 use App\Http\Controllers\V1\ProjectStageController;
 use App\Http\Controllers\V1\ProjectMemberController;
+use App\Http\Controllers\V1\OrganizationMetricController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +26,7 @@ use App\Http\Controllers\V1\ProjectMemberController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
 
 Route::middleware('auth:sanctum')->get('/users/{user}', function (Request $request) {
     return $request->user();
@@ -119,5 +123,28 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middle
     Route::delete('/goals/{id}', [GoalController::class, 'destroy']);
 });
 
+
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
+    Route::get('/organizations', [OrganizationController::class, 'index']);
+    Route::post('/organizations', [OrganizationController::class, 'store']);
+    Route::get('/organizations/{id}', [OrganizationController::class, 'show']);
+    Route::put('/organizations/{id}', [OrganizationController::class, 'update']);
+    Route::delete('/organizations/{id}', [OrganizationController::class, 'destroy']);
+});
+
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
+    Route::get('/org-members', [OrgMemberController::class, 'index']);
+    Route::post('/org-members', [OrgMemberController::class, 'store']);
+    Route::get('/org-members/{id}', [OrgMemberController::class, 'show']);
+    Route::put('/org-members/{id}', [OrgMemberController::class, 'update']);
+    Route::delete('/org-members/{id}', [OrgMemberController::class, 'destroy']);
+});
+
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
+    Route::post('/organization-metrics', [OrganizationMetricController::class, 'store'])->name('organization-metrics.store');
+    Route::get('/organization-metrics/{id}', [OrganizationMetricController::class, 'show'])->name('organization-metrics.show');
+    Route::put('/organization-metrics/{id}', [OrganizationMetricController::class, 'update'])->name('organization-metrics.update');
+    Route::delete('/organization-metrics/{id}', [OrganizationMetricController::class, 'destroy'])->name('organization-metrics.destroy');
+});
 
 
