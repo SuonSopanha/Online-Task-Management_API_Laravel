@@ -21,6 +21,8 @@ class UserCollection extends ResourceCollection
                     'email' => $user->email,
                     'full_name' => $user->full_name,
                     'photo_url' => $user->photo_url,
+                    'additional_info' => json_decode($user->additional_info),
+                    'role' => $user->role,
                 ];
             }),
         ];

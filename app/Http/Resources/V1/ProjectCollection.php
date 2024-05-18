@@ -34,7 +34,7 @@ class ProjectCollection extends ResourceCollection
             return [
                 'id' => $project->id,
                 'project_name' => $project->project_name,
-                'owner_id' => $this->owner_id,
+                'owner_id' => $project->owner_id,
                 'start_date' => $project->start_date,
                 'end_date' => $project->end_date,
                 'team_id' => $project->team_id,

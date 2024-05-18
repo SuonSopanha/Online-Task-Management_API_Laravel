@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('full_name')->nullable();
             $table->text('photo_url')->nullable(); // Changed to text type
             $table->json('additional_info')->nullable();
+            $table->string('role')->default('user');
             $table->rememberToken();
             $table->timestamps();
         });

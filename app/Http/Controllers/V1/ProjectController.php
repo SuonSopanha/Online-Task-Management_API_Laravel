@@ -98,4 +98,24 @@ class ProjectController extends Controller
 
         return $this->success(new ProjectResource($project));
     }
+
+    //custom controller
+
+    //get project by owner_id
+    public function getProjectByOwner()
+    {
+        $id = auth()->user()->id;
+        $project = Project::where('owner_id', $id)->get();
+        return $this->success(new ProjectCollection($project));
+    }
+
+    //get project by memmber
+    public function getProjectByMember()
+    {
+        $id = auth()->user()->id;
+        $project = Project::whereHas('project_members', function ($query) use ($id) {
+            $query->where('user_id', $id);
+        })->get();
+        return $this->success(new ProjectCollection($project));
+    }
 }
