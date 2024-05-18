@@ -17,7 +17,7 @@ class Project extends Model
         'owner_id',
         'start_date',
         'end_date',
-        'team_id',
+        'organization_id',
         'project_status',
         'project_priority',
     ];
@@ -27,9 +27,9 @@ class Project extends Model
         return $this->belongsTo(User::class, 'owner_id');
     }
 
-    public function team()
+    public function organization()
     {
-        return $this->belongsTo(Team::class, 'team_id');
+        return $this->belongsTo(Organization::class, 'organization_id');
     }
 
     public function stages()

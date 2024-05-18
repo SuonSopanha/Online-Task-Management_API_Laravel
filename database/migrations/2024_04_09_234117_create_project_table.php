@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('owner_id');
             $table->date('start_date');
             $table->date('end_date');
-            $table->string('team_id', 255)->nullable();
+            $table->string('organization_id', 255)->nullable();
             $table->string('project_status', 255);
             $table->string('project_priority', 255);
             $table->timestamps();

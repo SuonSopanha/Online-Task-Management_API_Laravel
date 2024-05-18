@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Organization;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -20,7 +21,7 @@ class GoalFactory extends Factory
         return [
             'goal_name' => fake()->word(),
             'description' => fake()->paragraph(),
-            'team_id' => User::inRandomOrder()->first()->id,
+            'organization_id' => Organization::inRandomOrder()->first()->id,
             'completed' => fake()->boolean(),
         ];
     }

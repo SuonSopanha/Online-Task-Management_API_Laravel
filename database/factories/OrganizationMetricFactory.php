@@ -21,16 +21,16 @@ class OrganizationMetricFactory extends Factory
     {
         return [
             'organization_id' => Organization::inRandomOrder()->first()->id,
-            'total_users' => $this->faker->numberBetween(0, 100),
-            'active_users' => $this->faker->numberBetween(0, 100),
+            'total_users' => $this->faker->numberBetween(0, 20),
+            'active_users' => $this->faker->numberBetween(0, 20),
             'projects_created' => $this->faker->numberBetween(0, 50),
             'projects_completed' => $this->faker->numberBetween(0, 50),
             'projects_in_progress' => $this->faker->numberBetween(0, 50),
             'average_project_completion_time' => $this->faker->randomFloat(2, 0, 100),
-            'total_tasks' => $this->faker->numberBetween(0, 500),
-            'completed_tasks' => $this->faker->numberBetween(0, 500),
-            'tasks_in_progress' => $this->faker->numberBetween(0, 500),
-            'tasks_overdue' => $this->faker->numberBetween(0, 500),
+            'total_tasks' => $this->faker->numberBetween(0, 100),
+            'completed_tasks' => $this->faker->numberBetween(0, 100),
+            'tasks_in_progress' => $this->faker->numberBetween(0, 100),
+            'tasks_overdue' => $this->faker->numberBetween(0, 100),
             'average_task_completion_time' => $this->faker->randomFloat(2, 0, 100),
         ];
     }

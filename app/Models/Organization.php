@@ -30,5 +30,13 @@ class Organization extends Model
     public function metrics(){
         return $this->hasMany(OrganizationMetric::class, 'organization_id');
     }
+
+    public function goals(){
+        return $this->hasMany(Goal::class, 'organization_id');
+    }
+
+    public function projects(){
+        return $this->hasMany(Project::class, 'organization_id');
+    }
 }
 
