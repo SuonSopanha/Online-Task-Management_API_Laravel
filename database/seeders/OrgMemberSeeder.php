@@ -12,6 +12,7 @@ class OrgMemberSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+
+        \App\Models\OrgMember::factory(10)->create();
     }
 }

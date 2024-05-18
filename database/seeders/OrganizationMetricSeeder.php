@@ -12,6 +12,7 @@ class OrganizationMetricSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+
+        \App\Models\OrganizationMetric::factory(10)->create();
     }
 }

@@ -22,20 +22,20 @@ class ProjectMemberFactory extends Factory
      */
     public function definition()
     {
-        // $project = Project::inRandomOrder()->first();
-
-        // return [
-        //     'project_id' => $project->id,
-        //     'user_id' => $project->owner_id,
-        //     'role' => $this->faker->randomElement(['Manager', 'CEO', 'Team Lead']),
-        // ];
-
+        $project = Project::inRandomOrder()->first();
 
         return [
-            'project_id' => Project::inRandomOrder()->first()->id,
-            'user_id' => Project::inRandomOrder()->first()->owner_id,
-            'role' => fake()->jobTitle(),
+            'project_id' => $project->id,
+            'user_id' => $project->owner_id,
+            'role' => $this->faker->randomElement(['Manager', 'CEO', 'Team Lead']),
         ];
-        
+
+
+        // return [
+        //     'project_id' => Project::inRandomOrder()->first()->id,
+        //     'user_id' => Project::inRandomOrder()->first()->owner_id,
+        //     'role' => fake()->jobTitle(),
+        // ];
+
     }
 }

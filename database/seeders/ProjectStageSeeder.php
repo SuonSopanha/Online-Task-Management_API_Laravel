@@ -13,6 +13,6 @@ class ProjectStageSeeder extends Seeder
      */
     public function run(): void
     {
-        ProjectStage::factory(20)->create();
+        ProjectStage::factory(30)->create();
     }
 }

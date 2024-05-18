@@ -16,7 +16,7 @@ class Goal extends Model
      * @var array
      */
     protected $fillable = [
-        'team_id',
+        'organization_id',
         'goal_name',
         'description',
         'completed',
@@ -27,6 +27,6 @@ class Goal extends Model
      */
     public function team()
     {
-        return $this->belongsTo(Team::class, 'team_id');
+        return $this->belongsTo(Organization::class, 'organization_id');
     }
 }
