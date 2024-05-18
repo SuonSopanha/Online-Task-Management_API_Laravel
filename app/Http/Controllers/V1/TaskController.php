@@ -87,24 +87,20 @@ class TaskController extends Controller
         return $this->success(null, 'Task deleted successfully');
     }
 
-    // Get tasks by owner ID
-    // public function getTaskbyOwnerID($owner_id)
-    // {
-    //     $tasks = new TaskCollection(Task::where('owner_id', $owner_id)->get());
-    //     return $this->success($tasks);
-    // }
+    //custom controller
 
-    // // Get tasks by assignee ID
-    // public function getTaskbyAssigneeID($assignee_id)
-    // {
-    //     $tasks = new TaskCollection(Task::where('assignee_id', $assignee_id)->get());
-    //     return $this->success($tasks);
-    // }
+    //get task by owner_id
+    public function getTaskByOwner()
+    {
+        $task = Task::where('owner_id', auth()->user()->id)->get();
+        return $this->success(new TaskCollection($task));
+    }
 
-    // // Get tasks by project ID
-    // public function getTaskbyProjectID($project_id)
-    // {
-    //     $tasks = new TaskCollection(Task::where('project_id', $project_id)->get());
-    //     return $this->success($tasks);
-    // }
+    //get task by assignee_id
+    public function getTaskByAssignee()
+    {
+        $task = Task::where('assignee_id', auth()->user()->id)->get();
+        return $this->success(new TaskCollection($task));
+    }
+
 }

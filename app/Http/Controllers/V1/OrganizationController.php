@@ -51,8 +51,10 @@ class OrganizationController extends Controller
     }
 
 
-    public function update(UpdateOrganizationRequest $request,$id)
+    public function update(UpdateOrganizationRequest $request,Organization $organization,$id)
     {
+        $this->authorize('update', $organization);
+
         $organization = Organization::find($id);
 
         if (!$organization) {
@@ -66,14 +68,15 @@ class OrganizationController extends Controller
     }
 
 
-    public function destroy($id)
+    public function destroy(Organization $organization,$id)
     {
-        $orgranization = Organization::find($id);
+        $this->authorize('delete', $organization);
+        $organization = Organization::find($id);
 
-        if (!$orgranization) {
+        if (!$organization) {
             return $this->error('', 'Organization not found', 404);
         }
-        $orgranization->delete();
+        $organization->delete();
         return $this->success([], 'Organization deleted successfully');
     }
 
