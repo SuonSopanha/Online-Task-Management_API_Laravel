@@ -16,6 +16,7 @@ use App\Http\Controllers\V1\OrganizationController;
 use App\Http\Controllers\V1\ProjectStageController;
 use App\Http\Controllers\V1\ProjectMemberController;
 use App\Http\Controllers\V1\OrganizationMetricController;
+use App\Http\Controllers\V1\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,9 +38,6 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], funct
     Route::post('/login', 'AuthController@login');
     Route::post('/register', 'AuthController@register');
     Route::post('/logout', 'AuthController@logout');
-
-
-
     // Other routes for version 1...
 });
 
@@ -53,7 +51,15 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middl
     Route::get('/users/{user}', [UserController::class, 'show']);
     Route::put('/users/{user}', [UserController::class, 'update']);
     Route::delete('/users/{user}', [UserController::class, 'destroy']);
+
 });
+
+
+Route::middleware(['auth:sanctum', 'is_admin'])->group(function () {
+    Route::get('/admin/statistics', [AdminController::class, 'getStatistics']);
+});
+
+
 
 // Routes for version 1 Team
 Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middleware' => 'auth:sanctum'], function () {
