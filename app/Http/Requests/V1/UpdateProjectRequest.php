@@ -26,7 +26,7 @@ class UpdateProjectRequest extends FormRequest
             'owner_id' => 'exists:users,id',
             'start_date' => 'date',
             'end_date' => 'date|after_or_equal:start_date',
-            'team_id' => 'nullable|string|max:255',
+            'organization_id' => 'exists:organizations,id',
             'project_status' => 'string|max:255',
             'project_priority' => 'string|max:255',
         ];

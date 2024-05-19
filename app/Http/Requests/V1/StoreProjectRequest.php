@@ -25,7 +25,7 @@ class StoreProjectRequest extends FormRequest
             'project_name' => 'required|string|max:255',
             'start_date' => 'required|date',
             'end_date' => 'required|date|after_or_equal:start_date',
-            'team_id' => 'nullable|string|max:255',
+            'organization_id' => 'nullable|exists:organizations,id',
             'project_status' => 'required|string|max:255',
             'project_priority' => 'required|string|max:255',
         ];

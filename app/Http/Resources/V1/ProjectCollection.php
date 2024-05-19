@@ -37,7 +37,7 @@ class ProjectCollection extends ResourceCollection
                 'owner_id' => $project->owner_id,
                 'start_date' => $project->start_date,
                 'end_date' => $project->end_date,
-                'team_id' => $project->team_id,
+                'organization_id' => $project->organization_id,
                 'project_status' => $project->project_status,
                 'project_priority' => $project->project_priority,
                 'created_at' => $project->created_at,
