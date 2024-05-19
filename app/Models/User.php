@@ -53,6 +53,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'additional_info' => 'json'
     ];
 
+    public function providers(){
+        return $this->hasMany(Provider::class);
+    }
+
     public function teams(){
         return $this->hasMany(Team::class);
     }

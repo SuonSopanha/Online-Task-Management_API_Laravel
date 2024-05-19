@@ -22,7 +22,7 @@ class ProjectResource extends JsonResource
             'owner_id' => $this->owner_id,
             'start_date' => $this->start_date,
             'end_date' => $this->end_date,
-            'team_id' => $this->team_id,
+            'organization_id' => $this->organization_id,
             'project_status' => $this->project_status,
             'project_priority' => $this->project_priority,
 

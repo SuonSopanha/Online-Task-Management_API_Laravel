@@ -3,6 +3,7 @@
 use App\Models\Milestone;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\V1\AuthController;
 use App\Http\Controllers\V1\GoalController;
 use App\Http\Controllers\V1\TaskController;
 use App\Http\Controllers\V1\TeamController;
@@ -36,12 +37,17 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], funct
     Route::post('/login', 'AuthController@login');
     Route::post('/register', 'AuthController@register');
     Route::post('/logout', 'AuthController@logout');
+
+
+
     // Other routes for version 1...
 });
 
+Route::get('/login/google', [AuthController::class, 'redirectToProvider']);
+Route::get('/login/google/callback', [AuthController::class, 'handleProviderCallback']);
 
 // Routes for version 1 User
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/users', [UserController::class, 'index']);
     Route::post('/users', [UserController::class, 'store']);
     Route::get('/users/{user}', [UserController::class, 'show']);
@@ -50,7 +56,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middle
 });
 
 // Routes for version 1 Team
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/teams', [TeamController::class, 'index']);
     Route::post('/teams', [TeamController::class, 'store']);
     Route::get('/teams/{team}', [TeamController::class, 'show']);
@@ -59,7 +65,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middle
 });
 
 // Routes for version 1 Task
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/tasks', [TaskController::class, 'index']);
     Route::post('/tasks', [TaskController::class, 'store']);
     Route::get('/tasks/{task}', [TaskController::class, 'show']);
@@ -71,7 +77,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middle
 });
 
 // Routes for version 1 Project
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/projects', [ProjectController::class, 'index']);
     Route::post('/projects', [ProjectController::class, 'store']);
     Route::get('/projects/{project}', [ProjectController::class, 'show']);
@@ -84,7 +90,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middle
 
 
 // Routes for version 1 Milestone
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/milestones', [MileStoneController::class, 'index']);
     Route::post('/milestones', [MileStoneController::class, 'store']);
     Route::get('/milestones/{milestone}', [MileStoneController::class, 'show']);
@@ -93,7 +99,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middle
 });
 
 // Routes for version 1 Project Stage
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/project-stages', [ProjectStageController::class, 'index']);
     Route::post('/project-stages', [ProjectStageController::class, 'store']);
     Route::get('/project-stages/{project-stage}', [ProjectStageController::class, 'show']);
@@ -102,7 +108,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middle
 });
 
 // Routes for version 1 Project Member
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/project-members', [ProjectMemberController::class, 'index']);
     Route::post('/project-members', [ProjectMemberController::class, 'store']);
     Route::get('/project-members/{prject-member}', [ProjectMemberController::class, 'show']);
@@ -112,7 +118,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middle
 
 
 // Routes for version 1 Team Member
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/team-members', [TeamMemberController::class, 'index']);
     Route::post('/team-members', [TeamMemberController::class, 'store']);
     Route::get('/team-members/{id}', [TeamMemberController::class, 'show']);
@@ -121,7 +127,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middle
 });
 
 // Routes for version 1 Goal
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/goals', [GoalController::class, 'index']);
     Route::post('/goals', [GoalController::class, 'store']);
     Route::get('/goals/{goal}', [GoalController::class, 'show']);
@@ -130,7 +136,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middle
 });
 
 
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/organizations', [OrganizationController::class, 'index']);
     Route::post('/organizations', [OrganizationController::class, 'store']);
     Route::get('/organizations/{organization}', [OrganizationController::class, 'show']);
@@ -138,7 +144,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middle
     Route::delete('/organizations/{organization}', [OrganizationController::class, 'destroy']);
 });
 
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/org-members', [OrgMemberController::class, 'index']);
     Route::post('/org-members', [OrgMemberController::class, 'store']);
     Route::get('/org-members/{org-member}', [OrgMemberController::class, 'show']);
@@ -146,11 +152,9 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middle
     Route::delete('/org-members/{org-member}', [OrgMemberController::class, 'destroy']);
 });
 
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1','middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middleware' => 'auth:sanctum'], function () {
     Route::post('/organization-metrics', [OrganizationMetricController::class, 'store'])->name('organization-metrics.store');
     Route::get('/organization-metrics/{organization-metric}', [OrganizationMetricController::class, 'show'])->name('organization-metrics.show');
     Route::put('/organization-metrics/{organization-metric}', [OrganizationMetricController::class, 'update'])->name('organization-metrics.update');
     Route::delete('/organization-metrics/{organization-metric}', [OrganizationMetricController::class, 'destroy'])->name('organization-metrics.destroy');
 });
-
-
