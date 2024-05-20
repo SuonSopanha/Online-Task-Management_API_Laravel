@@ -54,30 +54,24 @@ class ProjectStageController extends Controller
         return $this->success(new ProjectStageResource($project_stage));
     }
 
-    public function update(UpdateProjectStageRequest $request, $id){
+    public function update(UpdateProjectStageRequest $request, ProjectStage $projectStage){
 
-        $project_stage = ProjectStage::find($id);
 
-        if(!$project_stage){
-            return $this->error(null, 'Project Stage not found', 404);
-        }
+        $this->authorize('update', $projectStage);
+
 
         $validatedData = $request->validated();
-        $project_stage->update($validatedData);
+        $projectStage->update($validatedData);
 
-        return $this->success(new ProjectStageResource($project_stage));
+        return $this->success(new ProjectStageResource($projectStage));
 
     }
 
-    public function destroy($id){
+    public function destroy(ProjectStage $projectStage){
 
-        $project_stage = ProjectStage::find($id);
+        $this->authorize('delete', $projectStage);
 
-        if(!$project_stage){
-            return $this->error(null, 'Project Stage not found', 404);
-        }
-
-        $project_stage->delete();
+        $projectStage->delete();
 
         return $this->success(null, 'Project Stage deleted');
 

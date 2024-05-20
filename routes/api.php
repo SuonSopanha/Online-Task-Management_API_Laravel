@@ -57,6 +57,8 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middl
 
 Route::middleware(['auth:sanctum', 'is_admin'])->group(function () {
     Route::get('/admin/statistics', [AdminController::class, 'getStatistics']);
+    Route::get('/admin/users', [AdminController::class, 'getUsers']);
+    Route::get('/admin/organizations', [AdminController::class, 'getOrganizations']);
 });
 
 

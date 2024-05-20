@@ -51,31 +51,22 @@ class OrganizationController extends Controller
     }
 
 
-    public function update(UpdateOrganizationRequest $request,Organization $organization,$id)
+    public function update(UpdateOrganizationRequest $request,Organization $organization)
     {
         $this->authorize('update', $organization);
 
-        $organization = Organization::find($id);
 
-        if (!$organization) {
-            return $this->error('', 'Organization not found', 404);
-        }
         $validatedData = $request->validated();
-        $organization->fill($validatedData);
-        $organization->save();
+        $organization->update($validatedData);
         return $this->success(new OrganizationResource($organization));
 
     }
 
 
-    public function destroy(Organization $organization,$id)
+    public function destroy(Organization $organization)
     {
         $this->authorize('delete', $organization);
-        $organization = Organization::find($id);
 
-        if (!$organization) {
-            return $this->error('', 'Organization not found', 404);
-        }
         $organization->delete();
         return $this->success([], 'Organization deleted successfully');
     }

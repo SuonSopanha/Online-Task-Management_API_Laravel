@@ -38,28 +38,19 @@ class OrganizationMetricController extends Controller
         return $this->success(new OrganizationMetricResource($organization_metric));
     }
 
-    public function update(UpdateOrganizationMetricRequest $request, $id){
+    public function update(UpdateOrganizationMetricRequest $request, OrganizationMetric $organizationMetric){
 
-        $organization_metric = OrganizationMetric::find($id);
-
-        if(!$organization_metric){
-            return $this->error(null, 'Organization metric not found', 404);
-        }
-
+        $this->authorize('update', $organizationMetric);
         $validatedData = $request->validated();
-        $organization_metric->update($validatedData);
+        $organizationMetric->update($validatedData);
 
-        return $this->success(new OrganizationMetricResource($organization_metric));
+        return $this->success(new OrganizationMetricResource($organizationMetric));
     }
 
-    public function destroy($id){
-        $organization_metric = OrganizationMetric::find($id);
+    public function destroy(OrganizationMetric $organizationMetric){
 
-        if (!$organization_metric) {
-            return $this->error(null, 'Organization metric not found', 404);
-        }
-
-        $organization_metric->delete();
+        $this->authorize('delete', $organizationMetric);
+        $organizationMetric->delete();
 
         return $this->success(null, 'Organization metric deleted');
     }

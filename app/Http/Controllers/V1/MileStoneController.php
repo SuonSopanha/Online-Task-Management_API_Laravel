@@ -55,28 +55,22 @@ class MileStoneController extends Controller
         return $this->success(new MileStoneResource($milestones));
     }
 
-    public function update(UpdateMileStoneRequest $request, $id)
+    public function update(UpdateMileStoneRequest $request, MileStone $milestone )
     {
-        $milestones = MileStone::find($id);
 
-        if (!$milestones) {
-            return $this->error(null, 'MileStone not found', 404);
-        }
+        $this->authorize('update', $milestone);
 
         $validatedData = $request->validated();
-        $milestones->update($validatedData);
+        $milestone->update($validatedData);
 
         return $this->success([]);
     }
 
-    public function destroy($id)
+    public function destroy(MileStone $milestone )
     {
-        $milestones = MileStone::find($id);
 
-        if (!$milestones) {
-            return $this->error(null, 'MileStone not found', 404);
-        }
-        $milestones->delete();
+        $this->authorize('delete', $milestone);
+        $milestone->delete();
 
         return $this->success(null, 'MileStone deleted successfully');
     }
