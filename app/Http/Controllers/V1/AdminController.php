@@ -56,4 +56,18 @@ class AdminController extends Controller
 
         return $this->success($data);
     }
+
+    public function getUsers()
+    {
+        $users = User::all();
+        return $this->success($users);
+
+    }
+
+    public function getOrganizations()
+    {
+        $organizations = Organization::all();
+        return $this->success($organizations);
+    }
+
 }

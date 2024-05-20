@@ -56,15 +56,9 @@ class OrgMemberController extends Controller
     }
 
 
-    public function update(UpdateOrgMemberRequest $request, $id)
+    public function update(UpdateOrgMemberRequest $request,OrgMember $org_member)
     {
-
-        $org_member = OrgMember::find($id);
-
-        if (!$org_member) {
-            return $this->error('', 'Organization member not found', 404);
-        }
-
+        $this->authorize('update', $org_member);
         $validatedData = $request->validated();
 
         $org_member->update($validatedData);
@@ -72,15 +66,9 @@ class OrgMemberController extends Controller
     }
 
 
-    public function destroy($id)
+    public function destroy(OrgMember $org_member)
     {
-
-        $org_member = OrgMember::find($id);
-
-        if (!$org_member) {
-            return $this->error('', 'Organization member not found', 404);
-        }
-
+        $this->authorize('delete', $org_member);
         $org_member->delete();
         return $this->success(null, 'Organization member deleted successfully');
     }

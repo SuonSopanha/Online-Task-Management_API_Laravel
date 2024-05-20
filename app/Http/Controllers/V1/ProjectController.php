@@ -68,13 +68,10 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateProjectRequest $request, $id)
+    public function update(UpdateProjectRequest $request, Project $project)
     {
-        $project = Project::find($id);
 
-        if (!$project) {
-            return $this->error('', 'Project not found', 404);
-        }
+        $this->authorize('update', $project);
 
         $validatedData = $request->validated();
 
@@ -86,14 +83,9 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Project $project)
     {
-        $project = Project::find($id);
-
-        if (!$project) {
-            return $this->error('', 'Project not found', 404);
-        }
-
+        $this->authorize('delete', $project);
         $project->delete();
 
         return $this->success(new ProjectResource($project));

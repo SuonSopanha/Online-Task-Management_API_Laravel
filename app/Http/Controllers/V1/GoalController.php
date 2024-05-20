@@ -25,7 +25,7 @@ class GoalController extends Controller
     {
         $filter = new GoalQuery();
         $query = $filter->transform($request);
-        
+
 
         $goal = $query->get();
 
@@ -52,13 +52,9 @@ class GoalController extends Controller
 
     }
 
-    public function update(UpdateGoalRequest $request, $id){
+    public function update(UpdateGoalRequest $request,Goal $goal){
 
-        $goal = Goal::find($id);
-
-        if(!$goal){
-            return $this->error('', 'Goal not found', 404);
-        }
+        $this->authorize('update', $goal);
 
         $validatedData = $request->validated();
 
@@ -68,14 +64,9 @@ class GoalController extends Controller
 
     }
 
-    public function destroy($id){
+    public function destroy(Goal $goal){
 
-        $goal = Goal::find($id);
-
-        if (!$goal){
-            return $this->error('', 'Goal not found', 404);
-        }
-
+        $this->authorize('delete', $goal);
         $goal->delete();
 
         return $this->success(null,'Goal deleted successfully');

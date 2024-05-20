@@ -58,30 +58,22 @@ class ProjectMemberController extends Controller
     }
 
 
-    public function update(UpdateProjectMemberRequest $request, $id)
+    public function update(UpdateProjectMemberRequest $request, ProjectMember $projectMember)
     {
-        $project_member = ProjectMember::find($id);
 
-        if (!$project_member) {
-            return $this->error('', 'Project member not found', 404);
-        }
-
+        $this->authorize('update', $projectMember);
         $validatedData = $request->validated();
 
-        $project_member->update($validatedData);
+        $projectMember->update($validatedData);
 
-        return $this->success(new ProjectMemberResource($project_member));
+        return $this->success(new ProjectMemberResource($projectMember));
     }
 
-    public function destroy($id)
+    public function destroy(ProjectMember $projectMember)
     {
-        $project_member = ProjectMember::find($id);
 
-        if (!$project_member) {
-            return $this->error('', 'Project member not found', 404);
-        }
-
-        $project_member->delete();
+        $this->authorize('delete', $projectMember);
+        $projectMember->delete();
 
         return $this->success(null, 'Project member deleted successfully');
     }

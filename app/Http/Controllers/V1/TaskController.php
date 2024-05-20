@@ -57,30 +57,20 @@ class TaskController extends Controller
     }
 
     // Update a task
-    public function update(UpdateTaskRequest $request, $id)
+    public function update(UpdateTaskRequest $request, Task $task)
     {
-        $task = Task::find($id);
+        $this->authorize('update', $task);
 
-        if (!$task) {
-            return $this->error(null, 'Task not found', 404);
-        }
-
-
-        $validateData = $request->validated();
-
-        $task->update($validateData);
+        $validatedData = $request->validated();
+        $task->update($validatedData);
 
         return $this->success(new TaskResource($task));
     }
 
     // Delete a task
-    public function destroy($id)
+    public function destroy(Task $task)
     {
-        $task = Task::find($id);
-
-        if (!$task) {
-            return $this->error(null, 'Task not found', 404);
-        }
+        $this->authorize('delete', $task);
 
         $task->delete();
 
