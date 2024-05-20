@@ -43,7 +43,8 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'full_name' => $request->full_name,
-            'photo_url' => $request->photo_url
+            'photo_url' => $request->photo_url,
+            'role' => 'user'
         ]);
 
         return $this->success([
