@@ -2,6 +2,7 @@
 
 namespace App\Policies;
 
+use App\Models\ProjectMember;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -24,11 +25,11 @@ class ProjectMemberPolicy
         return true;
     }
 
-    public function update(User $user){
+    public function update(User $user,ProjectMember $projectMember){
         return true;
     }
 
-    public function delete(User $user){
+    public function delete(User $user,ProjectMember $projectMember){
         return true;
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
+use App\Models\OrganizationMetric;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class OrganizationMetricPolicy
@@ -30,13 +31,13 @@ class OrganizationMetricPolicy
     }
 
 
-    public function delete(User $user)
+    public function delete(User $user, OrganizationMetric $organizationMetric)
     {
         return true;
     }
 
 
-    public function restore(User $user)
+    public function restore(User $user, OrganizationMetric $organizationMetric)
     {
         return true;
     }

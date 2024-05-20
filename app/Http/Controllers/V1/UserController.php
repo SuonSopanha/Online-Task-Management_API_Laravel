@@ -17,10 +17,16 @@ class UserController extends Controller
 
     use HttpResponses;
 
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum');
+
+    }
+
     // Get all users
     public function index()
     {
-        $users = new UserCollection(User::all());
+        $users = auth()->user();
         return $this->success($users);
     }
 

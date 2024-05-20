@@ -26,7 +26,6 @@ class StoreUserRequest extends FormRequest
             'password' => 'required|min:6',
             'full_name' => 'nullable|string|max:255',
             'photo_url' => 'nullable|string',
-            'role' => 'required|string|max:255',
             // Define validation rules for other fields as needed
         ];
     }
