@@ -56,20 +56,20 @@ class OrgMemberController extends Controller
     }
 
 
-    public function update(UpdateOrgMemberRequest $request,OrgMember $org_member)
+    public function update(UpdateOrgMemberRequest $request,OrgMember $orgMember)
     {
-        $this->authorize('update', $org_member);
+        $this->authorize('update', $orgMember);
         $validatedData = $request->validated();
 
-        $org_member->update($validatedData);
-        return $this->success(new OrgMemberResource($org_member));
+        $orgMember->update($validatedData);
+        return $this->success(new OrgMemberResource($orgMember));
     }
 
 
-    public function destroy(OrgMember $org_member)
+    public function destroy(OrgMember $orgMember)
     {
-        $this->authorize('delete', $org_member);
-        $org_member->delete();
+        $this->authorize('delete', $orgMember);
+        $orgMember->delete();
         return $this->success(null, 'Organization member deleted successfully');
     }
 }
