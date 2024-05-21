@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers\V1;
 
+use Carbon\Carbon;
+use App\Models\Task;
 use App\Models\User;
+use App\Models\Project;
+use App\Models\Organization;
 use Illuminate\Http\Request;
 use App\Traits\HttpResponses;
-use App\Http\Controllers\Controller;
-use App\Models\Organization;
-use App\Models\Project;
-use App\Models\Task;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\OrganizationAdminCollection;
 
 class AdminController extends Controller
 {
@@ -67,7 +68,7 @@ class AdminController extends Controller
     public function getOrganizations()
     {
         $organizations = Organization::all();
-        return $this->success($organizations);
+        return $this->success(new OrganizationAdminCollection($organizations));
     }
 
 }
