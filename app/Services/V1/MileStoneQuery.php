@@ -13,6 +13,7 @@ class MileStoneQuery{
         'milestone_name' => ['eq', 'like'],
         'start_date' => ['eq', 'lt', 'lte', 'gt', 'gte', 'ne'],
         'end_date' => ['eq', 'lt', 'lte', 'gt', 'gte', 'ne'],
+        'owner_id' => ['eq'],
     ];
 
     protected $columnMap = [
@@ -20,6 +21,7 @@ class MileStoneQuery{
         'milestone_name' => 'milestone_name',
         'start_date' => 'start_date',
         'end_date' => 'end_date',
+        'owner_id' => 'owner_id',
     ];
 
 
