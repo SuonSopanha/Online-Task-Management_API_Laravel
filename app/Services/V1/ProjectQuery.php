@@ -15,7 +15,7 @@ class ProjectQuery
         'owner_id' => ['eq'],
         'start_date' => ['eq', 'lt', 'lte', 'gt', 'gte', 'ne'],
         'end_date' => ['eq', 'lt', 'lte', 'gt', 'gte', 'ne'],
-        'team_id' => ['eq', 'like'],
+        'organization_id' => ['eq', 'like'],
         'project_status' => ['eq'],
         'project_priority' => ['eq'],
     ];
@@ -28,7 +28,7 @@ class ProjectQuery
         'owner_id' => 'owner_id',
         'start_date' => 'start_date',
         'end_date' => 'end_date',
-        'team_id' => 'team_id',
+        'organization_id' => 'organization_id',
         'project_status' => 'project_status',
         'project_priority' => 'project_priority',
     ];

@@ -11,7 +11,7 @@ class GoalQuery
 
     protected $safeParams = [
         'id' => ['eq', 'lt', 'lte', 'gt', 'gte', 'ne'],
-        'team_id' => ['eq'],
+        'organization_id' => ['eq'],
         'goal_name' => ['eq', 'like'],
         'description' => ['eq', 'like'],
         'completed' => ['eq'],
@@ -19,7 +19,7 @@ class GoalQuery
 
     protected $columnMap = [
         'id' => 'id',
-        'team_id' => 'team_id',
+        'organization_id' => 'organization_id',
         'goal_name' => 'goal_name',
         'description' => 'description',
         'completed' => 'completed',
