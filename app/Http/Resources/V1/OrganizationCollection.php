@@ -16,12 +16,12 @@ class OrganizationCollection extends ResourceCollection
     {
         return $this->collection->map(function ($organization) {
             return [
-                'id' => $this->id,
-                'name' => $this->name,
-                'description' => $this->description,
-                'industry' => $this->industry,
-                'owner_id' => $this->owner_id,
-                'email' => $this->email,
+                'id' => $organization->id,
+                'name' => $organization->name,
+                'description' => $organization->description,
+                'industry' => $organization->industry,
+                'owner_id' => $organization->owner_id,
+                'email' => $organization->email,
             ];
         })->toArray();
     }
