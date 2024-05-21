@@ -23,9 +23,7 @@ class MileStoneController extends Controller
 
     public function index(Request $request)
     {
-        $filter = new MileStoneQuery();
-        $query = $filter->transform($request, MileStone::class); // Get the filtered query
-        $milestones = $query->get(); // Retrieve the filtered data without pagination
+        $milestones = MileStone::where('owner_id',auth()->user()->id)->get();
         return $this->success(new MileStoneCollection($milestones));
     }
 
