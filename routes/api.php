@@ -150,6 +150,9 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middl
     Route::get('/organizations/{organization}', [OrganizationController::class, 'show']);
     Route::put('/organizations/{organization}', [OrganizationController::class, 'update']);
     Route::delete('/organizations/{organization}', [OrganizationController::class, 'destroy']);
+
+    Route::get('/organizations-by-owner', [OrganizationController::class, 'getOrganizationByOwner']);
+    Route::get('/organizations-by-member', [OrganizationController::class, 'getOrganizationByMember']);
 });
 
 Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middleware' => 'auth:sanctum'], function () {
