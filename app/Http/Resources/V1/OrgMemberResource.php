@@ -10,10 +10,21 @@ class OrgMemberResource extends JsonResource
     /**
      * Transform the resource into an array.
      *
-     * @return array<string, mixed>
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
      */
-    public function toArray(Request $request): array
+    public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'user_id' => $this->user_id,
+            'org_id' => $this->org_id,
+            'role' => $this->role,
+            'is_admin' => $this->is_admin,
+            'assigned_tasks' => $this->assigned_tasks,
+            'completed_tasks' => $this->completed_tasks,
+            'overdue_tasks' => $this->overdue_tasks,
+            'worked_hour' => $this->worked_hour,
+        ];
     }
 }

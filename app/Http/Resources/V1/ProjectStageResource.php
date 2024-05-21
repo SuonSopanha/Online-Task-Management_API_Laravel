@@ -4,6 +4,7 @@ namespace App\Http\Resources\V1;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Carbon\Carbon;
 
 class ProjectStageResource extends JsonResource
 {
@@ -20,11 +21,11 @@ class ProjectStageResource extends JsonResource
         'id' => $this->id,
         'project_id' => $this->project_id,
         'stage_name' => $this->stage_name,
-        'start_date' => $this->start_date,
+        'start_date' =>Carbon::parse($this->start_date)->format('m/d/y') ,
         'period' => $this->period,
-        'end_date' => $this->end_date,
+        'end_date' => Carbon::parse($this->end_date)->format('m/d/y'),
         'completed' => $this->completed,
-        'completion_date' => $this->completion_date,
+        'completion_date' => $this->completion_date ? Carbon::parse($this->complete_date)->format('m/d/y') : null
 
        ];
     }

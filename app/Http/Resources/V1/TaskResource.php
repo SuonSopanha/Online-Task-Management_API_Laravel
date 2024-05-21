@@ -4,6 +4,7 @@ namespace App\Http\Resources\V1;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Carbon\Carbon;
 
 class TaskResource extends JsonResource
 {
@@ -12,15 +13,8 @@ class TaskResource extends JsonResource
      *
      * @return array<string, mixed>
      */
-    // public function toArray(Request $request): array
-    // {
-    //     return parent::toArray($request);   
-    // }
-
     public function toArray(Request $request): array
     {
-        // return parent::toArray($request);
-
         return [
             'id' => $this->id,
             'project_id' => $this->project_id,
@@ -30,8 +24,8 @@ class TaskResource extends JsonResource
             'on_tracking' => $this->on_tracking,
             'task_name' => $this->task_name,
             'description' => $this->description,
-            'start_date' => $this->start_date,
-            'due_date' => $this->due_date,
+            'start_date' => Carbon::parse($this->start_date)->format('m/d/Y'),
+            'due_date' => Carbon::parse($this->due_date)->format('m/d/Y'),
             'task_category' => $this->task_category,
             'work_hour_required' => $this->work_hour_required,
             'work_hour' => $this->work_hour,
@@ -42,8 +36,7 @@ class TaskResource extends JsonResource
             'assignee_id' => $this->assignee_id,
             'assignee_dates' => $this->assignee_dates,
             'complete' => $this->complete,
-            'complete_date' => $this->complete_date
+            'complete_date' => $this->complete_date ? Carbon::parse($this->complete_date)->format('m/d/Y') : null,
         ];
    }
-
 }
