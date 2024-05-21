@@ -72,4 +72,24 @@ class OrganizationController extends Controller
     }
 
 
+    //custom controller
+
+    //get oragization by owner id
+    public function getOrganizationByOwner()
+    {
+        $organization = Organization::where('owner_id', auth()->user()->id)->get();
+        return $this->success(new OrganizationCollection($organization));
+    }
+
+    //get organization by member
+    public function getOrganizationByMember()
+    {
+        $id = auth()->user()->id;
+        $organization = Organization::whereHas('members', function ($query) use ($id) {
+            $query->where('user_id', $id);
+        })->get();
+        return $this->success(new OrganizationCollection($organization));
+    }
+
+
 }
