@@ -18,7 +18,12 @@ class ProjectMemberResource extends JsonResource
             'id' => $this->id,
             'project_id' => $this->project_id,
             'user_id' => $this->user_id,
+            'user' => new UserResource($this->user), // Replace this with the correct resource class $this->user_id,
             'role' => $this->role,
+            'assigned_tasks' => $this->assigned_tasks,
+            'completed_task' => $this->completed_tasks,
+            'overdue_tasks' => $this->overdue_tasks,
+            'worked_hour' => $this->worked_hour
 
         ];
     }

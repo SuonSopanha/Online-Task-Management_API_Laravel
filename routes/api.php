@@ -82,6 +82,8 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middl
 
     Route::get('/tasks-by-owner', [TaskController::class, 'getTaskByOwner']);
     Route::get('/tasks-by-assignee', [TaskController::class, 'getTaskByAssignee']);
+    Route::get('/tasks-by-project-id/{id}', [TaskController::class, 'getTaskByProjectId']);
+    Route::get('/user-tasks', [TaskController::class, 'getAllTasks']);
 });
 
 // Routes for version 1 Project
@@ -94,6 +96,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middl
 
     Route::get('/projects-by-owner', [ProjectController::class, 'getProjectByOwner']);
     Route::get('/projects-by-member', [ProjectController::class, 'getProjectByMember']);
+    Route::get('/user-projects', [ProjectController::class, 'getProjectsByOwnerOrMember']);
 });
 
 
@@ -153,6 +156,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middl
 
     Route::get('/organizations-by-owner', [OrganizationController::class, 'getOrganizationByOwner']);
     Route::get('/organizations-by-member', [OrganizationController::class, 'getOrganizationByMember']);
+    Route::get('/user-organizations', [OrganizationController::class, 'getOrganizationsByOwnerOrMember']);
 });
 
 Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middleware' => 'auth:sanctum'], function () {

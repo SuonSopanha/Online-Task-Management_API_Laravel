@@ -18,6 +18,7 @@ class OrgMemberResource extends JsonResource
         return [
             'id' => $this->id,
             'user_id' => $this->user_id,
+            'user' => new UserResource($this->user), // Replace this with the correct resource class $this->user_id,
             'org_id' => $this->org_id,
             'role' => $this->role,
             'is_admin' => $this->is_admin,

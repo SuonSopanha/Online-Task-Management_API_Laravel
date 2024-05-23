@@ -19,6 +19,7 @@ class OrgMemberCollection extends ResourceCollection
             return [
                 'id' => $orgMember->id,
                 'user_id' => $orgMember->user_id,
+                'user' => new UserResource($orgMember->user),
                 'org_id' => $orgMember->org_id,
                 'role' => $orgMember->role,
                 'is_admin' => $orgMember->is_admin,
