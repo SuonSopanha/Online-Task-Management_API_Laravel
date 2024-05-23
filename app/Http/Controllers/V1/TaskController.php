@@ -117,7 +117,8 @@ class TaskController extends Controller
         $tasks = Task::where('owner_id', auth()->user()->id)
         ->orWhere('assignee_id', auth()->user()->id)
         ->with(['assignee', 'project', 'milestone', 'stage'])
-        ->get();
+        ->orderBy('created_at', 'desc')
+        ->paginate(5);
 
         return $this->success(new TasknAssigneeCollection($tasks));
     }
