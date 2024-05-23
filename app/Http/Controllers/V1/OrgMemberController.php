@@ -28,7 +28,7 @@ class OrgMemberController extends Controller
         $query = $filter->transform($request);
 
 
-        $org_member = $query->get();
+        $org_member = $query->with['user']->get();
         return $this->success(new OrgMemberCollection($org_member));
     }
 

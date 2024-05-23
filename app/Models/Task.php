@@ -61,7 +61,7 @@ class Task extends Model
 
     public function assignee()
     {
-        return $this->belongsTo(User::class, 'assignee_id');
+        return $this->belongsTo(User::class, 'assignee_id','id');
     }
 
     public function trackings(){

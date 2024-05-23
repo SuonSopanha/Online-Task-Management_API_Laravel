@@ -29,7 +29,7 @@ class ProjectMemberController extends Controller
         $query = $filter->transform($request);
 
 
-        $project_member = $query->get();
+        $project_member = $query->with['user']->get();
 
         return $this->success(new ProjectMemberCollection($project_member));
     }

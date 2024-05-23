@@ -67,7 +67,7 @@ class AdminController extends Controller
 
     public function getOrganizations()
     {
-        $organizations = Organization::all();
+        $organizations = Organization::with(['owner'])->get();
         return $this->success(new OrganizationAdminCollection($organizations));
     }
 

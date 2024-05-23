@@ -38,6 +38,7 @@ class ProjectMemberCollection extends ResourceCollection
                 'id' => $projectMember->id,
                 'project_id' => $projectMember->project_id,
                 'user_id' => $projectMember->user_id,
+                'user' =>new UserResource( $projectMember->user),
                 'role' => $projectMember->role,
                 'assigned_tasks' => $projectMember->assigned_tasks,
                 'completed_task' => $projectMember->completed_tasks,

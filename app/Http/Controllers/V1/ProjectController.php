@@ -110,4 +110,17 @@ class ProjectController extends Controller
         })->get();
         return $this->success(new ProjectCollection($project));
     }
+
+    public function getProjectsByOwnerOrMember()
+    {
+        $userId = auth()->user()->id;
+
+        $projects = Project::where('owner_id', $userId)
+            ->orWhereHas('project_members', function ($query) use ($userId) {
+                $query->where('user_id', $userId);
+            })
+            ->get();
+
+        return $this->success(new ProjectCollection($projects));
+    }
 }

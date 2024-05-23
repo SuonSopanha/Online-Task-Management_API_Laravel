@@ -11,6 +11,7 @@ use App\Http\Requests\V1\UpdateOrganizationRequest;
 use App\Services\V1\OrganizationQuery;
 use App\Http\Resources\V1\OrganizationCollection;
 use App\Http\Resources\V1\OrganizationResource;
+use App\Http\Resources\V1\SidebarOrganizationCollection;
 
 class OrganizationController extends Controller
 {
@@ -47,11 +48,10 @@ class OrganizationController extends Controller
             return $this->error('', 'Organization not found', 404);
         }
         return $this->success(new OrganizationResource($organization));
-
     }
 
 
-    public function update(UpdateOrganizationRequest $request,Organization $organization)
+    public function update(UpdateOrganizationRequest $request, Organization $organization)
     {
         $this->authorize('update', $organization);
 
@@ -59,7 +59,6 @@ class OrganizationController extends Controller
         $validatedData = $request->validated();
         $organization->update($validatedData);
         return $this->success(new OrganizationResource($organization));
-
     }
 
 
@@ -91,5 +90,16 @@ class OrganizationController extends Controller
         return $this->success(new OrganizationCollection($organization));
     }
 
+    public function getOrganizationsByOwnerOrMember()
+    {
+        $userId = auth()->user()->id;
 
+        $organizations = Organization::where('owner_id', $userId)
+            ->orWhereHas('members', function ($query) use ($userId) {
+                $query->where('user_id', $userId);
+            })
+            ->get();
+
+        return $this->success(new SidebarOrganizationCollection($organizations));
+    }
 }

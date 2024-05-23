@@ -5,12 +5,13 @@ namespace App\Http\Controllers\V1;
 use App\Models\Task;
 use Illuminate\Http\Request;
 use App\Traits\HttpResponses;
+use App\Services\V1\TaskQuery;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\TaskResource;
+use App\Http\Resources\V1\TaskCollection;
 use App\Http\Requests\V1\StoreTaskRequest;
 use App\Http\Requests\V1\UpdateTaskRequest;
-use App\Http\Resources\V1\TaskCollection;
-use App\Http\Resources\V1\TaskResource;
-use App\Services\V1\TaskQuery;
+use App\Http\Resources\V1\TasknAssigneeCollection;
 
 
 class TaskController extends Controller
@@ -93,4 +94,31 @@ class TaskController extends Controller
         return $this->success(new TaskCollection($task));
     }
 
+
+    // public function getTaskByProjectId($id){
+
+    //     $task = Task::where('project_id',$id)->get();
+    //     return $this->success(new TasknAssigneeCollection($task));
+    // }
+
+    // Get tasks by project_id
+    public function getTaskByProjectId($id)
+    {
+        $tasks = Task::where('project_id', $id)
+            ->with(['assignee', 'project', 'milestone', 'stage'])
+            ->get();
+
+        return $this->success(new TasknAssigneeCollection($tasks));
+    }
+
+    public function getAllTasks()
+    {
+
+        $tasks = Task::where('owner_id', auth()->user()->id)
+        ->orWhere('assignee_id', auth()->user()->id)
+        ->with(['assignee', 'project', 'milestone', 'stage'])
+        ->get();
+
+        return $this->success(new TasknAssigneeCollection($tasks));
+    }
 }
