@@ -111,7 +111,7 @@ class TaskController extends Controller
         return $this->success(new TasknAssigneeCollection($tasks));
     }
 
-    public function getAllTasks()
+    public function getSomeTasks()
     {
 
         $tasks = Task::where('owner_id', auth()->user()->id)
@@ -122,4 +122,17 @@ class TaskController extends Controller
 
         return $this->success(new TasknAssigneeCollection($tasks));
     }
+
+    public function getMyTasks()
+    {
+
+        $tasks = Task::where('owner_id', auth()->user()->id)
+        ->orWhere('assignee_id', auth()->user()->id)
+        ->with(['assignee', 'project', 'milestone', 'stage'])
+        ->orderBy('assignee_dates', 'desc')
+        ->get();
+        return $this->success(new TaskCollection($tasks));
+    }
+
+
 }

@@ -83,7 +83,8 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middl
     Route::get('/tasks-by-owner', [TaskController::class, 'getTaskByOwner']);
     Route::get('/tasks-by-assignee', [TaskController::class, 'getTaskByAssignee']);
     Route::get('/tasks-by-project-id/{id}', [TaskController::class, 'getTaskByProjectId']);
-    Route::get('/user-tasks', [TaskController::class, 'getAllTasks']);
+    Route::get('/user-tasks', [TaskController::class, 'getSomeTasks']);
+    Route::get('/my-tasks',[TaskController::class,'getMyTasks']);
 });
 
 // Routes for version 1 Project
@@ -125,6 +126,8 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middl
     Route::get('/project-members/{prject-member}', [ProjectMemberController::class, 'show']);
     Route::put('/project-members/{prject-member}', [ProjectMemberController::class, 'update']);
     Route::delete('/project-members/{prject-member}', [ProjectMemberController::class, 'destroy']);
+
+    Route::get('/project-members-by-project-id/{id}',[ProjectMemberController::class,'getMemberByProjectId']);
 });
 
 
