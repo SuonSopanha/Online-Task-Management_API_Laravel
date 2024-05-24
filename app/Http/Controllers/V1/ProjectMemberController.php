@@ -11,6 +11,7 @@ use App\Http\Resources\V1\ProjectMemberResource;
 use App\Http\Resources\V1\ProjectMemberCollection;
 use App\Http\Requests\V1\StoreProjectMemberRequest;
 use App\Http\Requests\V1\UpdateProjectMemberRequest;
+use App\Models\Project;
 
 class ProjectMemberController extends Controller
 {
@@ -29,7 +30,7 @@ class ProjectMemberController extends Controller
         $query = $filter->transform($request);
 
 
-        $project_member = $query->with['user']->get();
+        $project_member = $query->with(['user'])->get();
 
         return $this->success(new ProjectMemberCollection($project_member));
     }
@@ -76,6 +77,17 @@ class ProjectMemberController extends Controller
         $projectMember->delete();
 
         return $this->success(null, 'Project member deleted successfully');
+    }
+
+    public function getMemberByProjectId($id)
+    {
+        // Assuming 'project_id' is the column name in the 'project_members' table
+        $project_members = ProjectMember::where('project_id', $id)
+                                        ->with('user') // Load related user data
+                                        ->get();
+
+        // Return the result, wrapped in a success response or any other desired format
+        return $this->success(new ProjectMemberCollection($project_members));
     }
 
 
