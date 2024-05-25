@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\V1;
 
+use App\Models\User;
+use App\Models\Project;
 use Illuminate\Http\Request;
 use App\Models\ProjectMember;
 use App\Traits\HttpResponses;
@@ -11,7 +13,6 @@ use App\Http\Resources\V1\ProjectMemberResource;
 use App\Http\Resources\V1\ProjectMemberCollection;
 use App\Http\Requests\V1\StoreProjectMemberRequest;
 use App\Http\Requests\V1\UpdateProjectMemberRequest;
-use App\Models\Project;
 
 class ProjectMemberController extends Controller
 {
@@ -88,6 +89,47 @@ class ProjectMemberController extends Controller
 
         // Return the result, wrapped in a success response or any other desired format
         return $this->success(new ProjectMemberCollection($project_members));
+    }
+
+
+    public function addMembers(Request $request)
+    {
+        $request->validate([
+            'project_id' => 'required|exists:projects,id',
+            'members' => 'required|array',
+            'members.*.email' => 'required|email',
+            'members.*.role' => 'required|string',
+        ]);
+
+        // Find the project instance using the project_id from the request
+        $project = Project::find($request->project_id);
+
+        $results = [];
+        foreach ($request->members as $member) {
+            $email = $member['email'];
+            $role = $member['role'];
+
+            $user = User::where('email', $email)->first();
+            if (!$user) {
+                $results[] = ['email' => $email, 'status' => 'not found'];
+                continue;
+            }
+
+            if ($project->project_members()->where('user_id', $user->id)->exists()) {
+                $results[] = ['email' => $email, 'status' => 'already a member'];
+                continue;
+            }
+
+            $projectMember = new ProjectMember();
+            $projectMember->project_id = $project->id;
+            $projectMember->user_id = $user->id;
+            $projectMember->role = $role;
+            $projectMember->save();
+
+            $results[] = ['email' => $email, 'status' => 'added'];
+        }
+
+        return response()->json(['results' => $results]);
     }
 
 

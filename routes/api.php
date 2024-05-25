@@ -17,6 +17,7 @@ use App\Http\Controllers\V1\ProjectStageController;
 use App\Http\Controllers\V1\ProjectMemberController;
 use App\Http\Controllers\V1\OrganizationMetricController;
 use App\Http\Controllers\V1\AdminController;
+use App\Models\OrgMember;
 
 /*
 |--------------------------------------------------------------------------
@@ -128,6 +129,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middl
     Route::delete('/project-members/{prject-member}', [ProjectMemberController::class, 'destroy']);
 
     Route::get('/project-members-by-project-id/{id}',[ProjectMemberController::class,'getMemberByProjectId']);
+    Route::post('/add-project-members',[ProjectMemberController::class,'addMembers']);
 });
 
 
@@ -160,6 +162,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middl
     Route::get('/organizations-by-owner', [OrganizationController::class, 'getOrganizationByOwner']);
     Route::get('/organizations-by-member', [OrganizationController::class, 'getOrganizationByMember']);
     Route::get('/user-organizations', [OrganizationController::class, 'getOrganizationsByOwnerOrMember']);
+    Route::post('/add-organizations-members',[OrgMemberController::class,'addMembers']);
 });
 
 Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middleware' => 'auth:sanctum'], function () {

@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers\V1;
 
+use App\Models\User;
+use App\Models\OrgMember;
+use App\Models\Organization;
 use Illuminate\Http\Request;
 use App\Traits\HttpResponses;
 use App\Services\V1\OrgMemberQuery;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\OrgMemberResource;
+use App\Http\Resources\V1\OrgMemberCollection;
 use App\Http\Requests\V1\StoreOrgMemberRequest;
 use App\Http\Requests\V1\UpdateOrgMemberRequest;
-use App\Http\Resources\V1\OrgMemberCollection;
-use App\Http\Resources\V1\OrgMemberResource;
-use App\Models\OrgMember;
 
 class OrgMemberController extends Controller
 {
@@ -72,4 +74,46 @@ class OrgMemberController extends Controller
         $orgMember->delete();
         return $this->success(null, 'Organization member deleted successfully');
     }
+
+    public function addMembers(Request $request)
+{
+    $request->validate([
+        'org_id' => 'required|exists:organizations,id',
+        'members' => 'required|array',
+        'members.*.email' => 'required|email',
+        'members.*.role' => 'required|string',
+    ]);
+
+    // Find the project instance using the project_id from the request
+    $organization = Organization::find($request->org_id);
+
+    $results = [];
+    foreach ($request->members as $member) {
+        $email = $member['email'];
+        $role = $member['role'];
+
+        $user = User::where('email', $email)->first();
+        if (!$user) {
+            $results[] = ['email' => $email, 'status' => 'not found'];
+            continue;
+        }
+
+        if ($organization->members()->where('user_id', $user->id)->exists()) {
+            $results[] = ['email' => $email, 'status' => 'already a member'];
+            continue;
+        }
+
+        $organizationMember = new OrgMember();
+        $organizationMember->org_id = $organization->id;
+        $organizationMember->user_id = $user->id;
+        $organizationMember->role = $role;
+        $organizationMember->save();
+
+        $results[] = ['email' => $email, 'status' => 'added'];
+    }
+
+    return response()->json(['results' => $results]);
+}
+
+
 }
