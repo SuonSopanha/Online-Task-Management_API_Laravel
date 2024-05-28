@@ -39,6 +39,7 @@ class Task extends Model
         'complete_date' => 'date:Y-m-d',
     ];
 
+
     public function project()
     {
         return $this->belongsTo(Project::class);

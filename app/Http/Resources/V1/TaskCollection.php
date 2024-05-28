@@ -19,6 +19,7 @@ class TaskCollection extends ResourceCollection
             return [
                 'id' => $task->id,
                 'project_id' => $task->project_id,
+                'project_name' => $task->project_id ? $task->project->project_name : null,
                 'milestone_id' => $task->milestone_id,
                 'stage_id' => $task->stage_id,
                 'owner_id' => $task->owner_id,

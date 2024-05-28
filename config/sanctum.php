@@ -33,7 +33,19 @@ return [
     |
     */
 
-    'guard' => ['web'],
+    'guards' => [
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
+        'api' => [
+            'driver' => 'sanctum',
+            'provider' => 'users',
+            'hash' => false, // Set to true if you want Sanctum to use SHA-256 hashing for tokens
+        ],
+    ],
+
 
     /*
     |--------------------------------------------------------------------------
