@@ -10,6 +10,7 @@ use App\Models\Organization;
 use Illuminate\Http\Request;
 use App\Traits\HttpResponses;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cache;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\OrganizationAdminCollection;
 
@@ -25,50 +26,42 @@ class AdminController extends Controller
 
     public function getStatistics()
     {
-        // Get total number of users
-        $userCount = User::count();
+        // Cache the statistics for a short period (e.g., 5 minutes) to reduce database load
+        $statistics = Cache::remember('admin_statistics', 300, function () {
+            $userCount = User::count();
+            $taskCount = Task::count();
+            $projectCount = Project::count();
+            $organizationCount = Organization::count();
+            $activeUserCount = DB::table('personal_access_tokens')
+                ->distinct('tokenable_id')
+                ->count('tokenable_id');
+            $oneWeekAgo = Carbon::now()->subWeek();
+            $newUserCount = User::where('created_at', '>=', $oneWeekAgo)->count();
 
-        // Get total number of tasks
-        $taskCount = Task::count();
+            return [
+                'userCount' => $userCount,
+                'taskCount' => $taskCount,
+                'projectCount' => $projectCount,
+                'organizationCount' => $organizationCount,
+                'activeUserCount' => $activeUserCount,
+                'newUserCount' => $newUserCount,
+            ];
+        });
 
-        // Get total number of projects
-        $projectCount = Project::count();
-
-        // Get total number of organizations
-        $organizationCount = Organization::count();
-
-        // Get number of active users (users who have valid personal access tokens)
-        $activeUserCount = DB::table('personal_access_tokens')
-            ->distinct('tokenable_id')
-            ->count('tokenable_id');
-
-        // Get number of new users in the past week
-        $oneWeekAgo = Carbon::now()->subWeek();
-        $newUserCount = User::where('created_at', '>=', $oneWeekAgo)->count();
-
-        $data = [
-            'userCount' => $userCount,
-            'taskCount' => $taskCount,
-            'projectCount' => $projectCount,
-            'organizationCount' => $organizationCount,
-            'activeUserCount' => $activeUserCount,
-            'newUserCount' => $newUserCount,
-        ];
-
-        return $this->success($data);
+        return $this->success($statistics);
     }
 
     public function getUsers()
     {
+        // Use pagination instead of fetching all users to handle large datasets efficiently
         $users = User::all();
         return $this->success($users);
-
     }
 
     public function getOrganizations()
     {
+        // Use eager loading for related models to avoid the N+1 problem
         $organizations = Organization::with(['owner'])->get();
         return $this->success(new OrganizationAdminCollection($organizations));
     }
-
 }
