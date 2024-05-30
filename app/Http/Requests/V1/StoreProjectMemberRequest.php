@@ -23,7 +23,6 @@ class StoreProjectMemberRequest extends FormRequest
     {
         return [
             'project_id' => 'required|exists:projects,id',
-            'user_id' => 'required|exists:users,id',
             'role' => 'required|string|max:255',
         ];
     }

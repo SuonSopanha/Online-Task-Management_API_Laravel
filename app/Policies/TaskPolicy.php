@@ -40,7 +40,7 @@ class TaskPolicy
      */
     public function update(User $user, Task $task): bool
     {
-        return $user->id === $task->owner_id;
+        return $user->id === $task->owner_id || $user->id === $task->assignee_id;
     }
 
     /**

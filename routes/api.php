@@ -179,3 +179,9 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middl
     Route::put('/organization-metrics/{organization-metric}', [OrganizationMetricController::class, 'update'])->name('organization-metrics.update');
     Route::delete('/organization-metrics/{organization-metric}', [OrganizationMetricController::class, 'destroy'])->name('organization-metrics.destroy');
 });
+
+Route::middleware('auth:sanctum')->prefix('v1')->group(function () {
+    Route::get('dashboard/task-status-metrics', 'App\Http\Controllers\V1\UserDashboardController@taskStatusMetrics');
+    Route::get('dashboard/task-priority-metrics', 'App\Http\Controllers\V1\UserDashboardController@taskPriorityMetrics');
+    Route::get('dashboard/task-due-date-metrics', 'App\Http\Controllers\V1\UserDashboardController@taskDueDateMetrics');
+});

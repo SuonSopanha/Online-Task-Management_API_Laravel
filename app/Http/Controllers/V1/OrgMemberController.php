@@ -38,8 +38,10 @@ class OrgMemberController extends Controller
     public function store(StoreOrgMemberRequest $request)
     {
         $validatedData = $request->validated();
+        $validatedData['user_id'] = auth()->user()->id;
 
         $org_member = OrgMember::create($validatedData);
+
 
         return $this->success(new OrgMemberResource($org_member));
     }

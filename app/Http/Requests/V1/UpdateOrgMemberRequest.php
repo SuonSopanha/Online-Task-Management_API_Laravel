@@ -22,7 +22,6 @@ class UpdateOrgMemberRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => 'exists:users,id',
             'org_id' => 'exists:organizations,id',
             'role' => 'string|max:255',
             'is_admin' => 'nullable|boolean',
