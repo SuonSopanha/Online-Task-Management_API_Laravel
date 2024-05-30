@@ -40,7 +40,7 @@ class ProjectMemberController extends Controller
     public function store(StoreProjectMemberRequest $request)
     {
         $validatedData = $request->validated();
-
+        $validatedData['user_id'] = auth()->user()->id;
 
         $project_member = ProjectMember::create($validatedData);
 

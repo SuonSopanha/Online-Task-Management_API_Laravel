@@ -23,23 +23,23 @@ class StoreTaskRequest extends FormRequest
     {
         return [
             'project_id' => 'nullable|exists:projects,id',
-            'milestone_id' => 'nullable|exists:milestones,id',
+            'milestone_id' => 'nullable|exists:milestones,id',//
             'stage_id' => 'nullable|exists:project_stages,id',
-            'on_tracking' => 'boolean',
-            'task_name' => 'required|string|max:255',
+            'on_tracking' => 'boolean',//
+            'task_name' => 'required|string|max:255',//
             'description' => 'nullable|string',
-            'start_date' => 'required|date',
-            'due_date' => 'required|date',
-            'task_category' => 'required|string|max:255',
-            'work_hour_required' => 'required|integer',
+            'start_date' => 'required|date',//
+            'due_date' => 'required|date',//
+            'task_category' => 'required|string|max:255',//
+            'work_hour_required' => 'required|integer',//
             'work_hour' => 'integer',
-            'status' => 'required|string|max:255',
-            'priority' => 'required|string|max:255',
-            'severity' => 'required|string|max:255',
+            'status' => 'required|string|max:255',//
+            'priority' => 'required|string|max:255',//
+            'severity' => 'required|string|max:255',//
             'tag' => 'nullable|string|max:255',
             'assignee_id' => 'nullable|exists:users,id',
-            'assignee_dates' => 'date',
-            'complete' => 'boolean',
+            'assignee_dates' => 'date',//
+            'complete' => 'boolean',//
             'complete_date' => 'nullable|date',
         ];
     }

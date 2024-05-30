@@ -106,6 +106,7 @@ class TaskController extends Controller
     {
         $tasks = Task::where('project_id', $id)
             ->with(['assignee', 'project', 'milestone', 'stage'])
+            ->orderBy('created_at', 'desc')
             ->get();
 
         return $this->success(new TasknAssigneeCollection($tasks));

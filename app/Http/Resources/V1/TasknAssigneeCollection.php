@@ -35,9 +35,11 @@ class TasknAssigneeCollection extends ResourceCollection
                 'assignee_id' => $task->assignee_id,
                 'assignee_name' => $task->assignee->full_name,
                 'assignee_photo' =>  $task->assignee->photo_url,
-                'assignee_dates' => $task->assignee_dates,
+                'assignee_dates' => Carbon::parse($task->assignee_dates)->format('m/d/Y'),
                 'complete' => $task->complete,
                 'complete_date' => $task->complete_date ? Carbon::parse($task->complete_date)->format('m/d/Y') : null,
+                'created_at' => Carbon::parse($task->created_at)->format('m/d/Y'),
+                'updated_at' => Carbon::parse($task->updated_at)->format('m/d/Y'),
             ];
         })->toArray();
     }

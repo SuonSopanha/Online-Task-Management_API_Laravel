@@ -22,7 +22,6 @@ class StoreOrgMemberRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => 'required|exists:users,id',
             'org_id' => 'required|exists:organizations,id',
             'role' => 'required|string|max:255',
             'is_admin' => 'nullable|boolean',
