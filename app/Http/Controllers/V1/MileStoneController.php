@@ -40,7 +40,7 @@ class MileStoneController extends Controller
         $validatedData = $request->validated();
 
         $validatedData['owner_id'] = auth()->user()->id;
-        $milestones = MileStone::create($validatedData);
+        $milestones = Milestone::create($validatedData);
         return $this->success(new MileStoneResource($milestones));
     }
 
