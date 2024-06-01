@@ -38,8 +38,9 @@ Route::middleware('auth:sanctum')->get('/users/{user}', function (Request $reque
 Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], function () {
     Route::post('/login', 'AuthController@login');
     Route::post('/register', 'AuthController@register');
-    Route::post('/logout', 'AuthController@logout');
+
     // Other routes for version 1...
+    Route::get('/empty','TaskController@emptyTask');
 });
 
 Route::get('/login/google', [AuthController::class, 'redirectToProvider']);
@@ -50,9 +51,10 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middl
     Route::get('/users', [UserController::class, 'index']);
     Route::post('/users', [UserController::class, 'store']);
     Route::get('/users/{user}', [UserController::class, 'show']);
-    Route::put('/users/{user}', [UserController::class, 'update']);
+    Route::put('/users/{user}', [UserController::class, 'updateUser']);
     Route::delete('/users/{user}', [UserController::class, 'destroy']);
 
+    Route::post('/logout', 'AuthController@logout');
 });
 
 
@@ -115,18 +117,18 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middl
 Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/project-stages', [ProjectStageController::class, 'index']);
     Route::post('/project-stages', [ProjectStageController::class, 'store']);
-    Route::get('/project-stages/{project-stage}', [ProjectStageController::class, 'show']);
-    Route::put('/project-stages/{project-stage}', [ProjectStageController::class, 'update']);
-    Route::delete('/project-stages/{project-stage}', [ProjectStageController::class, 'destroy']);
+    Route::get('/project-stages/{projectstage}', [ProjectStageController::class, 'show']);
+    Route::put('/project-stages/{projectstage}', [ProjectStageController::class, 'update']);
+    Route::delete('/project-stages/{projectstage}', [ProjectStageController::class, 'destroy']);
 });
 
 // Routes for version 1 Project Member
 Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/project-members', [ProjectMemberController::class, 'index']);
     Route::post('/project-members', [ProjectMemberController::class, 'store']);
-    Route::get('/project-members/{prject-member}', [ProjectMemberController::class, 'show']);
-    Route::put('/project-members/{prject-member}', [ProjectMemberController::class, 'update']);
-    Route::delete('/project-members/{prject-member}', [ProjectMemberController::class, 'destroy']);
+    Route::get('/project-members/{prjectmember}', [ProjectMemberController::class, 'show']);
+    Route::put('/project-members/{prjectmember}', [ProjectMemberController::class, 'update']);
+    Route::delete('/project-members/{prjectmember}', [ProjectMemberController::class, 'destroy']);
 
     Route::get('/project-members-by-project-id/{id}',[ProjectMemberController::class,'getMemberByProjectId']);
     Route::post('/add-project-members',[ProjectMemberController::class,'addMembers']);
@@ -175,9 +177,9 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middl
 
 Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middleware' => 'auth:sanctum'], function () {
     Route::post('/organization-metrics', [OrganizationMetricController::class, 'store'])->name('organization-metrics.store');
-    Route::get('/organization-metrics/{organization-metric}', [OrganizationMetricController::class, 'show'])->name('organization-metrics.show');
-    Route::put('/organization-metrics/{organization-metric}', [OrganizationMetricController::class, 'update'])->name('organization-metrics.update');
-    Route::delete('/organization-metrics/{organization-metric}', [OrganizationMetricController::class, 'destroy'])->name('organization-metrics.destroy');
+    Route::get('/organization-metrics/{organizationmetric}', [OrganizationMetricController::class, 'show'])->name('organization-metrics.show');
+    Route::put('/organization-metrics/{organizationmetric}', [OrganizationMetricController::class, 'update'])->name('organization-metrics.update');
+    Route::delete('/organization-metrics/{organizationmetric}', [OrganizationMetricController::class, 'destroy'])->name('organization-metrics.destroy');
 });
 
 Route::middleware('auth:sanctum')->prefix('v1')->group(function () {

@@ -33,7 +33,7 @@ return [
 
     'allowed_origins' => ['*'],
 
-    'allowed_origins_patterns' => [],
+    'allowed_origins_patterns' => ['https://online-task-management-client-side-react.onrender.com'],
 
     'allowed_headers' => ['*'],
 

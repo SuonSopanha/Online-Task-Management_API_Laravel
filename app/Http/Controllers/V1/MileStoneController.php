@@ -8,7 +8,7 @@ use App\Http\Requests\V1\UpdateMileStoneRequest;
 use App\Services\V1\MileStoneQuery;
 use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
-use App\Models\MileStone;
+use App\Models\Milestone;
 use App\Http\Resources\V1\MileStoneCollection;
 use App\Http\Resources\V1\MileStoneResource;
 
@@ -23,7 +23,7 @@ class MileStoneController extends Controller
 
     public function index(Request $request)
     {
-        $milestones = MileStone::where('owner_id',auth()->user()->id)->get();
+        $milestones = Milestone::where('owner_id',auth()->user()->id)->get();
         return $this->success(new MileStoneCollection($milestones));
     }
 
@@ -31,7 +31,7 @@ class MileStoneController extends Controller
     // {
     //     $validatedData = $request->validate();
 
-    //     $milestones = MileStone::create($validatedData);
+    //     $milestones = Milestone::create($validatedData);
     //     return $this->success(new MileStoneResource($milestones));
     // }
 
@@ -46,7 +46,7 @@ class MileStoneController extends Controller
 
     public function show($id)
     {
-        $milestones = MileStone::find($id);
+        $milestones = Milestone::find($id);
 
         if (!$milestones) {
             return $this->error(null, 'MileStone not found', 404);
@@ -54,7 +54,7 @@ class MileStoneController extends Controller
         return $this->success(new MileStoneResource($milestones));
     }
 
-    public function update(UpdateMileStoneRequest $request, MileStone $milestone )
+    public function update(UpdateMileStoneRequest $request, Milestone $milestone )
     {
 
         $this->authorize('update', $milestone);
@@ -65,7 +65,7 @@ class MileStoneController extends Controller
         return $this->success([]);
     }
 
-    public function destroy(MileStone $milestone )
+    public function destroy(Milestone $milestone )
     {
 
         $this->authorize('delete', $milestone);
