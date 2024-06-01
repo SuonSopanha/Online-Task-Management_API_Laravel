@@ -53,9 +53,16 @@ class AuthController extends Controller
         ]);
     }
 
-    public function logout()
+
+    public function logout(Request $request)
     {
-        return "this is my logout";
+        // Revoke the token that was used to authenticate the current request
+        $request->user()->currentAccessToken()->delete();
+
+        // Alternatively, to revoke all tokens...
+        // $request->user()->tokens()->delete();
+
+        return $this->success([], 'Logged out successfully');
     }
 
 
@@ -99,7 +106,7 @@ class AuthController extends Controller
 
         $token = $userCreated->createToken('API token of ' . $userCreated->email)->plainTextToken;
 
-        return redirect()->to('http://localhost:3000/auth/callback?token=' . $token);
+        return redirect()->to('https://online-task-management-client-side-react.onrender.com/auth/callback?token=' . $token);
 
     }
 

@@ -24,6 +24,7 @@ class UpdateUserRequest extends FormRequest
         return [
             'full_name' => 'nullable|string|max:255',
             'photo_url' => 'nullable|string',
+            'email' => 'nullable|string|email|max:255|unique:users,email',
         ];
     }
 }

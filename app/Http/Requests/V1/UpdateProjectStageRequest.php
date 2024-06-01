@@ -22,7 +22,6 @@ class UpdateProjectStageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'project_id' => 'exists:projects,id',
             'stage_name' => 'string|max:255',
             'start_date' => 'date',
             'period' => 'integer',

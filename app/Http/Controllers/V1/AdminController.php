@@ -63,5 +63,6 @@ class AdminController extends Controller
         // Use eager loading for related models to avoid the N+1 problem
         $organizations = Organization::with(['owner'])->get();
         return $this->success(new OrganizationAdminCollection($organizations));
+        
     }
 }

@@ -59,6 +59,20 @@ class UserController extends Controller
         return $this->success(new UserResource($user));
     }
 
+    public function updateUser(UpdateUserRequest $request, $id)
+    {
+        $user = User::find($id);
+
+        if (!$user) {
+            return $this->error(null, 'User not found', 404);
+        }
+
+        $user->update($request->all());
+        return $this->success(new UserResource($user));
+    }
+
+
+
     // Update user
     // Update user
     public function update(UpdateUserRequest $request, $id)
