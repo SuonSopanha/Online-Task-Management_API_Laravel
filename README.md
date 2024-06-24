@@ -14,13 +14,12 @@ This project aims to provide a comprehensive solution for managing tasks online.
 
 - **Task Prioritization and Sorting:** Users can prioritize tasks and sort them based on various criteria to manage their workload effectively.
 
-- **Real-Time Collaboration and Teamwork:** Enable task collaboration with real-time updates and permissions management, facilitating teamwork and project coordination.
+- **Collaboration and Teamwork:** Enable task collaboration with real-time updates and permissions management, facilitating teamwork and project coordination.
 
 - **Task Tracking and Progress Monitoring:** Allow users to track task completion, monitor progress, and track time spent on tasks for better productivity management.
 
 - **Trend and Visualization:** Offer visualizations like charts to visualize task completion rates and team performance insights, helping users gain valuable insights into their productivity.
 
-- **Notifications and Reminders:** Send notifications for deadlines, assignments, and reminders via multiple channels to keep users informed and on track with their tasks.
 
 ## Technologies Used
 
