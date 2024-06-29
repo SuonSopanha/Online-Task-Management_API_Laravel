@@ -1,0 +1,2413 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  '/api/users/{user}':
+    get:
+      summary: ''
+      operationId: getApiUsersUser
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: user
+        description: 'The user.'
+        example: et
+        required: true
+        schema:
+          type: string
+  /api/v1/login:
+    post:
+      summary: ''
+      operationId: postApiV1Login
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: lwaelchi@example.com
+                password:
+                  type: string
+                  description: 'Must be at least 6 characters.'
+                  example: '2V,_lH'
+                full_name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: bmie
+                photo_url:
+                  type: string
+                  description: ''
+                  example: 'http://green.org/commodi-quibusdam-aliquid-doloremque-eum'
+              required:
+                - email
+                - password
+      security: []
+  /api/v1/register:
+    post:
+      summary: ''
+      operationId: postApiV1Register
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: alessandro74@example.com
+                password:
+                  type: string
+                  description: 'Must be at least 6 characters.'
+                  example: '%5[I+<M%y@?T'
+                full_name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: vdfvykogutf
+                photo_url:
+                  type: string
+                  description: ''
+                  example: 'http://kirlin.org/ipsa-sint-nulla-maxime-sint-animi-ut-ut'
+              required:
+                - email
+                - password
+      security: []
+  /api/login/google:
+    get:
+      summary: 'Redirect the user to the Provider authentication page.'
+      operationId: redirectTheUserToTheProviderAuthenticationPage
+      description: ''
+      parameters: []
+      responses:
+        302:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"UTF-8\" />\n        <meta http-equiv=\"refresh\" content=\"0;url='https://accounts.google.com/o/oauth2/auth?client_id=434014513875-favlgkdqulm08efo9mujdsn1gg0dsr1k.apps.googleusercontent.com&amp;redirect_uri=http%3A%2F%2F127.0.0.1%3A8000%2Fapi%2Flogin%2Fgoogle%2Fcallback&amp;scope=openid+profile+email&amp;response_type=code'\" />\n\n        <title>Redirecting to https://accounts.google.com/o/oauth2/auth?client_id=434014513875-favlgkdqulm08efo9mujdsn1gg0dsr1k.apps.googleusercontent.com&amp;redirect_uri=http%3A%2F%2F127.0.0.1%3A8000%2Fapi%2Flogin%2Fgoogle%2Fcallback&amp;scope=openid+profile+email&amp;response_type=code</title>\n    </head>\n    <body>\n        Redirecting to <a href=\"https://accounts.google.com/o/oauth2/auth?client_id=434014513875-favlgkdqulm08efo9mujdsn1gg0dsr1k.apps.googleusercontent.com&amp;redirect_uri=http%3A%2F%2F127.0.0.1%3A8000%2Fapi%2Flogin%2Fgoogle%2Fcallback&amp;scope=openid+profile+email&amp;response_type=code\">https://accounts.google.com/o/oauth2/auth?client_id=434014513875-favlgkdqulm08efo9mujdsn1gg0dsr1k.apps.googleusercontent.com&amp;redirect_uri=http%3A%2F%2F127.0.0.1%3A8000%2Fapi%2Flogin%2Fgoogle%2Fcallback&amp;scope=openid+profile+email&amp;response_type=code</a>.\n    </body>\n</html>"
+      tags:
+        - Endpoints
+      security: []
+  /api/login/google/callback:
+    get:
+      summary: 'Obtain the user information from Provider.'
+      operationId: obtainTheUserInformationFromProvider
+      description: ''
+      parameters: []
+      responses:
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Server Error'
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/users:
+    get:
+      summary: ''
+      operationId: getApiV1Users
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  '/api/v1/users/{user}':
+    get:
+      summary: ''
+      operationId: getApiV1UsersUser
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiV1UsersUser
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                full_name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: yqkrgecdfxxthu
+                photo_url:
+                  type: string
+                  description: ''
+                  example: 'http://www.mckenzie.com/'
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: dmraz@example.net
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1UsersUser
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: user
+        description: 'The user.'
+        example: repellat
+        required: true
+        schema:
+          type: string
+  /api/v1/logout:
+    post:
+      summary: ''
+      operationId: postApiV1Logout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/admin/statistics:
+    get:
+      summary: ''
+      operationId: getApiAdminStatistics
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/admin/users:
+    get:
+      summary: ''
+      operationId: getApiAdminUsers
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/admin/organizations:
+    get:
+      summary: ''
+      operationId: getApiAdminOrganizations
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/teams:
+    get:
+      summary: ''
+      operationId: getApiV1Teams
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1Teams
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: fc
+                description:
+                  type: string
+                  description: ''
+                  example: 'Ex consequatur nisi tempore maiores repellat sed dolores nostrum.'
+              required:
+                - name
+      security: []
+  '/api/v1/teams/{team}':
+    get:
+      summary: ''
+      operationId: getApiV1TeamsTeam
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiV1TeamsTeam
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: irowulspxevku
+                description:
+                  type: string
+                  description: ''
+                  example: 'Ea repudiandae sequi provident aperiam.'
+                owner_id:
+                  type: string
+                  description: ''
+                  example: null
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1TeamsTeam
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: team
+        description: 'The team.'
+        example: dolor
+        required: true
+        schema:
+          type: string
+  /api/v1/tasks:
+    get:
+      summary: ''
+      operationId: getApiV1Tasks
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1Tasks
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                project_id:
+                  type: string
+                  description: ''
+                  example: null
+                milestone_id:
+                  type: string
+                  description: ''
+                  example: null
+                stage_id:
+                  type: string
+                  description: ''
+                  example: null
+                on_tracking:
+                  type: boolean
+                  description: ''
+                  example: true
+                task_name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: xjncjdstahejmxhzof
+                description:
+                  type: string
+                  description: ''
+                  example: 'Voluptatem id recusandae enim voluptates sint perspiciatis quo.'
+                start_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2024-06-29T06:23:01'
+                due_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2024-06-29T06:23:01'
+                task_category:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: wq
+                work_hour_required:
+                  type: integer
+                  description: ''
+                  example: 1
+                work_hour:
+                  type: integer
+                  description: ''
+                  example: 6
+                status:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: oassknmrylegtsx
+                priority:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: sfpjgvwmsyxfgvyzjqbg
+                severity:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: yqezklp
+                tag:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: nrsbbpiwmlbfj
+                assignee_id:
+                  type: string
+                  description: ''
+                  example: null
+                assignee_dates:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2024-06-29T06:23:01'
+                complete:
+                  type: boolean
+                  description: ''
+                  example: false
+                complete_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2024-06-29T06:23:01'
+              required:
+                - task_name
+                - start_date
+                - due_date
+                - task_category
+                - work_hour_required
+                - status
+                - priority
+                - severity
+      security: []
+  '/api/v1/tasks/{task}':
+    get:
+      summary: ''
+      operationId: getApiV1TasksTask
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: task
+        description: 'The task.'
+        example: ex
+        required: true
+        schema:
+          type: string
+  '/api/v1/tasks/{task_id}':
+    put:
+      summary: ''
+      operationId: putApiV1TasksTask_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                project_id:
+                  type: string
+                  description: ''
+                  example: null
+                milestone_id:
+                  type: string
+                  description: ''
+                  example: null
+                stage_id:
+                  type: string
+                  description: ''
+                  example: null
+                owner_id:
+                  type: string
+                  description: ''
+                  example: null
+                on_tracking:
+                  type: boolean
+                  description: ''
+                  example: true
+                task_name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: gblkppluhve
+                description:
+                  type: string
+                  description: ''
+                  example: 'Voluptatem ut porro quos et aut rerum.'
+                start_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2024-06-29T06:23:02'
+                due_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2024-06-29T06:23:02'
+                task_category:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: woasfwfumwhwtggerdnpiw
+                work_hour_required:
+                  type: integer
+                  description: ''
+                  example: 19
+                work_hour:
+                  type: integer
+                  description: ''
+                  example: 7
+                status:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: ujbenjuclsdladbdnmodw
+                priority:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: gwmrdsaqyzkws
+                severity:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: k
+                tag:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: zyqubvlufebupqfpfy
+                assignee_id:
+                  type: string
+                  description: ''
+                  example: null
+                assignee_dates:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2024-06-29T06:23:02'
+                complete:
+                  type: boolean
+                  description: ''
+                  example: true
+                complete_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2024-06-29T06:23:02'
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1TasksTask_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: task_id
+        description: 'The ID of the task.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/tasks-by-owner:
+    get:
+      summary: ''
+      operationId: getApiV1TasksByOwner
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/tasks-by-assignee:
+    get:
+      summary: ''
+      operationId: getApiV1TasksByAssignee
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  '/api/v1/tasks-by-project-id/{id}':
+    get:
+      summary: ''
+      operationId: getApiV1TasksByProjectIdId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the tasks by project id.'
+        example: quas
+        required: true
+        schema:
+          type: string
+  /api/v1/user-tasks:
+    get:
+      summary: ''
+      operationId: getApiV1UserTasks
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/my-tasks:
+    get:
+      summary: ''
+      operationId: getApiV1MyTasks
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/projects:
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      operationId: storeANewlyCreatedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                project_name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: awacxhfuzoco
+                start_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2024-06-29T06:23:05'
+                end_date:
+                  type: string
+                  description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
+                  example: '2105-11-25'
+                organization_id:
+                  type: string
+                  description: ''
+                  example: null
+                project_status:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: dhtqumybodflmnuoq
+                project_priority:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: adwtljmasviurmuqyybeqrtfj
+              required:
+                - project_name
+                - start_date
+                - end_date
+                - project_status
+                - project_priority
+      security: []
+  '/api/v1/projects/{project}':
+    get:
+      summary: 'Display the specified resource.'
+      operationId: displayTheSpecifiedResource
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: project
+        description: 'The project.'
+        example: et
+        required: true
+        schema:
+          type: string
+  '/api/v1/projects/{project_id}':
+    put:
+      summary: 'Update the specified resource in storage.'
+      operationId: updateTheSpecifiedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                project_name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: mojtojwuqdozawyvgllcwsc
+                owner_id:
+                  type: string
+                  description: ''
+                  example: null
+                start_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2024-06-29T06:23:06'
+                end_date:
+                  type: string
+                  description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
+                  example: '2098-05-25'
+                organization_id:
+                  type: string
+                  description: ''
+                  example: null
+                project_status:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: rvdthpwk
+                project_priority:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: yswqzjhnxyvsg
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: project_id
+        description: 'The ID of the project.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/projects-by-owner:
+    get:
+      summary: ''
+      operationId: getApiV1ProjectsByOwner
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/projects-by-member:
+    get:
+      summary: ''
+      operationId: getApiV1ProjectsByMember
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/user-projects:
+    get:
+      summary: ''
+      operationId: getApiV1UserProjects
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/milestones:
+    get:
+      summary: ''
+      operationId: getApiV1Milestones
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1Milestones
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                milestone_name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: vagkapjgf
+                start_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2024-06-29T06:23:09'
+                end_date:
+                  type: string
+                  description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
+                  example: '2076-07-23'
+              required:
+                - milestone_name
+                - start_date
+                - end_date
+      security: []
+  '/api/v1/milestones/{milestone}':
+    get:
+      summary: ''
+      operationId: getApiV1MilestonesMilestone
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: milestone
+        description: 'The milestone.'
+        example: aperiam
+        required: true
+        schema:
+          type: string
+  '/api/v1/milestones/{milestone_id}':
+    put:
+      summary: ''
+      operationId: putApiV1MilestonesMilestone_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                milestone_name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: htykf
+                start_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2024-06-29T06:23:11'
+                end_date:
+                  type: string
+                  description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
+                  example: '2026-06-26'
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1MilestonesMilestone_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: milestone_id
+        description: 'The ID of the milestone.'
+        example: 3
+        required: true
+        schema:
+          type: integer
+  /api/v1/project-stages:
+    get:
+      summary: ''
+      operationId: getApiV1ProjectStages
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1ProjectStages
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                project_id:
+                  type: string
+                  description: ''
+                  example: sunt
+                stage_name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: npajrgwcpydnbzosvkl
+                start_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2024-06-29T06:23:12'
+                period:
+                  type: integer
+                  description: ''
+                  example: 6
+                end_date:
+                  type: string
+                  description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
+                  example: '2112-08-05'
+                completed:
+                  type: boolean
+                  description: ''
+                  example: true
+                completion_date:
+                  type: string
+                  description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
+                  example: '2081-01-20'
+              required:
+                - project_id
+                - stage_name
+                - start_date
+                - period
+                - end_date
+      security: []
+  '/api/v1/project-stages/{projectstage}':
+    get:
+      summary: ''
+      operationId: getApiV1ProjectStagesProjectstage
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiV1ProjectStagesProjectstage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                stage_name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: kdmrttcytdyjq
+                start_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2024-06-29T06:23:13'
+                period:
+                  type: integer
+                  description: ''
+                  example: 10
+                end_date:
+                  type: string
+                  description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
+                  example: '2031-02-08'
+                completed:
+                  type: boolean
+                  description: ''
+                  example: true
+                completion_date:
+                  type: string
+                  description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
+                  example: '2026-04-14'
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1ProjectStagesProjectstage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: projectstage
+        description: ''
+        example: ut
+        required: true
+        schema:
+          type: string
+  /api/v1/project-members:
+    get:
+      summary: ''
+      operationId: getApiV1ProjectMembers
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1ProjectMembers
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                project_id:
+                  type: string
+                  description: ''
+                  example: illo
+                role:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: ypmqtxqdgedlevuucpewgsbug
+              required:
+                - project_id
+                - role
+      security: []
+  '/api/v1/project-members/{prjectmember}':
+    get:
+      summary: ''
+      operationId: getApiV1ProjectMembersPrjectmember
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiV1ProjectMembersPrjectmember
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                team_id:
+                  type: string
+                  description: ''
+                  example: null
+                user_id:
+                  type: string
+                  description: ''
+                  example: null
+                role:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: i
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1ProjectMembersPrjectmember
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: prjectmember
+        description: ''
+        example: dicta
+        required: true
+        schema:
+          type: string
+  '/api/v1/project-members-by-project-id/{id}':
+    get:
+      summary: ''
+      operationId: getApiV1ProjectMembersByProjectIdId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the project members by project id.'
+        example: sunt
+        required: true
+        schema:
+          type: string
+  /api/v1/add-project-members:
+    post:
+      summary: ''
+      operationId: postApiV1AddProjectMembers
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                project_id:
+                  type: string
+                  description: ''
+                  example: distinctio
+                members:
+                  type: array
+                  description: ''
+                  example:
+                    - []
+                  items:
+                    type: object
+                    properties:
+                      email:
+                        type: string
+                        description: 'Must be a valid email address.'
+                        example: wunsch.jakayla@example.com
+                      role:
+                        type: string
+                        description: ''
+                        example: eum
+                    required:
+                      - email
+                      - role
+              required:
+                - project_id
+                - members
+      security: []
+  /api/v1/team-members:
+    get:
+      summary: ''
+      operationId: getApiV1TeamMembers
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1TeamMembers
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                team_id:
+                  type: string
+                  description: ''
+                  example: exercitationem
+                user_id:
+                  type: string
+                  description: ''
+                  example: omnis
+                role:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: dbavxaacmwfjegzpt
+              required:
+                - team_id
+                - user_id
+                - role
+      security: []
+  '/api/v1/team-members/{id}':
+    get:
+      summary: ''
+      operationId: getApiV1TeamMembersId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiV1TeamMembersId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                team_id:
+                  type: string
+                  description: ''
+                  example: null
+                user_id:
+                  type: string
+                  description: ''
+                  example: null
+                role:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: gtvluuyyysrqdgcqg
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1TeamMembersId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the team member.'
+        example: sapiente
+        required: true
+        schema:
+          type: string
+  /api/v1/goals:
+    get:
+      summary: ''
+      operationId: getApiV1Goals
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1Goals
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                team_id:
+                  type: string
+                  description: ''
+                  example: voluptatem
+                goal_name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: daypmekygk
+                description:
+                  type: string
+                  description: ''
+                  example: 'In ab officiis provident et.'
+                completed:
+                  type: boolean
+                  description: ''
+                  example: false
+              required:
+                - team_id
+                - goal_name
+      security: []
+  '/api/v1/goals/{goal}':
+    get:
+      summary: ''
+      operationId: getApiV1GoalsGoal
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: goal
+        description: 'The goal.'
+        example: nemo
+        required: true
+        schema:
+          type: string
+  '/api/v1/goals/{goal_id}':
+    put:
+      summary: ''
+      operationId: putApiV1GoalsGoal_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                team_id:
+                  type: string
+                  description: ''
+                  example: null
+                goal_name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: mqofhvkimdu
+                description:
+                  type: string
+                  description: ''
+                  example: 'Perspiciatis molestias voluptate deserunt non ab aliquam.'
+                completed:
+                  type: boolean
+                  description: ''
+                  example: true
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1GoalsGoal_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: goal_id
+        description: 'The ID of the goal.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/organizations:
+    get:
+      summary: ''
+      operationId: getApiV1Organizations
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1Organizations
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: goghdxgaadziqzwijtxecybuq
+                description:
+                  type: string
+                  description: ''
+                  example: 'Dolor sed cumque eaque optio.'
+                industry:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: rxdeflbmirldbpeke
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: glover.gia@example.com
+              required:
+                - name
+      security: []
+  '/api/v1/organizations/{organization}':
+    get:
+      summary: ''
+      operationId: getApiV1OrganizationsOrganization
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: organization
+        description: 'The organization.'
+        example: fugit
+        required: true
+        schema:
+          type: string
+  '/api/v1/organizations/{organization_id}':
+    delete:
+      summary: ''
+      operationId: deleteApiV1OrganizationsOrganization_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: organization_id
+        description: 'The ID of the organization.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/organizations-by-owner:
+    get:
+      summary: ''
+      operationId: getApiV1OrganizationsByOwner
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/organizations-by-member:
+    get:
+      summary: ''
+      operationId: getApiV1OrganizationsByMember
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/user-organizations:
+    get:
+      summary: ''
+      operationId: getApiV1UserOrganizations
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/add-organizations-members:
+    post:
+      summary: ''
+      operationId: postApiV1AddOrganizationsMembers
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                org_id:
+                  type: string
+                  description: ''
+                  example: est
+                members:
+                  type: array
+                  description: ''
+                  example:
+                    - []
+                  items:
+                    type: object
+                    properties:
+                      email:
+                        type: string
+                        description: 'Must be a valid email address.'
+                        example: denis.brekke@example.net
+                      role:
+                        type: string
+                        description: ''
+                        example: ea
+                    required:
+                      - email
+                      - role
+              required:
+                - org_id
+                - members
+      security: []
+  /api/v1/org-members:
+    get:
+      summary: ''
+      operationId: getApiV1OrgMembers
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1OrgMembers
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                org_id:
+                  type: string
+                  description: ''
+                  example: tempore
+                role:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: njfe
+                is_admin:
+                  type: boolean
+                  description: ''
+                  example: true
+                assigned_tasks:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 52
+                completed_tasks:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 31
+                overdue_tasks:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 2
+                worked_hour:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 26
+              required:
+                - org_id
+                - role
+      security: []
+  '/api/v1/org-members/{org-member}':
+    get:
+      summary: ''
+      operationId: getApiV1OrgMembersOrgMember
+      description: ''
+      parameters: []
+      responses:
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The route api/v1/org-members/aliquam could not be found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The route api/v1/org-members/aliquam could not be found.'
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiV1OrgMembersOrgMember
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                org_id:
+                  type: string
+                  description: ''
+                  example: null
+                role:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: aoetzobizgsaiqz
+                is_admin:
+                  type: boolean
+                  description: ''
+                  example: false
+                assigned_tasks:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 86
+                completed_tasks:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 67
+                overdue_tasks:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 68
+                worked_hour:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 33
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1OrgMembersOrgMember
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: org-member
+        description: ''
+        example: aliquam
+        required: true
+        schema:
+          type: string
+  /api/v1/organization-metrics:
+    post:
+      summary: ''
+      operationId: postApiV1OrganizationMetrics
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                organization_id:
+                  type: string
+                  description: ''
+                  example: nam
+                total_users:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 0
+                active_users:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 17
+                projects_created:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 10
+                projects_completed:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 8
+                projects_in_progress:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 39
+                average_project_completion_time:
+                  type: number
+                  description: 'Must be at least 0.'
+                  example: 10
+                total_tasks:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 63
+                completed_tasks:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 8
+                tasks_in_progress:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 63
+                tasks_overdue:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 12
+                average_task_completion_time:
+                  type: number
+                  description: 'Must be at least 0.'
+                  example: 6
+              required:
+                - organization_id
+                - total_users
+                - active_users
+                - projects_created
+                - projects_completed
+                - projects_in_progress
+                - average_project_completion_time
+                - total_tasks
+                - completed_tasks
+                - tasks_in_progress
+                - tasks_overdue
+                - average_task_completion_time
+      security: []
+  '/api/v1/organization-metrics/{organizationmetric}':
+    get:
+      summary: ''
+      operationId: getApiV1OrganizationMetricsOrganizationmetric
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiV1OrganizationMetricsOrganizationmetric
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                total_users:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 5
+                active_users:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 19
+                projects_created:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 69
+                projects_completed:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 42
+                projects_in_progress:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 67
+                average_project_completion_time:
+                  type: number
+                  description: 'Must be at least 0.'
+                  example: 66
+                total_tasks:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 55
+                completed_tasks:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 59
+                tasks_in_progress:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 29
+                tasks_overdue:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 60
+                average_task_completion_time:
+                  type: number
+                  description: 'Must be at least 0.'
+                  example: 21
+              required:
+                - total_users
+                - active_users
+                - projects_created
+                - projects_completed
+                - projects_in_progress
+                - average_project_completion_time
+                - total_tasks
+                - completed_tasks
+                - tasks_in_progress
+                - tasks_overdue
+                - average_task_completion_time
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1OrganizationMetricsOrganizationmetric
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: organizationmetric
+        description: ''
+        example: repellendus
+        required: true
+        schema:
+          type: string
+  /api/v1/dashboard/task-status-metrics:
+    get:
+      summary: ''
+      operationId: getApiV1DashboardTaskStatusMetrics
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/dashboard/task-priority-metrics:
+    get:
+      summary: ''
+      operationId: getApiV1DashboardTaskPriorityMetrics
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/dashboard/task-due-date-metrics:
+    get:
+      summary: ''
+      operationId: getApiV1DashboardTaskDueDateMetrics
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''
