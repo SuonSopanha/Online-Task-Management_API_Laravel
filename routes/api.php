@@ -54,6 +54,8 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1', 'middl
     Route::put('/users/{user}', [UserController::class, 'updateUser']);
     Route::delete('/users/{user}', [UserController::class, 'destroy']);
 
+    
+
     Route::post('/logout', 'AuthController@logout');
 });
 

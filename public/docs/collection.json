@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "6689d51e-51f6-432b-9e48-fedfaa635bcf",
+        "_postman_id": "6c10ee93-de04-48d4-b8dd-26fd44afde15",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -31,7 +31,7 @@
                                 {
                                     "id": "user",
                                     "key": "user",
-                                    "value": "et",
+                                    "value": "ab",
                                     "description": "The user."
                                 }
                             ]
@@ -97,7 +97,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"lwaelchi@example.com\",\"password\":\"2V,_lH\",\"full_name\":\"bmie\",\"photo_url\":\"http:\\\/\\\/green.org\\\/commodi-quibusdam-aliquid-doloremque-eum\"}"
+                            "raw": "{\"email\":\"katarina67@example.net\",\"password\":\".S\\\/ZG#,efME0gXN\\\/\",\"full_name\":\"jopeiv\",\"photo_url\":\"https:\\\/\\\/www.davis.biz\\\/debitis-maiores-cupiditate-sequi-delectus-eos-incidunt\"}"
                         },
                         "description": "",
                         "auth": {
@@ -128,7 +128,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"alessandro74@example.com\",\"password\":\"%5[I+<M%y@?T\",\"full_name\":\"vdfvykogutf\",\"photo_url\":\"http:\\\/\\\/kirlin.org\\\/ipsa-sint-nulla-maxime-sint-animi-ut-ut\"}"
+                            "raw": "{\"email\":\"ekuhn@example.com\",\"password\":\"d|T>QxzNqb>a%2b==v;\",\"full_name\":\"qvzvukyefowekwenfqph\",\"photo_url\":\"http:\\\/\\\/white.com\\\/quos-ut-laudantium-eos\"}"
                         },
                         "description": "",
                         "auth": {
@@ -252,185 +252,6 @@
                             "name": ""
                         }
                     ]
-                },
-                {
-                    "name": "GET api\/v1\/users",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/users",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/users"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "vary",
-                                    "value": "Origin"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "GET api\/v1\/users\/{user}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/users\/:user",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/users\/:user",
-                            "variable": [
-                                {
-                                    "id": "user",
-                                    "key": "user",
-                                    "value": "repellat",
-                                    "description": "The user."
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "vary",
-                                    "value": "Origin"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "PUT api\/v1\/users\/{user}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/users\/:user",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/users\/:user",
-                            "variable": [
-                                {
-                                    "id": "user",
-                                    "key": "user",
-                                    "value": "facilis",
-                                    "description": "The user."
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"full_name\":\"yqkrgecdfxxthu\",\"photo_url\":\"http:\\\/\\\/www.mckenzie.com\\\/\",\"email\":\"dmraz@example.net\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "DELETE api\/v1\/users\/{user}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/users\/:user",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/users\/:user",
-                            "variable": [
-                                {
-                                    "id": "user",
-                                    "key": "user",
-                                    "value": "voluptas",
-                                    "description": "The user."
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
                 },
                 {
                     "name": "POST api\/v1\/logout",
@@ -674,7 +495,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"fc\",\"description\":\"Ex consequatur nisi tempore maiores repellat sed dolores nostrum.\"}"
+                            "raw": "{\"name\":\"qltklrittlagakp\",\"description\":\"Dolores nemo beatae harum ut aut fuga possimus.\"}"
                         },
                         "description": "",
                         "auth": {
@@ -695,7 +516,7 @@
                                 {
                                     "id": "team",
                                     "key": "team",
-                                    "value": "dolor",
+                                    "value": "eligendi",
                                     "description": "The team."
                                 }
                             ]
@@ -751,7 +572,7 @@
                                 {
                                     "id": "team",
                                     "key": "team",
-                                    "value": "doloribus",
+                                    "value": "minus",
                                     "description": "The team."
                                 }
                             ]
@@ -769,7 +590,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"irowulspxevku\",\"description\":\"Ea repudiandae sequi provident aperiam.\"}"
+                            "raw": "{\"name\":\"ucinhex\",\"description\":\"Consequatur illum fuga alias neque assumenda dicta.\"}"
                         },
                         "description": "",
                         "auth": {
@@ -790,7 +611,7 @@
                                 {
                                     "id": "team",
                                     "key": "team",
-                                    "value": "commodi",
+                                    "value": "recusandae",
                                     "description": "The team."
                                 }
                             ]
@@ -884,7 +705,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"on_tracking\":true,\"task_name\":\"xjncjdstahejmxhzof\",\"description\":\"Voluptatem id recusandae enim voluptates sint perspiciatis quo.\",\"start_date\":\"2024-06-29T06:23:01\",\"due_date\":\"2024-06-29T06:23:01\",\"task_category\":\"wq\",\"work_hour_required\":1,\"work_hour\":6,\"status\":\"oassknmrylegtsx\",\"priority\":\"sfpjgvwmsyxfgvyzjqbg\",\"severity\":\"yqezklp\",\"tag\":\"nrsbbpiwmlbfj\",\"assignee_dates\":\"2024-06-29T06:23:01\",\"complete\":false,\"complete_date\":\"2024-06-29T06:23:01\"}"
+                            "raw": "{\"on_tracking\":true,\"task_name\":\"gaptzfxkilksrvlgkcea\",\"description\":\"Error consequatur doloribus dolorem placeat id.\",\"start_date\":\"2024-06-29T06:35:27\",\"due_date\":\"2024-06-29T06:35:27\",\"task_category\":\"aoclf\",\"work_hour_required\":13,\"work_hour\":7,\"status\":\"oifjirgtdiorpr\",\"priority\":\"vbewx\",\"severity\":\"yukkjsyurtxcdiiidz\",\"tag\":\"lcgr\",\"assignee_dates\":\"2024-06-29T06:35:27\",\"complete\":false,\"complete_date\":\"2024-06-29T06:35:27\"}"
                         },
                         "description": "",
                         "auth": {
@@ -905,7 +726,7 @@
                                 {
                                     "id": "task",
                                     "key": "task",
-                                    "value": "ex",
+                                    "value": "in",
                                     "description": "The task."
                                 }
                             ]
@@ -979,7 +800,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"on_tracking\":true,\"task_name\":\"gblkppluhve\",\"description\":\"Voluptatem ut porro quos et aut rerum.\",\"start_date\":\"2024-06-29T06:23:02\",\"due_date\":\"2024-06-29T06:23:02\",\"task_category\":\"woasfwfumwhwtggerdnpiw\",\"work_hour_required\":19,\"work_hour\":7,\"status\":\"ujbenjuclsdladbdnmodw\",\"priority\":\"gwmrdsaqyzkws\",\"severity\":\"k\",\"tag\":\"zyqubvlufebupqfpfy\",\"assignee_dates\":\"2024-06-29T06:23:02\",\"complete\":true,\"complete_date\":\"2024-06-29T06:23:02\"}"
+                            "raw": "{\"on_tracking\":true,\"task_name\":\"blbiacnvb\",\"description\":\"Mollitia sed quibusdam dolor eius eligendi error maiores ad.\",\"start_date\":\"2024-06-29T06:35:28\",\"due_date\":\"2024-06-29T06:35:28\",\"task_category\":\"regocy\",\"work_hour_required\":11,\"work_hour\":4,\"status\":\"higefzphycvfqgfknpfcyju\",\"priority\":\"zbehjln\",\"severity\":\"zfzbybsexpeutjoykuh\",\"tag\":\"llvtvqcferlwdtoxkv\",\"assignee_dates\":\"2024-06-29T06:35:28\",\"complete\":false,\"complete_date\":\"2024-06-29T06:35:28\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1132,7 +953,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quas",
+                                    "value": "ipsa",
                                     "description": "The ID of the tasks by project id."
                                 }
                             ]
@@ -1342,7 +1163,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"project_name\":\"awacxhfuzoco\",\"start_date\":\"2024-06-29T06:23:05\",\"end_date\":\"2105-11-25\",\"project_status\":\"dhtqumybodflmnuoq\",\"project_priority\":\"adwtljmasviurmuqyybeqrtfj\"}"
+                            "raw": "{\"project_name\":\"egjhhoatgalaulbkwjpucoqqd\",\"start_date\":\"2024-06-29T06:35:31\",\"end_date\":\"2064-09-13\",\"project_status\":\"bjoltjderorxgzelgghyrzvp\",\"project_priority\":\"xzturtuqq\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1363,7 +1184,7 @@
                                 {
                                     "id": "project",
                                     "key": "project",
-                                    "value": "et",
+                                    "value": "est",
                                     "description": "The project."
                                 }
                             ]
@@ -1437,7 +1258,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"project_name\":\"mojtojwuqdozawyvgllcwsc\",\"start_date\":\"2024-06-29T06:23:06\",\"end_date\":\"2098-05-25\",\"project_status\":\"rvdthpwk\",\"project_priority\":\"yswqzjhnxyvsg\"}"
+                            "raw": "{\"project_name\":\"ecqkqlheedlfytybkjjrhyyzj\",\"start_date\":\"2024-06-29T06:35:33\",\"end_date\":\"2121-12-22\",\"project_status\":\"gtpikztvyibqa\",\"project_priority\":\"fdjmqhpezglyauwhmxdpzfqe\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1696,7 +1517,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"milestone_name\":\"vagkapjgf\",\"start_date\":\"2024-06-29T06:23:09\",\"end_date\":\"2076-07-23\"}"
+                            "raw": "{\"milestone_name\":\"slnzboottozyvcifoct\",\"start_date\":\"2024-06-29T06:35:36\",\"end_date\":\"2048-01-12\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1717,7 +1538,7 @@
                                 {
                                     "id": "milestone",
                                     "key": "milestone",
-                                    "value": "aperiam",
+                                    "value": "omnis",
                                     "description": "The milestone."
                                 }
                             ]
@@ -1791,7 +1612,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"milestone_name\":\"htykf\",\"start_date\":\"2024-06-29T06:23:11\",\"end_date\":\"2026-06-26\"}"
+                            "raw": "{\"milestone_name\":\"oubbjhducbvjqbnajrbmrx\",\"start_date\":\"2024-06-29T06:35:37\",\"end_date\":\"2058-02-02\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1906,7 +1727,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"project_id\":\"sunt\",\"stage_name\":\"npajrgwcpydnbzosvkl\",\"start_date\":\"2024-06-29T06:23:12\",\"period\":6,\"end_date\":\"2112-08-05\",\"completed\":true,\"completion_date\":\"2081-01-20\"}"
+                            "raw": "{\"project_id\":\"voluptas\",\"stage_name\":\"lfmrivijekep\",\"start_date\":\"2024-06-29T06:35:38\",\"period\":6,\"end_date\":\"2119-10-22\",\"completed\":false,\"completion_date\":\"2099-02-24\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1927,7 +1748,7 @@
                                 {
                                     "id": "projectstage",
                                     "key": "projectstage",
-                                    "value": "ut",
+                                    "value": "temporibus",
                                     "description": ""
                                 }
                             ]
@@ -2001,7 +1822,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"stage_name\":\"kdmrttcytdyjq\",\"start_date\":\"2024-06-29T06:23:13\",\"period\":10,\"end_date\":\"2031-02-08\",\"completed\":true,\"completion_date\":\"2026-04-14\"}"
+                            "raw": "{\"stage_name\":\"wg\",\"start_date\":\"2024-06-29T06:35:38\",\"period\":6,\"end_date\":\"2101-05-15\",\"completed\":false,\"completion_date\":\"2032-02-11\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2116,7 +1937,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"project_id\":\"illo\",\"role\":\"ypmqtxqdgedlevuucpewgsbug\"}"
+                            "raw": "{\"project_id\":\"labore\",\"role\":\"tbyhdgrinepebyggmwycove\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2137,7 +1958,7 @@
                                 {
                                     "id": "prjectmember",
                                     "key": "prjectmember",
-                                    "value": "dicta",
+                                    "value": "dolores",
                                     "description": ""
                                 }
                             ]
@@ -2211,7 +2032,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"role\":\"i\"}"
+                            "raw": "{\"role\":\"jmmxarmz\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2268,7 +2089,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sunt",
+                                    "value": "ab",
                                     "description": "The ID of the project members by project id."
                                 }
                             ]
@@ -2334,7 +2155,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"project_id\":\"distinctio\",\"members\":[{\"email\":\"wunsch.jakayla@example.com\",\"role\":\"eum\"}]}"
+                            "raw": "{\"project_id\":\"labore\",\"members\":[{\"email\":\"zcrooks@example.org\",\"role\":\"et\"}]}"
                         },
                         "description": "",
                         "auth": {
@@ -2413,7 +2234,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"team_id\":\"exercitationem\",\"user_id\":\"omnis\",\"role\":\"dbavxaacmwfjegzpt\"}"
+                            "raw": "{\"team_id\":\"fuga\",\"user_id\":\"impedit\",\"role\":\"snuwxnkhwltwkftfj\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2434,7 +2255,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sapiente",
+                                    "value": "est",
                                     "description": "The ID of the team member."
                                 }
                             ]
@@ -2490,7 +2311,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "repudiandae",
+                                    "value": "molestiae",
                                     "description": "The ID of the team member."
                                 }
                             ]
@@ -2508,7 +2329,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"role\":\"gtvluuyyysrqdgcqg\"}"
+                            "raw": "{\"role\":\"yilxvwkicn\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2529,7 +2350,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "maiores",
+                                    "value": "ut",
                                     "description": "The ID of the team member."
                                 }
                             ]
@@ -2623,7 +2444,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"team_id\":\"voluptatem\",\"goal_name\":\"daypmekygk\",\"description\":\"In ab officiis provident et.\",\"completed\":false}"
+                            "raw": "{\"team_id\":\"expedita\",\"goal_name\":\"drgubigduyzhnfvsrever\",\"description\":\"Soluta omnis et est sit voluptas.\",\"completed\":true}"
                         },
                         "description": "",
                         "auth": {
@@ -2644,7 +2465,7 @@
                                 {
                                     "id": "goal",
                                     "key": "goal",
-                                    "value": "nemo",
+                                    "value": "non",
                                     "description": "The goal."
                                 }
                             ]
@@ -2718,7 +2539,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"goal_name\":\"mqofhvkimdu\",\"description\":\"Perspiciatis molestias voluptate deserunt non ab aliquam.\",\"completed\":true}"
+                            "raw": "{\"goal_name\":\"snocljpsmhhvpvpnafygzzfvw\",\"description\":\"Quis eum architecto esse impedit.\",\"completed\":false}"
                         },
                         "description": "",
                         "auth": {
@@ -2833,7 +2654,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"goghdxgaadziqzwijtxecybuq\",\"description\":\"Dolor sed cumque eaque optio.\",\"industry\":\"rxdeflbmirldbpeke\",\"email\":\"glover.gia@example.com\"}"
+                            "raw": "{\"name\":\"arjhgkjxhyrjwqx\",\"description\":\"Consectetur voluptatem nihil sunt harum perferendis sunt ratione et.\",\"industry\":\"qbzwganffqdtjqsohojc\",\"email\":\"daniel.augustus@example.net\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2854,7 +2675,7 @@
                                 {
                                     "id": "organization",
                                     "key": "organization",
-                                    "value": "fugit",
+                                    "value": "provident",
                                     "description": "The organization."
                                 }
                             ]
@@ -3100,7 +2921,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"org_id\":\"est\",\"members\":[{\"email\":\"denis.brekke@example.net\",\"role\":\"ea\"}]}"
+                            "raw": "{\"org_id\":\"dolores\",\"members\":[{\"email\":\"rath.grover@example.com\",\"role\":\"ut\"}]}"
                         },
                         "description": "",
                         "auth": {
@@ -3179,7 +3000,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"org_id\":\"tempore\",\"role\":\"njfe\",\"is_admin\":true,\"assigned_tasks\":52,\"completed_tasks\":31,\"overdue_tasks\":2,\"worked_hour\":26}"
+                            "raw": "{\"org_id\":\"omnis\",\"role\":\"zotmzbumxkgjsuh\",\"is_admin\":false,\"assigned_tasks\":9,\"completed_tasks\":5,\"overdue_tasks\":14,\"worked_hour\":38}"
                         },
                         "description": "",
                         "auth": {
@@ -3200,7 +3021,7 @@
                                 {
                                     "id": "org-member",
                                     "key": "org-member",
-                                    "value": "aliquam",
+                                    "value": "impedit",
                                     "description": ""
                                 }
                             ]
@@ -3239,7 +3060,7 @@
                                 }
                             ],
                             "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/v1\/org-members\/aliquam could not be found.\"\n}",
+                            "body": "{\n    \"message\": \"The route api\/v1\/org-members\/impedit could not be found.\"\n}",
                             "name": ""
                         }
                     ]
@@ -3274,7 +3095,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"role\":\"aoetzobizgsaiqz\",\"is_admin\":false,\"assigned_tasks\":86,\"completed_tasks\":67,\"overdue_tasks\":68,\"worked_hour\":33}"
+                            "raw": "{\"role\":\"ygimowsxm\",\"is_admin\":false,\"assigned_tasks\":21,\"completed_tasks\":22,\"overdue_tasks\":2,\"worked_hour\":30}"
                         },
                         "description": "",
                         "auth": {
@@ -3341,7 +3162,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"organization_id\":\"nam\",\"total_users\":0,\"active_users\":17,\"projects_created\":10,\"projects_completed\":8,\"projects_in_progress\":39,\"average_project_completion_time\":10,\"total_tasks\":63,\"completed_tasks\":8,\"tasks_in_progress\":63,\"tasks_overdue\":12,\"average_task_completion_time\":6}"
+                            "raw": "{\"organization_id\":\"quaerat\",\"total_users\":34,\"active_users\":76,\"projects_created\":76,\"projects_completed\":62,\"projects_in_progress\":13,\"average_project_completion_time\":87,\"total_tasks\":9,\"completed_tasks\":55,\"tasks_in_progress\":43,\"tasks_overdue\":28,\"average_task_completion_time\":27}"
                         },
                         "description": "",
                         "auth": {
@@ -3362,7 +3183,7 @@
                                 {
                                     "id": "organizationmetric",
                                     "key": "organizationmetric",
-                                    "value": "repellendus",
+                                    "value": "tempora",
                                     "description": ""
                                 }
                             ]
@@ -3436,7 +3257,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"total_users\":5,\"active_users\":19,\"projects_created\":69,\"projects_completed\":42,\"projects_in_progress\":67,\"average_project_completion_time\":66,\"total_tasks\":55,\"completed_tasks\":59,\"tasks_in_progress\":29,\"tasks_overdue\":60,\"average_task_completion_time\":21}"
+                            "raw": "{\"total_users\":18,\"active_users\":42,\"projects_created\":59,\"projects_completed\":12,\"projects_in_progress\":42,\"average_project_completion_time\":12,\"total_tasks\":19,\"completed_tasks\":44,\"tasks_in_progress\":27,\"tasks_overdue\":20,\"average_task_completion_time\":23}"
                         },
                         "description": "",
                         "auth": {
@@ -3621,6 +3442,171 @@
                             ],
                             "code": 401,
                             "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "User management",
+            "description": "\nAPIs for managing users",
+            "item": [
+                {
+                    "name": "Get all users",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/users",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/users"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display a specific user.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/users\/:user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/users\/:user",
+                            "variable": [
+                                {
+                                    "id": "user",
+                                    "key": "user",
+                                    "value": "eaque",
+                                    "description": "The user."
+                                },
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete a specific user.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/users\/:user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/users\/:user",
+                            "variable": [
+                                {
+                                    "id": "user",
+                                    "key": "user",
+                                    "value": "voluptate",
+                                    "description": "The user."
+                                },
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"success\": true,\n \"data\": {\n     \"message\": \"User deleted successfully\"\n }\n}",
                             "name": ""
                         }
                     ]

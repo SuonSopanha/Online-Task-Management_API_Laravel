@@ -86,18 +86,6 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-login-google-callback">
                                 <a href="#endpoints-GETapi-login-google-callback">Obtain the user information from Provider.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-users">
-                                <a href="#endpoints-GETapi-v1-users">GET api/v1/users</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-users--user-">
-                                <a href="#endpoints-GETapi-v1-users--user-">GET api/v1/users/{user}</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-v1-users--user-">
-                                <a href="#endpoints-PUTapi-v1-users--user-">PUT api/v1/users/{user}</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-v1-users--user-">
-                                <a href="#endpoints-DELETEapi-v1-users--user-">DELETE api/v1/users/{user}</a>
-                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-logout">
                                 <a href="#endpoints-POSTapi-v1-logout">POST api/v1/logout</a>
                             </li>
@@ -322,6 +310,22 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-user-management" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="user-management">
+                    <a href="#user-management">User management</a>
+                </li>
+                                    <ul id="tocify-subheader-user-management" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="user-management-GETapi-v1-users">
+                                <a href="#user-management-GETapi-v1-users">Get all users</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="user-management-GETapi-v1-users--user-">
+                                <a href="#user-management-GETapi-v1-users--user-">Display a specific user.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="user-management-DELETEapi-v1-users--user-">
+                                <a href="#user-management-DELETEapi-v1-users--user-">Delete a specific user.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
             </div>
 
     <ul class="toc-footer" id="toc-footer">
@@ -366,14 +370,14 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/users/et" \
+    --get "http://localhost/api/users/ab" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/users/et"
+    "http://localhost/api/users/ab"
 );
 
 const headers = {
@@ -482,10 +486,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="user"                data-endpoint="GETapi-users--user-"
-               value="et"
+               value="ab"
                data-component="url">
     <br>
-<p>The user. Example: <code>et</code></p>
+<p>The user. Example: <code>ab</code></p>
             </div>
                     </form>
 
@@ -506,10 +510,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"lwaelchi@example.com\",
-    \"password\": \"2V,_lH\",
-    \"full_name\": \"bmie\",
-    \"photo_url\": \"http:\\/\\/green.org\\/commodi-quibusdam-aliquid-doloremque-eum\"
+    \"email\": \"katarina67@example.net\",
+    \"password\": \".S\\/ZG#,efME0gXN\\/\",
+    \"full_name\": \"jopeiv\",
+    \"photo_url\": \"https:\\/\\/www.davis.biz\\/debitis-maiores-cupiditate-sequi-delectus-eos-incidunt\"
 }"
 </code></pre></div>
 
@@ -525,10 +529,10 @@ const headers = {
 };
 
 let body = {
-    "email": "lwaelchi@example.com",
-    "password": "2V,_lH",
-    "full_name": "bmie",
-    "photo_url": "http:\/\/green.org\/commodi-quibusdam-aliquid-doloremque-eum"
+    "email": "katarina67@example.net",
+    "password": ".S\/ZG#,efME0gXN\/",
+    "full_name": "jopeiv",
+    "photo_url": "https:\/\/www.davis.biz\/debitis-maiores-cupiditate-sequi-delectus-eos-incidunt"
 };
 
 fetch(url, {
@@ -617,10 +621,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-v1-login"
-               value="lwaelchi@example.com"
+               value="katarina67@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>lwaelchi@example.com</code></p>
+<p>Must be a valid email address. Example: <code>katarina67@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -628,10 +632,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-v1-login"
-               value="2V,_lH"
+               value=".S/ZG#,efME0gXN/"
                data-component="body">
     <br>
-<p>Must be at least 6 characters. Example: <code>2V,_lH</code></p>
+<p>Must be at least 6 characters. Example: <code>.S/ZG#,efME0gXN/</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>full_name</code></b>&nbsp;&nbsp;
@@ -639,10 +643,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="full_name"                data-endpoint="POSTapi-v1-login"
-               value="bmie"
+               value="jopeiv"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>bmie</code></p>
+<p>Must not be greater than 255 characters. Example: <code>jopeiv</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>photo_url</code></b>&nbsp;&nbsp;
@@ -650,10 +654,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="photo_url"                data-endpoint="POSTapi-v1-login"
-               value="http://green.org/commodi-quibusdam-aliquid-doloremque-eum"
+               value="https://www.davis.biz/debitis-maiores-cupiditate-sequi-delectus-eos-incidunt"
                data-component="body">
     <br>
-<p>Example: <code>http://green.org/commodi-quibusdam-aliquid-doloremque-eum</code></p>
+<p>Example: <code>https://www.davis.biz/debitis-maiores-cupiditate-sequi-delectus-eos-incidunt</code></p>
         </div>
         </form>
 
@@ -674,10 +678,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"alessandro74@example.com\",
-    \"password\": \"%5[I+&lt;M%y@?T\",
-    \"full_name\": \"vdfvykogutf\",
-    \"photo_url\": \"http:\\/\\/kirlin.org\\/ipsa-sint-nulla-maxime-sint-animi-ut-ut\"
+    \"email\": \"ekuhn@example.com\",
+    \"password\": \"d|T&gt;QxzNqb&gt;a%2b==v;\",
+    \"full_name\": \"qvzvukyefowekwenfqph\",
+    \"photo_url\": \"http:\\/\\/white.com\\/quos-ut-laudantium-eos\"
 }"
 </code></pre></div>
 
@@ -693,10 +697,10 @@ const headers = {
 };
 
 let body = {
-    "email": "alessandro74@example.com",
-    "password": "%5[I+&lt;M%y@?T",
-    "full_name": "vdfvykogutf",
-    "photo_url": "http:\/\/kirlin.org\/ipsa-sint-nulla-maxime-sint-animi-ut-ut"
+    "email": "ekuhn@example.com",
+    "password": "d|T&gt;QxzNqb&gt;a%2b==v;",
+    "full_name": "qvzvukyefowekwenfqph",
+    "photo_url": "http:\/\/white.com\/quos-ut-laudantium-eos"
 };
 
 fetch(url, {
@@ -785,10 +789,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-v1-register"
-               value="alessandro74@example.com"
+               value="ekuhn@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>alessandro74@example.com</code></p>
+<p>Must be a valid email address. Example: <code>ekuhn@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -796,10 +800,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-v1-register"
-               value="%5[I+<M%y@?T"
+               value="d|T>QxzNqb>a%2b==v;"
                data-component="body">
     <br>
-<p>Must be at least 6 characters. Example: <code>%5[I+&lt;M%y@?T</code></p>
+<p>Must be at least 6 characters. Example: <code>d|T&gt;QxzNqb&gt;a%2b==v;</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>full_name</code></b>&nbsp;&nbsp;
@@ -807,10 +811,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="full_name"                data-endpoint="POSTapi-v1-register"
-               value="vdfvykogutf"
+               value="qvzvukyefowekwenfqph"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>vdfvykogutf</code></p>
+<p>Must not be greater than 255 characters. Example: <code>qvzvukyefowekwenfqph</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>photo_url</code></b>&nbsp;&nbsp;
@@ -818,10 +822,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="photo_url"                data-endpoint="POSTapi-v1-register"
-               value="http://kirlin.org/ipsa-sint-nulla-maxime-sint-animi-ut-ut"
+               value="http://white.com/quos-ut-laudantium-eos"
                data-component="body">
     <br>
-<p>Example: <code>http://kirlin.org/ipsa-sint-nulla-maxime-sint-animi-ut-ut</code></p>
+<p>Example: <code>http://white.com/quos-ut-laudantium-eos</code></p>
         </div>
         </form>
 
@@ -1086,553 +1090,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Example: <code>application/json</code></p>
             </div>
                         </form>
-
-                    <h2 id="endpoints-GETapi-v1-users">GET api/v1/users</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-v1-users">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/users" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/users"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-v1-users">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-vary: Origin
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-v1-users" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-users"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-users"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-users" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-users">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-v1-users" data-method="GET"
-      data-path="api/v1/users"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-users', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-users"
-                    onclick="tryItOut('GETapi-v1-users');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-users"
-                    onclick="cancelTryOut('GETapi-v1-users');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-users"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/users</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-v1-users"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-v1-users"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        </form>
-
-                    <h2 id="endpoints-GETapi-v1-users--user-">GET api/v1/users/{user}</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-v1-users--user-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/users/repellat" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/users/repellat"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-v1-users--user-">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-vary: Origin
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-v1-users--user-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-users--user-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-users--user-"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-users--user-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-users--user-">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-v1-users--user-" data-method="GET"
-      data-path="api/v1/users/{user}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-users--user-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-users--user-"
-                    onclick="tryItOut('GETapi-v1-users--user-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-users--user-"
-                    onclick="cancelTryOut('GETapi-v1-users--user-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-users--user-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/users/{user}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-v1-users--user-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-v1-users--user-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>user</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="user"                data-endpoint="GETapi-v1-users--user-"
-               value="repellat"
-               data-component="url">
-    <br>
-<p>The user. Example: <code>repellat</code></p>
-            </div>
-                    </form>
-
-                    <h2 id="endpoints-PUTapi-v1-users--user-">PUT api/v1/users/{user}</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-PUTapi-v1-users--user-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/v1/users/facilis" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"full_name\": \"yqkrgecdfxxthu\",
-    \"photo_url\": \"http:\\/\\/www.mckenzie.com\\/\",
-    \"email\": \"dmraz@example.net\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/users/facilis"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "full_name": "yqkrgecdfxxthu",
-    "photo_url": "http:\/\/www.mckenzie.com\/",
-    "email": "dmraz@example.net"
-};
-
-fetch(url, {
-    method: "PUT",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-PUTapi-v1-users--user-">
-</span>
-<span id="execution-results-PUTapi-v1-users--user-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-PUTapi-v1-users--user-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-v1-users--user-"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-PUTapi-v1-users--user-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-v1-users--user-">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-PUTapi-v1-users--user-" data-method="PUT"
-      data-path="api/v1/users/{user}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-users--user-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PUTapi-v1-users--user-"
-                    onclick="tryItOut('PUTapi-v1-users--user-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PUTapi-v1-users--user-"
-                    onclick="cancelTryOut('PUTapi-v1-users--user-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PUTapi-v1-users--user-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-darkblue">PUT</small>
-            <b><code>api/v1/users/{user}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="PUTapi-v1-users--user-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="PUTapi-v1-users--user-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>user</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="user"                data-endpoint="PUTapi-v1-users--user-"
-               value="facilis"
-               data-component="url">
-    <br>
-<p>The user. Example: <code>facilis</code></p>
-            </div>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>full_name</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="full_name"                data-endpoint="PUTapi-v1-users--user-"
-               value="yqkrgecdfxxthu"
-               data-component="body">
-    <br>
-<p>Must not be greater than 255 characters. Example: <code>yqkrgecdfxxthu</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>photo_url</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="photo_url"                data-endpoint="PUTapi-v1-users--user-"
-               value="http://www.mckenzie.com/"
-               data-component="body">
-    <br>
-<p>Example: <code>http://www.mckenzie.com/</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="email"                data-endpoint="PUTapi-v1-users--user-"
-               value="dmraz@example.net"
-               data-component="body">
-    <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>dmraz@example.net</code></p>
-        </div>
-        </form>
-
-                    <h2 id="endpoints-DELETEapi-v1-users--user-">DELETE api/v1/users/{user}</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-DELETEapi-v1-users--user-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/v1/users/voluptas" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/users/voluptas"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-DELETEapi-v1-users--user-">
-</span>
-<span id="execution-results-DELETEapi-v1-users--user-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-DELETEapi-v1-users--user-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-v1-users--user-"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-DELETEapi-v1-users--user-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-v1-users--user-">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-DELETEapi-v1-users--user-" data-method="DELETE"
-      data-path="api/v1/users/{user}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-users--user-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEapi-v1-users--user-"
-                    onclick="tryItOut('DELETEapi-v1-users--user-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEapi-v1-users--user-"
-                    onclick="cancelTryOut('DELETEapi-v1-users--user-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEapi-v1-users--user-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-red">DELETE</small>
-            <b><code>api/v1/users/{user}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="DELETEapi-v1-users--user-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="DELETEapi-v1-users--user-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>user</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="user"                data-endpoint="DELETEapi-v1-users--user-"
-               value="voluptas"
-               data-component="url">
-    <br>
-<p>The user. Example: <code>voluptas</code></p>
-            </div>
-                    </form>
 
                     <h2 id="endpoints-POSTapi-v1-logout">POST api/v1/logout</h2>
 
@@ -2255,8 +1712,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"fc\",
-    \"description\": \"Ex consequatur nisi tempore maiores repellat sed dolores nostrum.\"
+    \"name\": \"qltklrittlagakp\",
+    \"description\": \"Dolores nemo beatae harum ut aut fuga possimus.\"
 }"
 </code></pre></div>
 
@@ -2272,8 +1729,8 @@ const headers = {
 };
 
 let body = {
-    "name": "fc",
-    "description": "Ex consequatur nisi tempore maiores repellat sed dolores nostrum."
+    "name": "qltklrittlagakp",
+    "description": "Dolores nemo beatae harum ut aut fuga possimus."
 };
 
 fetch(url, {
@@ -2362,10 +1819,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-teams"
-               value="fc"
+               value="qltklrittlagakp"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>fc</code></p>
+<p>Must not be greater than 255 characters. Example: <code>qltklrittlagakp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2373,10 +1830,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-v1-teams"
-               value="Ex consequatur nisi tempore maiores repellat sed dolores nostrum."
+               value="Dolores nemo beatae harum ut aut fuga possimus."
                data-component="body">
     <br>
-<p>Example: <code>Ex consequatur nisi tempore maiores repellat sed dolores nostrum.</code></p>
+<p>Example: <code>Dolores nemo beatae harum ut aut fuga possimus.</code></p>
         </div>
         </form>
 
@@ -2393,14 +1850,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/teams/dolor" \
+    --get "http://localhost/api/v1/teams/eligendi" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/teams/dolor"
+    "http://localhost/api/v1/teams/eligendi"
 );
 
 const headers = {
@@ -2509,10 +1966,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="team"                data-endpoint="GETapi-v1-teams--team-"
-               value="dolor"
+               value="eligendi"
                data-component="url">
     <br>
-<p>The team. Example: <code>dolor</code></p>
+<p>The team. Example: <code>eligendi</code></p>
             </div>
                     </form>
 
@@ -2529,19 +1986,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/v1/teams/doloribus" \
+    "http://localhost/api/v1/teams/minus" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"irowulspxevku\",
-    \"description\": \"Ea repudiandae sequi provident aperiam.\"
+    \"name\": \"ucinhex\",
+    \"description\": \"Consequatur illum fuga alias neque assumenda dicta.\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/teams/doloribus"
+    "http://localhost/api/v1/teams/minus"
 );
 
 const headers = {
@@ -2550,8 +2007,8 @@ const headers = {
 };
 
 let body = {
-    "name": "irowulspxevku",
-    "description": "Ea repudiandae sequi provident aperiam."
+    "name": "ucinhex",
+    "description": "Consequatur illum fuga alias neque assumenda dicta."
 };
 
 fetch(url, {
@@ -2640,10 +2097,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="team"                data-endpoint="PUTapi-v1-teams--team-"
-               value="doloribus"
+               value="minus"
                data-component="url">
     <br>
-<p>The team. Example: <code>doloribus</code></p>
+<p>The team. Example: <code>minus</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -2652,10 +2109,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-teams--team-"
-               value="irowulspxevku"
+               value="ucinhex"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>irowulspxevku</code></p>
+<p>Must not be greater than 255 characters. Example: <code>ucinhex</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2663,10 +2120,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-v1-teams--team-"
-               value="Ea repudiandae sequi provident aperiam."
+               value="Consequatur illum fuga alias neque assumenda dicta."
                data-component="body">
     <br>
-<p>Example: <code>Ea repudiandae sequi provident aperiam.</code></p>
+<p>Example: <code>Consequatur illum fuga alias neque assumenda dicta.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>owner_id</code></b>&nbsp;&nbsp;
@@ -2694,14 +2151,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/v1/teams/commodi" \
+    "http://localhost/api/v1/teams/recusandae" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/teams/commodi"
+    "http://localhost/api/v1/teams/recusandae"
 );
 
 const headers = {
@@ -2794,10 +2251,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="team"                data-endpoint="DELETEapi-v1-teams--team-"
-               value="commodi"
+               value="recusandae"
                data-component="url">
     <br>
-<p>The team. Example: <code>commodi</code></p>
+<p>The team. Example: <code>recusandae</code></p>
             </div>
                     </form>
 
@@ -2943,20 +2400,20 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --data "{
     \"on_tracking\": true,
-    \"task_name\": \"xjncjdstahejmxhzof\",
-    \"description\": \"Voluptatem id recusandae enim voluptates sint perspiciatis quo.\",
-    \"start_date\": \"2024-06-29T06:23:01\",
-    \"due_date\": \"2024-06-29T06:23:01\",
-    \"task_category\": \"wq\",
-    \"work_hour_required\": 1,
-    \"work_hour\": 6,
-    \"status\": \"oassknmrylegtsx\",
-    \"priority\": \"sfpjgvwmsyxfgvyzjqbg\",
-    \"severity\": \"yqezklp\",
-    \"tag\": \"nrsbbpiwmlbfj\",
-    \"assignee_dates\": \"2024-06-29T06:23:01\",
+    \"task_name\": \"gaptzfxkilksrvlgkcea\",
+    \"description\": \"Error consequatur doloribus dolorem placeat id.\",
+    \"start_date\": \"2024-06-29T06:35:27\",
+    \"due_date\": \"2024-06-29T06:35:27\",
+    \"task_category\": \"aoclf\",
+    \"work_hour_required\": 13,
+    \"work_hour\": 7,
+    \"status\": \"oifjirgtdiorpr\",
+    \"priority\": \"vbewx\",
+    \"severity\": \"yukkjsyurtxcdiiidz\",
+    \"tag\": \"lcgr\",
+    \"assignee_dates\": \"2024-06-29T06:35:27\",
     \"complete\": false,
-    \"complete_date\": \"2024-06-29T06:23:01\"
+    \"complete_date\": \"2024-06-29T06:35:27\"
 }"
 </code></pre></div>
 
@@ -2973,20 +2430,20 @@ const headers = {
 
 let body = {
     "on_tracking": true,
-    "task_name": "xjncjdstahejmxhzof",
-    "description": "Voluptatem id recusandae enim voluptates sint perspiciatis quo.",
-    "start_date": "2024-06-29T06:23:01",
-    "due_date": "2024-06-29T06:23:01",
-    "task_category": "wq",
-    "work_hour_required": 1,
-    "work_hour": 6,
-    "status": "oassknmrylegtsx",
-    "priority": "sfpjgvwmsyxfgvyzjqbg",
-    "severity": "yqezklp",
-    "tag": "nrsbbpiwmlbfj",
-    "assignee_dates": "2024-06-29T06:23:01",
+    "task_name": "gaptzfxkilksrvlgkcea",
+    "description": "Error consequatur doloribus dolorem placeat id.",
+    "start_date": "2024-06-29T06:35:27",
+    "due_date": "2024-06-29T06:35:27",
+    "task_category": "aoclf",
+    "work_hour_required": 13,
+    "work_hour": 7,
+    "status": "oifjirgtdiorpr",
+    "priority": "vbewx",
+    "severity": "yukkjsyurtxcdiiidz",
+    "tag": "lcgr",
+    "assignee_dates": "2024-06-29T06:35:27",
     "complete": false,
-    "complete_date": "2024-06-29T06:23:01"
+    "complete_date": "2024-06-29T06:35:27"
 };
 
 fetch(url, {
@@ -3129,10 +2586,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="task_name"                data-endpoint="POSTapi-v1-tasks"
-               value="xjncjdstahejmxhzof"
+               value="gaptzfxkilksrvlgkcea"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>xjncjdstahejmxhzof</code></p>
+<p>Must not be greater than 255 characters. Example: <code>gaptzfxkilksrvlgkcea</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -3140,10 +2597,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-v1-tasks"
-               value="Voluptatem id recusandae enim voluptates sint perspiciatis quo."
+               value="Error consequatur doloribus dolorem placeat id."
                data-component="body">
     <br>
-<p>Example: <code>Voluptatem id recusandae enim voluptates sint perspiciatis quo.</code></p>
+<p>Example: <code>Error consequatur doloribus dolorem placeat id.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>start_date</code></b>&nbsp;&nbsp;
@@ -3151,10 +2608,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="start_date"                data-endpoint="POSTapi-v1-tasks"
-               value="2024-06-29T06:23:01"
+               value="2024-06-29T06:35:27"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-06-29T06:23:01</code></p>
+<p>Must be a valid date. Example: <code>2024-06-29T06:35:27</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>due_date</code></b>&nbsp;&nbsp;
@@ -3162,10 +2619,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="due_date"                data-endpoint="POSTapi-v1-tasks"
-               value="2024-06-29T06:23:01"
+               value="2024-06-29T06:35:27"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-06-29T06:23:01</code></p>
+<p>Must be a valid date. Example: <code>2024-06-29T06:35:27</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>task_category</code></b>&nbsp;&nbsp;
@@ -3173,10 +2630,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="task_category"                data-endpoint="POSTapi-v1-tasks"
-               value="wq"
+               value="aoclf"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>wq</code></p>
+<p>Must not be greater than 255 characters. Example: <code>aoclf</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>work_hour_required</code></b>&nbsp;&nbsp;
@@ -3184,10 +2641,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="work_hour_required"                data-endpoint="POSTapi-v1-tasks"
-               value="1"
+               value="13"
                data-component="body">
     <br>
-<p>Example: <code>1</code></p>
+<p>Example: <code>13</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>work_hour</code></b>&nbsp;&nbsp;
@@ -3195,10 +2652,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="work_hour"                data-endpoint="POSTapi-v1-tasks"
-               value="6"
+               value="7"
                data-component="body">
     <br>
-<p>Example: <code>6</code></p>
+<p>Example: <code>7</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -3206,10 +2663,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="POSTapi-v1-tasks"
-               value="oassknmrylegtsx"
+               value="oifjirgtdiorpr"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>oassknmrylegtsx</code></p>
+<p>Must not be greater than 255 characters. Example: <code>oifjirgtdiorpr</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>priority</code></b>&nbsp;&nbsp;
@@ -3217,10 +2674,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="priority"                data-endpoint="POSTapi-v1-tasks"
-               value="sfpjgvwmsyxfgvyzjqbg"
+               value="vbewx"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>sfpjgvwmsyxfgvyzjqbg</code></p>
+<p>Must not be greater than 255 characters. Example: <code>vbewx</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>severity</code></b>&nbsp;&nbsp;
@@ -3228,10 +2685,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="severity"                data-endpoint="POSTapi-v1-tasks"
-               value="yqezklp"
+               value="yukkjsyurtxcdiiidz"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>yqezklp</code></p>
+<p>Must not be greater than 255 characters. Example: <code>yukkjsyurtxcdiiidz</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>tag</code></b>&nbsp;&nbsp;
@@ -3239,10 +2696,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="tag"                data-endpoint="POSTapi-v1-tasks"
-               value="nrsbbpiwmlbfj"
+               value="lcgr"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>nrsbbpiwmlbfj</code></p>
+<p>Must not be greater than 255 characters. Example: <code>lcgr</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>assignee_id</code></b>&nbsp;&nbsp;
@@ -3261,10 +2718,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="assignee_dates"                data-endpoint="POSTapi-v1-tasks"
-               value="2024-06-29T06:23:01"
+               value="2024-06-29T06:35:27"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-06-29T06:23:01</code></p>
+<p>Must be a valid date. Example: <code>2024-06-29T06:35:27</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>complete</code></b>&nbsp;&nbsp;
@@ -3293,10 +2750,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="complete_date"                data-endpoint="POSTapi-v1-tasks"
-               value="2024-06-29T06:23:01"
+               value="2024-06-29T06:35:27"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-06-29T06:23:01</code></p>
+<p>Must be a valid date. Example: <code>2024-06-29T06:35:27</code></p>
         </div>
         </form>
 
@@ -3313,14 +2770,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/tasks/ex" \
+    --get "http://localhost/api/v1/tasks/in" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/tasks/ex"
+    "http://localhost/api/v1/tasks/in"
 );
 
 const headers = {
@@ -3429,10 +2886,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="task"                data-endpoint="GETapi-v1-tasks--task-"
-               value="ex"
+               value="in"
                data-component="url">
     <br>
-<p>The task. Example: <code>ex</code></p>
+<p>The task. Example: <code>in</code></p>
             </div>
                     </form>
 
@@ -3454,20 +2911,20 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --data "{
     \"on_tracking\": true,
-    \"task_name\": \"gblkppluhve\",
-    \"description\": \"Voluptatem ut porro quos et aut rerum.\",
-    \"start_date\": \"2024-06-29T06:23:02\",
-    \"due_date\": \"2024-06-29T06:23:02\",
-    \"task_category\": \"woasfwfumwhwtggerdnpiw\",
-    \"work_hour_required\": 19,
-    \"work_hour\": 7,
-    \"status\": \"ujbenjuclsdladbdnmodw\",
-    \"priority\": \"gwmrdsaqyzkws\",
-    \"severity\": \"k\",
-    \"tag\": \"zyqubvlufebupqfpfy\",
-    \"assignee_dates\": \"2024-06-29T06:23:02\",
-    \"complete\": true,
-    \"complete_date\": \"2024-06-29T06:23:02\"
+    \"task_name\": \"blbiacnvb\",
+    \"description\": \"Mollitia sed quibusdam dolor eius eligendi error maiores ad.\",
+    \"start_date\": \"2024-06-29T06:35:28\",
+    \"due_date\": \"2024-06-29T06:35:28\",
+    \"task_category\": \"regocy\",
+    \"work_hour_required\": 11,
+    \"work_hour\": 4,
+    \"status\": \"higefzphycvfqgfknpfcyju\",
+    \"priority\": \"zbehjln\",
+    \"severity\": \"zfzbybsexpeutjoykuh\",
+    \"tag\": \"llvtvqcferlwdtoxkv\",
+    \"assignee_dates\": \"2024-06-29T06:35:28\",
+    \"complete\": false,
+    \"complete_date\": \"2024-06-29T06:35:28\"
 }"
 </code></pre></div>
 
@@ -3484,20 +2941,20 @@ const headers = {
 
 let body = {
     "on_tracking": true,
-    "task_name": "gblkppluhve",
-    "description": "Voluptatem ut porro quos et aut rerum.",
-    "start_date": "2024-06-29T06:23:02",
-    "due_date": "2024-06-29T06:23:02",
-    "task_category": "woasfwfumwhwtggerdnpiw",
-    "work_hour_required": 19,
-    "work_hour": 7,
-    "status": "ujbenjuclsdladbdnmodw",
-    "priority": "gwmrdsaqyzkws",
-    "severity": "k",
-    "tag": "zyqubvlufebupqfpfy",
-    "assignee_dates": "2024-06-29T06:23:02",
-    "complete": true,
-    "complete_date": "2024-06-29T06:23:02"
+    "task_name": "blbiacnvb",
+    "description": "Mollitia sed quibusdam dolor eius eligendi error maiores ad.",
+    "start_date": "2024-06-29T06:35:28",
+    "due_date": "2024-06-29T06:35:28",
+    "task_category": "regocy",
+    "work_hour_required": 11,
+    "work_hour": 4,
+    "status": "higefzphycvfqgfknpfcyju",
+    "priority": "zbehjln",
+    "severity": "zfzbybsexpeutjoykuh",
+    "tag": "llvtvqcferlwdtoxkv",
+    "assignee_dates": "2024-06-29T06:35:28",
+    "complete": false,
+    "complete_date": "2024-06-29T06:35:28"
 };
 
 fetch(url, {
@@ -3663,10 +3120,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="task_name"                data-endpoint="PUTapi-v1-tasks--task_id-"
-               value="gblkppluhve"
+               value="blbiacnvb"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>gblkppluhve</code></p>
+<p>Must not be greater than 255 characters. Example: <code>blbiacnvb</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -3674,10 +3131,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-v1-tasks--task_id-"
-               value="Voluptatem ut porro quos et aut rerum."
+               value="Mollitia sed quibusdam dolor eius eligendi error maiores ad."
                data-component="body">
     <br>
-<p>Example: <code>Voluptatem ut porro quos et aut rerum.</code></p>
+<p>Example: <code>Mollitia sed quibusdam dolor eius eligendi error maiores ad.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>start_date</code></b>&nbsp;&nbsp;
@@ -3685,10 +3142,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="start_date"                data-endpoint="PUTapi-v1-tasks--task_id-"
-               value="2024-06-29T06:23:02"
+               value="2024-06-29T06:35:28"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-06-29T06:23:02</code></p>
+<p>Must be a valid date. Example: <code>2024-06-29T06:35:28</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>due_date</code></b>&nbsp;&nbsp;
@@ -3696,10 +3153,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="due_date"                data-endpoint="PUTapi-v1-tasks--task_id-"
-               value="2024-06-29T06:23:02"
+               value="2024-06-29T06:35:28"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-06-29T06:23:02</code></p>
+<p>Must be a valid date. Example: <code>2024-06-29T06:35:28</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>task_category</code></b>&nbsp;&nbsp;
@@ -3707,10 +3164,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="task_category"                data-endpoint="PUTapi-v1-tasks--task_id-"
-               value="woasfwfumwhwtggerdnpiw"
+               value="regocy"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>woasfwfumwhwtggerdnpiw</code></p>
+<p>Must not be greater than 255 characters. Example: <code>regocy</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>work_hour_required</code></b>&nbsp;&nbsp;
@@ -3718,10 +3175,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="work_hour_required"                data-endpoint="PUTapi-v1-tasks--task_id-"
-               value="19"
+               value="11"
                data-component="body">
     <br>
-<p>Example: <code>19</code></p>
+<p>Example: <code>11</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>work_hour</code></b>&nbsp;&nbsp;
@@ -3729,10 +3186,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="work_hour"                data-endpoint="PUTapi-v1-tasks--task_id-"
-               value="7"
+               value="4"
                data-component="body">
     <br>
-<p>Example: <code>7</code></p>
+<p>Example: <code>4</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -3740,10 +3197,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="PUTapi-v1-tasks--task_id-"
-               value="ujbenjuclsdladbdnmodw"
+               value="higefzphycvfqgfknpfcyju"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>ujbenjuclsdladbdnmodw</code></p>
+<p>Must not be greater than 255 characters. Example: <code>higefzphycvfqgfknpfcyju</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>priority</code></b>&nbsp;&nbsp;
@@ -3751,10 +3208,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="priority"                data-endpoint="PUTapi-v1-tasks--task_id-"
-               value="gwmrdsaqyzkws"
+               value="zbehjln"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>gwmrdsaqyzkws</code></p>
+<p>Must not be greater than 255 characters. Example: <code>zbehjln</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>severity</code></b>&nbsp;&nbsp;
@@ -3762,10 +3219,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="severity"                data-endpoint="PUTapi-v1-tasks--task_id-"
-               value="k"
+               value="zfzbybsexpeutjoykuh"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>k</code></p>
+<p>Must not be greater than 255 characters. Example: <code>zfzbybsexpeutjoykuh</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>tag</code></b>&nbsp;&nbsp;
@@ -3773,10 +3230,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="tag"                data-endpoint="PUTapi-v1-tasks--task_id-"
-               value="zyqubvlufebupqfpfy"
+               value="llvtvqcferlwdtoxkv"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>zyqubvlufebupqfpfy</code></p>
+<p>Must not be greater than 255 characters. Example: <code>llvtvqcferlwdtoxkv</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>assignee_id</code></b>&nbsp;&nbsp;
@@ -3795,10 +3252,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="assignee_dates"                data-endpoint="PUTapi-v1-tasks--task_id-"
-               value="2024-06-29T06:23:02"
+               value="2024-06-29T06:35:28"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-06-29T06:23:02</code></p>
+<p>Must be a valid date. Example: <code>2024-06-29T06:35:28</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>complete</code></b>&nbsp;&nbsp;
@@ -3819,7 +3276,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>complete_date</code></b>&nbsp;&nbsp;
@@ -3827,10 +3284,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="complete_date"                data-endpoint="PUTapi-v1-tasks--task_id-"
-               value="2024-06-29T06:23:02"
+               value="2024-06-29T06:35:28"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-06-29T06:23:02</code></p>
+<p>Must be a valid date. Example: <code>2024-06-29T06:35:28</code></p>
         </div>
         </form>
 
@@ -4215,14 +3672,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/tasks-by-project-id/quas" \
+    --get "http://localhost/api/v1/tasks-by-project-id/ipsa" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/tasks-by-project-id/quas"
+    "http://localhost/api/v1/tasks-by-project-id/ipsa"
 );
 
 const headers = {
@@ -4331,10 +3788,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-v1-tasks-by-project-id--id-"
-               value="quas"
+               value="ipsa"
                data-component="url">
     <br>
-<p>The ID of the tasks by project id. Example: <code>quas</code></p>
+<p>The ID of the tasks by project id. Example: <code>ipsa</code></p>
             </div>
                     </form>
 
@@ -4727,11 +4184,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"project_name\": \"awacxhfuzoco\",
-    \"start_date\": \"2024-06-29T06:23:05\",
-    \"end_date\": \"2105-11-25\",
-    \"project_status\": \"dhtqumybodflmnuoq\",
-    \"project_priority\": \"adwtljmasviurmuqyybeqrtfj\"
+    \"project_name\": \"egjhhoatgalaulbkwjpucoqqd\",
+    \"start_date\": \"2024-06-29T06:35:31\",
+    \"end_date\": \"2064-09-13\",
+    \"project_status\": \"bjoltjderorxgzelgghyrzvp\",
+    \"project_priority\": \"xzturtuqq\"
 }"
 </code></pre></div>
 
@@ -4747,11 +4204,11 @@ const headers = {
 };
 
 let body = {
-    "project_name": "awacxhfuzoco",
-    "start_date": "2024-06-29T06:23:05",
-    "end_date": "2105-11-25",
-    "project_status": "dhtqumybodflmnuoq",
-    "project_priority": "adwtljmasviurmuqyybeqrtfj"
+    "project_name": "egjhhoatgalaulbkwjpucoqqd",
+    "start_date": "2024-06-29T06:35:31",
+    "end_date": "2064-09-13",
+    "project_status": "bjoltjderorxgzelgghyrzvp",
+    "project_priority": "xzturtuqq"
 };
 
 fetch(url, {
@@ -4840,10 +4297,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="project_name"                data-endpoint="POSTapi-v1-projects"
-               value="awacxhfuzoco"
+               value="egjhhoatgalaulbkwjpucoqqd"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>awacxhfuzoco</code></p>
+<p>Must not be greater than 255 characters. Example: <code>egjhhoatgalaulbkwjpucoqqd</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>start_date</code></b>&nbsp;&nbsp;
@@ -4851,10 +4308,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="start_date"                data-endpoint="POSTapi-v1-projects"
-               value="2024-06-29T06:23:05"
+               value="2024-06-29T06:35:31"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-06-29T06:23:05</code></p>
+<p>Must be a valid date. Example: <code>2024-06-29T06:35:31</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>end_date</code></b>&nbsp;&nbsp;
@@ -4862,10 +4319,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="end_date"                data-endpoint="POSTapi-v1-projects"
-               value="2105-11-25"
+               value="2064-09-13"
                data-component="body">
     <br>
-<p>Must be a valid date. Must be a date after or equal to <code>start_date</code>. Example: <code>2105-11-25</code></p>
+<p>Must be a valid date. Must be a date after or equal to <code>start_date</code>. Example: <code>2064-09-13</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>organization_id</code></b>&nbsp;&nbsp;
@@ -4884,10 +4341,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="project_status"                data-endpoint="POSTapi-v1-projects"
-               value="dhtqumybodflmnuoq"
+               value="bjoltjderorxgzelgghyrzvp"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>dhtqumybodflmnuoq</code></p>
+<p>Must not be greater than 255 characters. Example: <code>bjoltjderorxgzelgghyrzvp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>project_priority</code></b>&nbsp;&nbsp;
@@ -4895,10 +4352,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="project_priority"                data-endpoint="POSTapi-v1-projects"
-               value="adwtljmasviurmuqyybeqrtfj"
+               value="xzturtuqq"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>adwtljmasviurmuqyybeqrtfj</code></p>
+<p>Must not be greater than 255 characters. Example: <code>xzturtuqq</code></p>
         </div>
         </form>
 
@@ -4915,14 +4372,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/projects/et" \
+    --get "http://localhost/api/v1/projects/est" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/projects/et"
+    "http://localhost/api/v1/projects/est"
 );
 
 const headers = {
@@ -5031,10 +4488,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="project"                data-endpoint="GETapi-v1-projects--project-"
-               value="et"
+               value="est"
                data-component="url">
     <br>
-<p>The project. Example: <code>et</code></p>
+<p>The project. Example: <code>est</code></p>
             </div>
                     </form>
 
@@ -5055,11 +4512,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"project_name\": \"mojtojwuqdozawyvgllcwsc\",
-    \"start_date\": \"2024-06-29T06:23:06\",
-    \"end_date\": \"2098-05-25\",
-    \"project_status\": \"rvdthpwk\",
-    \"project_priority\": \"yswqzjhnxyvsg\"
+    \"project_name\": \"ecqkqlheedlfytybkjjrhyyzj\",
+    \"start_date\": \"2024-06-29T06:35:33\",
+    \"end_date\": \"2121-12-22\",
+    \"project_status\": \"gtpikztvyibqa\",
+    \"project_priority\": \"fdjmqhpezglyauwhmxdpzfqe\"
 }"
 </code></pre></div>
 
@@ -5075,11 +4532,11 @@ const headers = {
 };
 
 let body = {
-    "project_name": "mojtojwuqdozawyvgllcwsc",
-    "start_date": "2024-06-29T06:23:06",
-    "end_date": "2098-05-25",
-    "project_status": "rvdthpwk",
-    "project_priority": "yswqzjhnxyvsg"
+    "project_name": "ecqkqlheedlfytybkjjrhyyzj",
+    "start_date": "2024-06-29T06:35:33",
+    "end_date": "2121-12-22",
+    "project_status": "gtpikztvyibqa",
+    "project_priority": "fdjmqhpezglyauwhmxdpzfqe"
 };
 
 fetch(url, {
@@ -5180,10 +4637,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="project_name"                data-endpoint="PUTapi-v1-projects--project_id-"
-               value="mojtojwuqdozawyvgllcwsc"
+               value="ecqkqlheedlfytybkjjrhyyzj"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>mojtojwuqdozawyvgllcwsc</code></p>
+<p>Must not be greater than 255 characters. Example: <code>ecqkqlheedlfytybkjjrhyyzj</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>owner_id</code></b>&nbsp;&nbsp;
@@ -5202,10 +4659,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="start_date"                data-endpoint="PUTapi-v1-projects--project_id-"
-               value="2024-06-29T06:23:06"
+               value="2024-06-29T06:35:33"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-06-29T06:23:06</code></p>
+<p>Must be a valid date. Example: <code>2024-06-29T06:35:33</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>end_date</code></b>&nbsp;&nbsp;
@@ -5213,10 +4670,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="end_date"                data-endpoint="PUTapi-v1-projects--project_id-"
-               value="2098-05-25"
+               value="2121-12-22"
                data-component="body">
     <br>
-<p>Must be a valid date. Must be a date after or equal to <code>start_date</code>. Example: <code>2098-05-25</code></p>
+<p>Must be a valid date. Must be a date after or equal to <code>start_date</code>. Example: <code>2121-12-22</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>organization_id</code></b>&nbsp;&nbsp;
@@ -5235,10 +4692,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="project_status"                data-endpoint="PUTapi-v1-projects--project_id-"
-               value="rvdthpwk"
+               value="gtpikztvyibqa"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>rvdthpwk</code></p>
+<p>Must not be greater than 255 characters. Example: <code>gtpikztvyibqa</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>project_priority</code></b>&nbsp;&nbsp;
@@ -5246,10 +4703,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="project_priority"                data-endpoint="PUTapi-v1-projects--project_id-"
-               value="yswqzjhnxyvsg"
+               value="fdjmqhpezglyauwhmxdpzfqe"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>yswqzjhnxyvsg</code></p>
+<p>Must not be greater than 255 characters. Example: <code>fdjmqhpezglyauwhmxdpzfqe</code></p>
         </div>
         </form>
 
@@ -5886,9 +5343,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"milestone_name\": \"vagkapjgf\",
-    \"start_date\": \"2024-06-29T06:23:09\",
-    \"end_date\": \"2076-07-23\"
+    \"milestone_name\": \"slnzboottozyvcifoct\",
+    \"start_date\": \"2024-06-29T06:35:36\",
+    \"end_date\": \"2048-01-12\"
 }"
 </code></pre></div>
 
@@ -5904,9 +5361,9 @@ const headers = {
 };
 
 let body = {
-    "milestone_name": "vagkapjgf",
-    "start_date": "2024-06-29T06:23:09",
-    "end_date": "2076-07-23"
+    "milestone_name": "slnzboottozyvcifoct",
+    "start_date": "2024-06-29T06:35:36",
+    "end_date": "2048-01-12"
 };
 
 fetch(url, {
@@ -5995,10 +5452,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="milestone_name"                data-endpoint="POSTapi-v1-milestones"
-               value="vagkapjgf"
+               value="slnzboottozyvcifoct"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>vagkapjgf</code></p>
+<p>Must not be greater than 255 characters. Example: <code>slnzboottozyvcifoct</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>start_date</code></b>&nbsp;&nbsp;
@@ -6006,10 +5463,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="start_date"                data-endpoint="POSTapi-v1-milestones"
-               value="2024-06-29T06:23:09"
+               value="2024-06-29T06:35:36"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-06-29T06:23:09</code></p>
+<p>Must be a valid date. Example: <code>2024-06-29T06:35:36</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>end_date</code></b>&nbsp;&nbsp;
@@ -6017,10 +5474,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="end_date"                data-endpoint="POSTapi-v1-milestones"
-               value="2076-07-23"
+               value="2048-01-12"
                data-component="body">
     <br>
-<p>Must be a valid date. Must be a date after or equal to <code>start_date</code>. Example: <code>2076-07-23</code></p>
+<p>Must be a valid date. Must be a date after or equal to <code>start_date</code>. Example: <code>2048-01-12</code></p>
         </div>
         </form>
 
@@ -6037,14 +5494,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/milestones/aperiam" \
+    --get "http://localhost/api/v1/milestones/omnis" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/milestones/aperiam"
+    "http://localhost/api/v1/milestones/omnis"
 );
 
 const headers = {
@@ -6153,10 +5610,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="milestone"                data-endpoint="GETapi-v1-milestones--milestone-"
-               value="aperiam"
+               value="omnis"
                data-component="url">
     <br>
-<p>The milestone. Example: <code>aperiam</code></p>
+<p>The milestone. Example: <code>omnis</code></p>
             </div>
                     </form>
 
@@ -6177,9 +5634,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"milestone_name\": \"htykf\",
-    \"start_date\": \"2024-06-29T06:23:11\",
-    \"end_date\": \"2026-06-26\"
+    \"milestone_name\": \"oubbjhducbvjqbnajrbmrx\",
+    \"start_date\": \"2024-06-29T06:35:37\",
+    \"end_date\": \"2058-02-02\"
 }"
 </code></pre></div>
 
@@ -6195,9 +5652,9 @@ const headers = {
 };
 
 let body = {
-    "milestone_name": "htykf",
-    "start_date": "2024-06-29T06:23:11",
-    "end_date": "2026-06-26"
+    "milestone_name": "oubbjhducbvjqbnajrbmrx",
+    "start_date": "2024-06-29T06:35:37",
+    "end_date": "2058-02-02"
 };
 
 fetch(url, {
@@ -6298,10 +5755,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="milestone_name"                data-endpoint="PUTapi-v1-milestones--milestone_id-"
-               value="htykf"
+               value="oubbjhducbvjqbnajrbmrx"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>htykf</code></p>
+<p>Must not be greater than 255 characters. Example: <code>oubbjhducbvjqbnajrbmrx</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>start_date</code></b>&nbsp;&nbsp;
@@ -6309,10 +5766,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="start_date"                data-endpoint="PUTapi-v1-milestones--milestone_id-"
-               value="2024-06-29T06:23:11"
+               value="2024-06-29T06:35:37"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-06-29T06:23:11</code></p>
+<p>Must be a valid date. Example: <code>2024-06-29T06:35:37</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>end_date</code></b>&nbsp;&nbsp;
@@ -6320,10 +5777,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="end_date"                data-endpoint="PUTapi-v1-milestones--milestone_id-"
-               value="2026-06-26"
+               value="2058-02-02"
                data-component="body">
     <br>
-<p>Must be a valid date. Must be a date after or equal to <code>start_date</code>. Example: <code>2026-06-26</code></p>
+<p>Must be a valid date. Must be a date after or equal to <code>start_date</code>. Example: <code>2058-02-02</code></p>
         </div>
         </form>
 
@@ -6588,13 +6045,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"project_id\": \"sunt\",
-    \"stage_name\": \"npajrgwcpydnbzosvkl\",
-    \"start_date\": \"2024-06-29T06:23:12\",
+    \"project_id\": \"voluptas\",
+    \"stage_name\": \"lfmrivijekep\",
+    \"start_date\": \"2024-06-29T06:35:38\",
     \"period\": 6,
-    \"end_date\": \"2112-08-05\",
-    \"completed\": true,
-    \"completion_date\": \"2081-01-20\"
+    \"end_date\": \"2119-10-22\",
+    \"completed\": false,
+    \"completion_date\": \"2099-02-24\"
 }"
 </code></pre></div>
 
@@ -6610,13 +6067,13 @@ const headers = {
 };
 
 let body = {
-    "project_id": "sunt",
-    "stage_name": "npajrgwcpydnbzosvkl",
-    "start_date": "2024-06-29T06:23:12",
+    "project_id": "voluptas",
+    "stage_name": "lfmrivijekep",
+    "start_date": "2024-06-29T06:35:38",
     "period": 6,
-    "end_date": "2112-08-05",
-    "completed": true,
-    "completion_date": "2081-01-20"
+    "end_date": "2119-10-22",
+    "completed": false,
+    "completion_date": "2099-02-24"
 };
 
 fetch(url, {
@@ -6705,10 +6162,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="project_id"                data-endpoint="POSTapi-v1-project-stages"
-               value="sunt"
+               value="voluptas"
                data-component="body">
     <br>
-<p>Example: <code>sunt</code></p>
+<p>Example: <code>voluptas</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>stage_name</code></b>&nbsp;&nbsp;
@@ -6716,10 +6173,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="stage_name"                data-endpoint="POSTapi-v1-project-stages"
-               value="npajrgwcpydnbzosvkl"
+               value="lfmrivijekep"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>npajrgwcpydnbzosvkl</code></p>
+<p>Must not be greater than 255 characters. Example: <code>lfmrivijekep</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>start_date</code></b>&nbsp;&nbsp;
@@ -6727,10 +6184,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="start_date"                data-endpoint="POSTapi-v1-project-stages"
-               value="2024-06-29T06:23:12"
+               value="2024-06-29T06:35:38"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-06-29T06:23:12</code></p>
+<p>Must be a valid date. Example: <code>2024-06-29T06:35:38</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>period</code></b>&nbsp;&nbsp;
@@ -6749,10 +6206,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="end_date"                data-endpoint="POSTapi-v1-project-stages"
-               value="2112-08-05"
+               value="2119-10-22"
                data-component="body">
     <br>
-<p>Must be a valid date. Must be a date after or equal to <code>start_date</code>. Example: <code>2112-08-05</code></p>
+<p>Must be a valid date. Must be a date after or equal to <code>start_date</code>. Example: <code>2119-10-22</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>completed</code></b>&nbsp;&nbsp;
@@ -6773,7 +6230,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>completion_date</code></b>&nbsp;&nbsp;
@@ -6781,10 +6238,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="completion_date"                data-endpoint="POSTapi-v1-project-stages"
-               value="2081-01-20"
+               value="2099-02-24"
                data-component="body">
     <br>
-<p>Must be a valid date. Must be a date after or equal to <code>start_date</code>. Example: <code>2081-01-20</code></p>
+<p>Must be a valid date. Must be a date after or equal to <code>start_date</code>. Example: <code>2099-02-24</code></p>
         </div>
         </form>
 
@@ -6801,14 +6258,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/project-stages/ut" \
+    --get "http://localhost/api/v1/project-stages/temporibus" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/project-stages/ut"
+    "http://localhost/api/v1/project-stages/temporibus"
 );
 
 const headers = {
@@ -6917,10 +6374,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="projectstage"                data-endpoint="GETapi-v1-project-stages--projectstage-"
-               value="ut"
+               value="temporibus"
                data-component="url">
     <br>
-<p>Example: <code>ut</code></p>
+<p>Example: <code>temporibus</code></p>
             </div>
                     </form>
 
@@ -6941,12 +6398,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"stage_name\": \"kdmrttcytdyjq\",
-    \"start_date\": \"2024-06-29T06:23:13\",
-    \"period\": 10,
-    \"end_date\": \"2031-02-08\",
-    \"completed\": true,
-    \"completion_date\": \"2026-04-14\"
+    \"stage_name\": \"wg\",
+    \"start_date\": \"2024-06-29T06:35:38\",
+    \"period\": 6,
+    \"end_date\": \"2101-05-15\",
+    \"completed\": false,
+    \"completion_date\": \"2032-02-11\"
 }"
 </code></pre></div>
 
@@ -6962,12 +6419,12 @@ const headers = {
 };
 
 let body = {
-    "stage_name": "kdmrttcytdyjq",
-    "start_date": "2024-06-29T06:23:13",
-    "period": 10,
-    "end_date": "2031-02-08",
-    "completed": true,
-    "completion_date": "2026-04-14"
+    "stage_name": "wg",
+    "start_date": "2024-06-29T06:35:38",
+    "period": 6,
+    "end_date": "2101-05-15",
+    "completed": false,
+    "completion_date": "2032-02-11"
 };
 
 fetch(url, {
@@ -7068,10 +6525,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="stage_name"                data-endpoint="PUTapi-v1-project-stages--projectstage-"
-               value="kdmrttcytdyjq"
+               value="wg"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>kdmrttcytdyjq</code></p>
+<p>Must not be greater than 255 characters. Example: <code>wg</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>start_date</code></b>&nbsp;&nbsp;
@@ -7079,10 +6536,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="start_date"                data-endpoint="PUTapi-v1-project-stages--projectstage-"
-               value="2024-06-29T06:23:13"
+               value="2024-06-29T06:35:38"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-06-29T06:23:13</code></p>
+<p>Must be a valid date. Example: <code>2024-06-29T06:35:38</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>period</code></b>&nbsp;&nbsp;
@@ -7090,10 +6547,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="period"                data-endpoint="PUTapi-v1-project-stages--projectstage-"
-               value="10"
+               value="6"
                data-component="body">
     <br>
-<p>Example: <code>10</code></p>
+<p>Example: <code>6</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>end_date</code></b>&nbsp;&nbsp;
@@ -7101,10 +6558,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="end_date"                data-endpoint="PUTapi-v1-project-stages--projectstage-"
-               value="2031-02-08"
+               value="2101-05-15"
                data-component="body">
     <br>
-<p>Must be a valid date. Must be a date after or equal to <code>start_date</code>. Example: <code>2031-02-08</code></p>
+<p>Must be a valid date. Must be a date after or equal to <code>start_date</code>. Example: <code>2101-05-15</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>completed</code></b>&nbsp;&nbsp;
@@ -7125,7 +6582,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>completion_date</code></b>&nbsp;&nbsp;
@@ -7133,10 +6590,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="completion_date"                data-endpoint="PUTapi-v1-project-stages--projectstage-"
-               value="2026-04-14"
+               value="2032-02-11"
                data-component="body">
     <br>
-<p>Must be a valid date. Must be a date after or equal to <code>start_date</code>. Example: <code>2026-04-14</code></p>
+<p>Must be a valid date. Must be a date after or equal to <code>start_date</code>. Example: <code>2032-02-11</code></p>
         </div>
         </form>
 
@@ -7401,8 +6858,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"project_id\": \"illo\",
-    \"role\": \"ypmqtxqdgedlevuucpewgsbug\"
+    \"project_id\": \"labore\",
+    \"role\": \"tbyhdgrinepebyggmwycove\"
 }"
 </code></pre></div>
 
@@ -7418,8 +6875,8 @@ const headers = {
 };
 
 let body = {
-    "project_id": "illo",
-    "role": "ypmqtxqdgedlevuucpewgsbug"
+    "project_id": "labore",
+    "role": "tbyhdgrinepebyggmwycove"
 };
 
 fetch(url, {
@@ -7508,10 +6965,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="project_id"                data-endpoint="POSTapi-v1-project-members"
-               value="illo"
+               value="labore"
                data-component="body">
     <br>
-<p>Example: <code>illo</code></p>
+<p>Example: <code>labore</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>role</code></b>&nbsp;&nbsp;
@@ -7519,10 +6976,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="role"                data-endpoint="POSTapi-v1-project-members"
-               value="ypmqtxqdgedlevuucpewgsbug"
+               value="tbyhdgrinepebyggmwycove"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>ypmqtxqdgedlevuucpewgsbug</code></p>
+<p>Must not be greater than 255 characters. Example: <code>tbyhdgrinepebyggmwycove</code></p>
         </div>
         </form>
 
@@ -7539,14 +6996,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/project-members/dicta" \
+    --get "http://localhost/api/v1/project-members/dolores" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/project-members/dicta"
+    "http://localhost/api/v1/project-members/dolores"
 );
 
 const headers = {
@@ -7655,10 +7112,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="prjectmember"                data-endpoint="GETapi-v1-project-members--prjectmember-"
-               value="dicta"
+               value="dolores"
                data-component="url">
     <br>
-<p>Example: <code>dicta</code></p>
+<p>Example: <code>dolores</code></p>
             </div>
                     </form>
 
@@ -7679,7 +7136,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"role\": \"i\"
+    \"role\": \"jmmxarmz\"
 }"
 </code></pre></div>
 
@@ -7695,7 +7152,7 @@ const headers = {
 };
 
 let body = {
-    "role": "i"
+    "role": "jmmxarmz"
 };
 
 fetch(url, {
@@ -7818,10 +7275,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="role"                data-endpoint="PUTapi-v1-project-members--prjectmember-"
-               value="i"
+               value="jmmxarmz"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>i</code></p>
+<p>Must not be greater than 255 characters. Example: <code>jmmxarmz</code></p>
         </div>
         </form>
 
@@ -7958,14 +7415,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/project-members-by-project-id/sunt" \
+    --get "http://localhost/api/v1/project-members-by-project-id/ab" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/project-members-by-project-id/sunt"
+    "http://localhost/api/v1/project-members-by-project-id/ab"
 );
 
 const headers = {
@@ -8074,10 +7531,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-v1-project-members-by-project-id--id-"
-               value="sunt"
+               value="ab"
                data-component="url">
     <br>
-<p>The ID of the project members by project id. Example: <code>sunt</code></p>
+<p>The ID of the project members by project id. Example: <code>ab</code></p>
             </div>
                     </form>
 
@@ -8098,11 +7555,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"project_id\": \"distinctio\",
+    \"project_id\": \"labore\",
     \"members\": [
         {
-            \"email\": \"wunsch.jakayla@example.com\",
-            \"role\": \"eum\"
+            \"email\": \"zcrooks@example.org\",
+            \"role\": \"et\"
         }
     ]
 }"
@@ -8120,11 +7577,11 @@ const headers = {
 };
 
 let body = {
-    "project_id": "distinctio",
+    "project_id": "labore",
     "members": [
         {
-            "email": "wunsch.jakayla@example.com",
-            "role": "eum"
+            "email": "zcrooks@example.org",
+            "role": "et"
         }
     ]
 };
@@ -8215,10 +7672,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="project_id"                data-endpoint="POSTapi-v1-add-project-members"
-               value="distinctio"
+               value="labore"
                data-component="body">
     <br>
-<p>Example: <code>distinctio</code></p>
+<p>Example: <code>labore</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -8235,10 +7692,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="members.0.email"                data-endpoint="POSTapi-v1-add-project-members"
-               value="wunsch.jakayla@example.com"
+               value="zcrooks@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>wunsch.jakayla@example.com</code></p>
+<p>Must be a valid email address. Example: <code>zcrooks@example.org</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>role</code></b>&nbsp;&nbsp;
@@ -8246,10 +7703,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="members.0.role"                data-endpoint="POSTapi-v1-add-project-members"
-               value="eum"
+               value="et"
                data-component="body">
     <br>
-<p>Example: <code>eum</code></p>
+<p>Example: <code>et</code></p>
                     </div>
                                     </details>
         </div>
@@ -8396,9 +7853,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"team_id\": \"exercitationem\",
-    \"user_id\": \"omnis\",
-    \"role\": \"dbavxaacmwfjegzpt\"
+    \"team_id\": \"fuga\",
+    \"user_id\": \"impedit\",
+    \"role\": \"snuwxnkhwltwkftfj\"
 }"
 </code></pre></div>
 
@@ -8414,9 +7871,9 @@ const headers = {
 };
 
 let body = {
-    "team_id": "exercitationem",
-    "user_id": "omnis",
-    "role": "dbavxaacmwfjegzpt"
+    "team_id": "fuga",
+    "user_id": "impedit",
+    "role": "snuwxnkhwltwkftfj"
 };
 
 fetch(url, {
@@ -8505,10 +7962,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="team_id"                data-endpoint="POSTapi-v1-team-members"
-               value="exercitationem"
+               value="fuga"
                data-component="body">
     <br>
-<p>Example: <code>exercitationem</code></p>
+<p>Example: <code>fuga</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>user_id</code></b>&nbsp;&nbsp;
@@ -8516,10 +7973,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="user_id"                data-endpoint="POSTapi-v1-team-members"
-               value="omnis"
+               value="impedit"
                data-component="body">
     <br>
-<p>Example: <code>omnis</code></p>
+<p>Example: <code>impedit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>role</code></b>&nbsp;&nbsp;
@@ -8527,10 +7984,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="role"                data-endpoint="POSTapi-v1-team-members"
-               value="dbavxaacmwfjegzpt"
+               value="snuwxnkhwltwkftfj"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>dbavxaacmwfjegzpt</code></p>
+<p>Must not be greater than 255 characters. Example: <code>snuwxnkhwltwkftfj</code></p>
         </div>
         </form>
 
@@ -8547,14 +8004,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/team-members/sapiente" \
+    --get "http://localhost/api/v1/team-members/est" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/team-members/sapiente"
+    "http://localhost/api/v1/team-members/est"
 );
 
 const headers = {
@@ -8663,10 +8120,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-v1-team-members--id-"
-               value="sapiente"
+               value="est"
                data-component="url">
     <br>
-<p>The ID of the team member. Example: <code>sapiente</code></p>
+<p>The ID of the team member. Example: <code>est</code></p>
             </div>
                     </form>
 
@@ -8683,18 +8140,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/v1/team-members/repudiandae" \
+    "http://localhost/api/v1/team-members/molestiae" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"role\": \"gtvluuyyysrqdgcqg\"
+    \"role\": \"yilxvwkicn\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/team-members/repudiandae"
+    "http://localhost/api/v1/team-members/molestiae"
 );
 
 const headers = {
@@ -8703,7 +8160,7 @@ const headers = {
 };
 
 let body = {
-    "role": "gtvluuyyysrqdgcqg"
+    "role": "yilxvwkicn"
 };
 
 fetch(url, {
@@ -8792,10 +8249,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-v1-team-members--id-"
-               value="repudiandae"
+               value="molestiae"
                data-component="url">
     <br>
-<p>The ID of the team member. Example: <code>repudiandae</code></p>
+<p>The ID of the team member. Example: <code>molestiae</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -8826,10 +8283,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="role"                data-endpoint="PUTapi-v1-team-members--id-"
-               value="gtvluuyyysrqdgcqg"
+               value="yilxvwkicn"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>gtvluuyyysrqdgcqg</code></p>
+<p>Must not be greater than 255 characters. Example: <code>yilxvwkicn</code></p>
         </div>
         </form>
 
@@ -8846,14 +8303,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/v1/team-members/maiores" \
+    "http://localhost/api/v1/team-members/ut" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/team-members/maiores"
+    "http://localhost/api/v1/team-members/ut"
 );
 
 const headers = {
@@ -8946,10 +8403,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-v1-team-members--id-"
-               value="maiores"
+               value="ut"
                data-component="url">
     <br>
-<p>The ID of the team member. Example: <code>maiores</code></p>
+<p>The ID of the team member. Example: <code>ut</code></p>
             </div>
                     </form>
 
@@ -9094,10 +8551,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"team_id\": \"voluptatem\",
-    \"goal_name\": \"daypmekygk\",
-    \"description\": \"In ab officiis provident et.\",
-    \"completed\": false
+    \"team_id\": \"expedita\",
+    \"goal_name\": \"drgubigduyzhnfvsrever\",
+    \"description\": \"Soluta omnis et est sit voluptas.\",
+    \"completed\": true
 }"
 </code></pre></div>
 
@@ -9113,10 +8570,10 @@ const headers = {
 };
 
 let body = {
-    "team_id": "voluptatem",
-    "goal_name": "daypmekygk",
-    "description": "In ab officiis provident et.",
-    "completed": false
+    "team_id": "expedita",
+    "goal_name": "drgubigduyzhnfvsrever",
+    "description": "Soluta omnis et est sit voluptas.",
+    "completed": true
 };
 
 fetch(url, {
@@ -9205,10 +8662,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="team_id"                data-endpoint="POSTapi-v1-goals"
-               value="voluptatem"
+               value="expedita"
                data-component="body">
     <br>
-<p>Example: <code>voluptatem</code></p>
+<p>Example: <code>expedita</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>goal_name</code></b>&nbsp;&nbsp;
@@ -9216,10 +8673,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="goal_name"                data-endpoint="POSTapi-v1-goals"
-               value="daypmekygk"
+               value="drgubigduyzhnfvsrever"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>daypmekygk</code></p>
+<p>Must not be greater than 255 characters. Example: <code>drgubigduyzhnfvsrever</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -9227,10 +8684,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-v1-goals"
-               value="In ab officiis provident et."
+               value="Soluta omnis et est sit voluptas."
                data-component="body">
     <br>
-<p>Example: <code>In ab officiis provident et.</code></p>
+<p>Example: <code>Soluta omnis et est sit voluptas.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>completed</code></b>&nbsp;&nbsp;
@@ -9251,7 +8708,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>false</code></p>
+<p>Example: <code>true</code></p>
         </div>
         </form>
 
@@ -9268,14 +8725,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/goals/nemo" \
+    --get "http://localhost/api/v1/goals/non" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/goals/nemo"
+    "http://localhost/api/v1/goals/non"
 );
 
 const headers = {
@@ -9384,10 +8841,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="goal"                data-endpoint="GETapi-v1-goals--goal-"
-               value="nemo"
+               value="non"
                data-component="url">
     <br>
-<p>The goal. Example: <code>nemo</code></p>
+<p>The goal. Example: <code>non</code></p>
             </div>
                     </form>
 
@@ -9408,9 +8865,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"goal_name\": \"mqofhvkimdu\",
-    \"description\": \"Perspiciatis molestias voluptate deserunt non ab aliquam.\",
-    \"completed\": true
+    \"goal_name\": \"snocljpsmhhvpvpnafygzzfvw\",
+    \"description\": \"Quis eum architecto esse impedit.\",
+    \"completed\": false
 }"
 </code></pre></div>
 
@@ -9426,9 +8883,9 @@ const headers = {
 };
 
 let body = {
-    "goal_name": "mqofhvkimdu",
-    "description": "Perspiciatis molestias voluptate deserunt non ab aliquam.",
-    "completed": true
+    "goal_name": "snocljpsmhhvpvpnafygzzfvw",
+    "description": "Quis eum architecto esse impedit.",
+    "completed": false
 };
 
 fetch(url, {
@@ -9540,10 +8997,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="goal_name"                data-endpoint="PUTapi-v1-goals--goal_id-"
-               value="mqofhvkimdu"
+               value="snocljpsmhhvpvpnafygzzfvw"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>mqofhvkimdu</code></p>
+<p>Must not be greater than 255 characters. Example: <code>snocljpsmhhvpvpnafygzzfvw</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -9551,10 +9008,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-v1-goals--goal_id-"
-               value="Perspiciatis molestias voluptate deserunt non ab aliquam."
+               value="Quis eum architecto esse impedit."
                data-component="body">
     <br>
-<p>Example: <code>Perspiciatis molestias voluptate deserunt non ab aliquam.</code></p>
+<p>Example: <code>Quis eum architecto esse impedit.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>completed</code></b>&nbsp;&nbsp;
@@ -9575,7 +9032,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
         </div>
         </form>
 
@@ -9840,10 +9297,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"goghdxgaadziqzwijtxecybuq\",
-    \"description\": \"Dolor sed cumque eaque optio.\",
-    \"industry\": \"rxdeflbmirldbpeke\",
-    \"email\": \"glover.gia@example.com\"
+    \"name\": \"arjhgkjxhyrjwqx\",
+    \"description\": \"Consectetur voluptatem nihil sunt harum perferendis sunt ratione et.\",
+    \"industry\": \"qbzwganffqdtjqsohojc\",
+    \"email\": \"daniel.augustus@example.net\"
 }"
 </code></pre></div>
 
@@ -9859,10 +9316,10 @@ const headers = {
 };
 
 let body = {
-    "name": "goghdxgaadziqzwijtxecybuq",
-    "description": "Dolor sed cumque eaque optio.",
-    "industry": "rxdeflbmirldbpeke",
-    "email": "glover.gia@example.com"
+    "name": "arjhgkjxhyrjwqx",
+    "description": "Consectetur voluptatem nihil sunt harum perferendis sunt ratione et.",
+    "industry": "qbzwganffqdtjqsohojc",
+    "email": "daniel.augustus@example.net"
 };
 
 fetch(url, {
@@ -9951,10 +9408,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-organizations"
-               value="goghdxgaadziqzwijtxecybuq"
+               value="arjhgkjxhyrjwqx"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>goghdxgaadziqzwijtxecybuq</code></p>
+<p>Must not be greater than 255 characters. Example: <code>arjhgkjxhyrjwqx</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -9962,10 +9419,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-v1-organizations"
-               value="Dolor sed cumque eaque optio."
+               value="Consectetur voluptatem nihil sunt harum perferendis sunt ratione et."
                data-component="body">
     <br>
-<p>Example: <code>Dolor sed cumque eaque optio.</code></p>
+<p>Example: <code>Consectetur voluptatem nihil sunt harum perferendis sunt ratione et.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>industry</code></b>&nbsp;&nbsp;
@@ -9973,10 +9430,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="industry"                data-endpoint="POSTapi-v1-organizations"
-               value="rxdeflbmirldbpeke"
+               value="qbzwganffqdtjqsohojc"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>rxdeflbmirldbpeke</code></p>
+<p>Must not be greater than 255 characters. Example: <code>qbzwganffqdtjqsohojc</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -9984,10 +9441,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-v1-organizations"
-               value="glover.gia@example.com"
+               value="daniel.augustus@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>glover.gia@example.com</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>daniel.augustus@example.net</code></p>
         </div>
         </form>
 
@@ -10004,14 +9461,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/organizations/fugit" \
+    --get "http://localhost/api/v1/organizations/provident" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/organizations/fugit"
+    "http://localhost/api/v1/organizations/provident"
 );
 
 const headers = {
@@ -10120,10 +9577,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="organization"                data-endpoint="GETapi-v1-organizations--organization-"
-               value="fugit"
+               value="provident"
                data-component="url">
     <br>
-<p>The organization. Example: <code>fugit</code></p>
+<p>The organization. Example: <code>provident</code></p>
             </div>
                     </form>
 
@@ -10636,11 +10093,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"org_id\": \"est\",
+    \"org_id\": \"dolores\",
     \"members\": [
         {
-            \"email\": \"denis.brekke@example.net\",
-            \"role\": \"ea\"
+            \"email\": \"rath.grover@example.com\",
+            \"role\": \"ut\"
         }
     ]
 }"
@@ -10658,11 +10115,11 @@ const headers = {
 };
 
 let body = {
-    "org_id": "est",
+    "org_id": "dolores",
     "members": [
         {
-            "email": "denis.brekke@example.net",
-            "role": "ea"
+            "email": "rath.grover@example.com",
+            "role": "ut"
         }
     ]
 };
@@ -10753,10 +10210,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="org_id"                data-endpoint="POSTapi-v1-add-organizations-members"
-               value="est"
+               value="dolores"
                data-component="body">
     <br>
-<p>Example: <code>est</code></p>
+<p>Example: <code>dolores</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -10773,10 +10230,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="members.0.email"                data-endpoint="POSTapi-v1-add-organizations-members"
-               value="denis.brekke@example.net"
+               value="rath.grover@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>denis.brekke@example.net</code></p>
+<p>Must be a valid email address. Example: <code>rath.grover@example.com</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>role</code></b>&nbsp;&nbsp;
@@ -10784,10 +10241,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="members.0.role"                data-endpoint="POSTapi-v1-add-organizations-members"
-               value="ea"
+               value="ut"
                data-component="body">
     <br>
-<p>Example: <code>ea</code></p>
+<p>Example: <code>ut</code></p>
                     </div>
                                     </details>
         </div>
@@ -10934,13 +10391,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"org_id\": \"tempore\",
-    \"role\": \"njfe\",
-    \"is_admin\": true,
-    \"assigned_tasks\": 52,
-    \"completed_tasks\": 31,
-    \"overdue_tasks\": 2,
-    \"worked_hour\": 26
+    \"org_id\": \"omnis\",
+    \"role\": \"zotmzbumxkgjsuh\",
+    \"is_admin\": false,
+    \"assigned_tasks\": 9,
+    \"completed_tasks\": 5,
+    \"overdue_tasks\": 14,
+    \"worked_hour\": 38
 }"
 </code></pre></div>
 
@@ -10956,13 +10413,13 @@ const headers = {
 };
 
 let body = {
-    "org_id": "tempore",
-    "role": "njfe",
-    "is_admin": true,
-    "assigned_tasks": 52,
-    "completed_tasks": 31,
-    "overdue_tasks": 2,
-    "worked_hour": 26
+    "org_id": "omnis",
+    "role": "zotmzbumxkgjsuh",
+    "is_admin": false,
+    "assigned_tasks": 9,
+    "completed_tasks": 5,
+    "overdue_tasks": 14,
+    "worked_hour": 38
 };
 
 fetch(url, {
@@ -11051,10 +10508,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="org_id"                data-endpoint="POSTapi-v1-org-members"
-               value="tempore"
+               value="omnis"
                data-component="body">
     <br>
-<p>Example: <code>tempore</code></p>
+<p>Example: <code>omnis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>role</code></b>&nbsp;&nbsp;
@@ -11062,10 +10519,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="role"                data-endpoint="POSTapi-v1-org-members"
-               value="njfe"
+               value="zotmzbumxkgjsuh"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>njfe</code></p>
+<p>Must not be greater than 255 characters. Example: <code>zotmzbumxkgjsuh</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>is_admin</code></b>&nbsp;&nbsp;
@@ -11086,7 +10543,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>assigned_tasks</code></b>&nbsp;&nbsp;
@@ -11094,10 +10551,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="assigned_tasks"                data-endpoint="POSTapi-v1-org-members"
-               value="52"
+               value="9"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>52</code></p>
+<p>Must be at least 0. Example: <code>9</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>completed_tasks</code></b>&nbsp;&nbsp;
@@ -11105,10 +10562,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="completed_tasks"                data-endpoint="POSTapi-v1-org-members"
-               value="31"
+               value="5"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>31</code></p>
+<p>Must be at least 0. Example: <code>5</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>overdue_tasks</code></b>&nbsp;&nbsp;
@@ -11116,10 +10573,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="overdue_tasks"                data-endpoint="POSTapi-v1-org-members"
-               value="2"
+               value="14"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>2</code></p>
+<p>Must be at least 0. Example: <code>14</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>worked_hour</code></b>&nbsp;&nbsp;
@@ -11127,10 +10584,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="worked_hour"                data-endpoint="POSTapi-v1-org-members"
-               value="26"
+               value="38"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>26</code></p>
+<p>Must be at least 0. Example: <code>38</code></p>
         </div>
         </form>
 
@@ -11147,14 +10604,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/org-members/aliquam" \
+    --get "http://localhost/api/v1/org-members/impedit" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/org-members/aliquam"
+    "http://localhost/api/v1/org-members/impedit"
 );
 
 const headers = {
@@ -11183,7 +10640,7 @@ vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;The route api/v1/org-members/aliquam could not be found.&quot;
+    &quot;message&quot;: &quot;The route api/v1/org-members/impedit could not be found.&quot;
 }</code>
  </pre>
     </span>
@@ -11263,10 +10720,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="org-member"                data-endpoint="GETapi-v1-org-members--org-member-"
-               value="aliquam"
+               value="impedit"
                data-component="url">
     <br>
-<p>Example: <code>aliquam</code></p>
+<p>Example: <code>impedit</code></p>
             </div>
                     </form>
 
@@ -11287,12 +10744,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"role\": \"aoetzobizgsaiqz\",
+    \"role\": \"ygimowsxm\",
     \"is_admin\": false,
-    \"assigned_tasks\": 86,
-    \"completed_tasks\": 67,
-    \"overdue_tasks\": 68,
-    \"worked_hour\": 33
+    \"assigned_tasks\": 21,
+    \"completed_tasks\": 22,
+    \"overdue_tasks\": 2,
+    \"worked_hour\": 30
 }"
 </code></pre></div>
 
@@ -11308,12 +10765,12 @@ const headers = {
 };
 
 let body = {
-    "role": "aoetzobizgsaiqz",
+    "role": "ygimowsxm",
     "is_admin": false,
-    "assigned_tasks": 86,
-    "completed_tasks": 67,
-    "overdue_tasks": 68,
-    "worked_hour": 33
+    "assigned_tasks": 21,
+    "completed_tasks": 22,
+    "overdue_tasks": 2,
+    "worked_hour": 30
 };
 
 fetch(url, {
@@ -11425,10 +10882,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="role"                data-endpoint="PUTapi-v1-org-members--org-member-"
-               value="aoetzobizgsaiqz"
+               value="ygimowsxm"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>aoetzobizgsaiqz</code></p>
+<p>Must not be greater than 255 characters. Example: <code>ygimowsxm</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>is_admin</code></b>&nbsp;&nbsp;
@@ -11457,10 +10914,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="assigned_tasks"                data-endpoint="PUTapi-v1-org-members--org-member-"
-               value="86"
+               value="21"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>86</code></p>
+<p>Must be at least 0. Example: <code>21</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>completed_tasks</code></b>&nbsp;&nbsp;
@@ -11468,10 +10925,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="completed_tasks"                data-endpoint="PUTapi-v1-org-members--org-member-"
-               value="67"
+               value="22"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>67</code></p>
+<p>Must be at least 0. Example: <code>22</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>overdue_tasks</code></b>&nbsp;&nbsp;
@@ -11479,10 +10936,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="overdue_tasks"                data-endpoint="PUTapi-v1-org-members--org-member-"
-               value="68"
+               value="2"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>68</code></p>
+<p>Must be at least 0. Example: <code>2</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>worked_hour</code></b>&nbsp;&nbsp;
@@ -11490,10 +10947,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="worked_hour"                data-endpoint="PUTapi-v1-org-members--org-member-"
-               value="33"
+               value="30"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>33</code></p>
+<p>Must be at least 0. Example: <code>30</code></p>
         </div>
         </form>
 
@@ -11634,18 +11091,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"organization_id\": \"nam\",
-    \"total_users\": 0,
-    \"active_users\": 17,
-    \"projects_created\": 10,
-    \"projects_completed\": 8,
-    \"projects_in_progress\": 39,
-    \"average_project_completion_time\": 10,
-    \"total_tasks\": 63,
-    \"completed_tasks\": 8,
-    \"tasks_in_progress\": 63,
-    \"tasks_overdue\": 12,
-    \"average_task_completion_time\": 6
+    \"organization_id\": \"quaerat\",
+    \"total_users\": 34,
+    \"active_users\": 76,
+    \"projects_created\": 76,
+    \"projects_completed\": 62,
+    \"projects_in_progress\": 13,
+    \"average_project_completion_time\": 87,
+    \"total_tasks\": 9,
+    \"completed_tasks\": 55,
+    \"tasks_in_progress\": 43,
+    \"tasks_overdue\": 28,
+    \"average_task_completion_time\": 27
 }"
 </code></pre></div>
 
@@ -11661,18 +11118,18 @@ const headers = {
 };
 
 let body = {
-    "organization_id": "nam",
-    "total_users": 0,
-    "active_users": 17,
-    "projects_created": 10,
-    "projects_completed": 8,
-    "projects_in_progress": 39,
-    "average_project_completion_time": 10,
-    "total_tasks": 63,
-    "completed_tasks": 8,
-    "tasks_in_progress": 63,
-    "tasks_overdue": 12,
-    "average_task_completion_time": 6
+    "organization_id": "quaerat",
+    "total_users": 34,
+    "active_users": 76,
+    "projects_created": 76,
+    "projects_completed": 62,
+    "projects_in_progress": 13,
+    "average_project_completion_time": 87,
+    "total_tasks": 9,
+    "completed_tasks": 55,
+    "tasks_in_progress": 43,
+    "tasks_overdue": 28,
+    "average_task_completion_time": 27
 };
 
 fetch(url, {
@@ -11761,10 +11218,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="organization_id"                data-endpoint="POSTapi-v1-organization-metrics"
-               value="nam"
+               value="quaerat"
                data-component="body">
     <br>
-<p>Example: <code>nam</code></p>
+<p>Example: <code>quaerat</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>total_users</code></b>&nbsp;&nbsp;
@@ -11772,10 +11229,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="total_users"                data-endpoint="POSTapi-v1-organization-metrics"
-               value="0"
+               value="34"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>0</code></p>
+<p>Must be at least 0. Example: <code>34</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>active_users</code></b>&nbsp;&nbsp;
@@ -11783,10 +11240,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="active_users"                data-endpoint="POSTapi-v1-organization-metrics"
-               value="17"
+               value="76"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>17</code></p>
+<p>Must be at least 0. Example: <code>76</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>projects_created</code></b>&nbsp;&nbsp;
@@ -11794,10 +11251,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="projects_created"                data-endpoint="POSTapi-v1-organization-metrics"
-               value="10"
+               value="76"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>10</code></p>
+<p>Must be at least 0. Example: <code>76</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>projects_completed</code></b>&nbsp;&nbsp;
@@ -11805,10 +11262,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="projects_completed"                data-endpoint="POSTapi-v1-organization-metrics"
-               value="8"
+               value="62"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>8</code></p>
+<p>Must be at least 0. Example: <code>62</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>projects_in_progress</code></b>&nbsp;&nbsp;
@@ -11816,10 +11273,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="projects_in_progress"                data-endpoint="POSTapi-v1-organization-metrics"
-               value="39"
+               value="13"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>39</code></p>
+<p>Must be at least 0. Example: <code>13</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>average_project_completion_time</code></b>&nbsp;&nbsp;
@@ -11827,10 +11284,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="average_project_completion_time"                data-endpoint="POSTapi-v1-organization-metrics"
-               value="10"
+               value="87"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>10</code></p>
+<p>Must be at least 0. Example: <code>87</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>total_tasks</code></b>&nbsp;&nbsp;
@@ -11838,10 +11295,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="total_tasks"                data-endpoint="POSTapi-v1-organization-metrics"
-               value="63"
+               value="9"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>63</code></p>
+<p>Must be at least 0. Example: <code>9</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>completed_tasks</code></b>&nbsp;&nbsp;
@@ -11849,10 +11306,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="completed_tasks"                data-endpoint="POSTapi-v1-organization-metrics"
-               value="8"
+               value="55"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>8</code></p>
+<p>Must be at least 0. Example: <code>55</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>tasks_in_progress</code></b>&nbsp;&nbsp;
@@ -11860,10 +11317,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="tasks_in_progress"                data-endpoint="POSTapi-v1-organization-metrics"
-               value="63"
+               value="43"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>63</code></p>
+<p>Must be at least 0. Example: <code>43</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>tasks_overdue</code></b>&nbsp;&nbsp;
@@ -11871,10 +11328,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="tasks_overdue"                data-endpoint="POSTapi-v1-organization-metrics"
-               value="12"
+               value="28"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>12</code></p>
+<p>Must be at least 0. Example: <code>28</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>average_task_completion_time</code></b>&nbsp;&nbsp;
@@ -11882,10 +11339,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="average_task_completion_time"                data-endpoint="POSTapi-v1-organization-metrics"
-               value="6"
+               value="27"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>6</code></p>
+<p>Must be at least 0. Example: <code>27</code></p>
         </div>
         </form>
 
@@ -11902,14 +11359,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/organization-metrics/repellendus" \
+    --get "http://localhost/api/v1/organization-metrics/tempora" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/organization-metrics/repellendus"
+    "http://localhost/api/v1/organization-metrics/tempora"
 );
 
 const headers = {
@@ -12018,10 +11475,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="organizationmetric"                data-endpoint="GETapi-v1-organization-metrics--organizationmetric-"
-               value="repellendus"
+               value="tempora"
                data-component="url">
     <br>
-<p>Example: <code>repellendus</code></p>
+<p>Example: <code>tempora</code></p>
             </div>
                     </form>
 
@@ -12042,17 +11499,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"total_users\": 5,
-    \"active_users\": 19,
-    \"projects_created\": 69,
-    \"projects_completed\": 42,
-    \"projects_in_progress\": 67,
-    \"average_project_completion_time\": 66,
-    \"total_tasks\": 55,
-    \"completed_tasks\": 59,
-    \"tasks_in_progress\": 29,
-    \"tasks_overdue\": 60,
-    \"average_task_completion_time\": 21
+    \"total_users\": 18,
+    \"active_users\": 42,
+    \"projects_created\": 59,
+    \"projects_completed\": 12,
+    \"projects_in_progress\": 42,
+    \"average_project_completion_time\": 12,
+    \"total_tasks\": 19,
+    \"completed_tasks\": 44,
+    \"tasks_in_progress\": 27,
+    \"tasks_overdue\": 20,
+    \"average_task_completion_time\": 23
 }"
 </code></pre></div>
 
@@ -12068,17 +11525,17 @@ const headers = {
 };
 
 let body = {
-    "total_users": 5,
-    "active_users": 19,
-    "projects_created": 69,
-    "projects_completed": 42,
-    "projects_in_progress": 67,
-    "average_project_completion_time": 66,
-    "total_tasks": 55,
-    "completed_tasks": 59,
-    "tasks_in_progress": 29,
-    "tasks_overdue": 60,
-    "average_task_completion_time": 21
+    "total_users": 18,
+    "active_users": 42,
+    "projects_created": 59,
+    "projects_completed": 12,
+    "projects_in_progress": 42,
+    "average_project_completion_time": 12,
+    "total_tasks": 19,
+    "completed_tasks": 44,
+    "tasks_in_progress": 27,
+    "tasks_overdue": 20,
+    "average_task_completion_time": 23
 };
 
 fetch(url, {
@@ -12179,10 +11636,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="total_users"                data-endpoint="PUTapi-v1-organization-metrics--organizationmetric-"
-               value="5"
+               value="18"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>5</code></p>
+<p>Must be at least 0. Example: <code>18</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>active_users</code></b>&nbsp;&nbsp;
@@ -12190,10 +11647,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="active_users"                data-endpoint="PUTapi-v1-organization-metrics--organizationmetric-"
-               value="19"
+               value="42"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>19</code></p>
+<p>Must be at least 0. Example: <code>42</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>projects_created</code></b>&nbsp;&nbsp;
@@ -12201,10 +11658,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="projects_created"                data-endpoint="PUTapi-v1-organization-metrics--organizationmetric-"
-               value="69"
+               value="59"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>69</code></p>
+<p>Must be at least 0. Example: <code>59</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>projects_completed</code></b>&nbsp;&nbsp;
@@ -12212,10 +11669,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="projects_completed"                data-endpoint="PUTapi-v1-organization-metrics--organizationmetric-"
-               value="42"
+               value="12"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>42</code></p>
+<p>Must be at least 0. Example: <code>12</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>projects_in_progress</code></b>&nbsp;&nbsp;
@@ -12223,10 +11680,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="projects_in_progress"                data-endpoint="PUTapi-v1-organization-metrics--organizationmetric-"
-               value="67"
+               value="42"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>67</code></p>
+<p>Must be at least 0. Example: <code>42</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>average_project_completion_time</code></b>&nbsp;&nbsp;
@@ -12234,10 +11691,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="average_project_completion_time"                data-endpoint="PUTapi-v1-organization-metrics--organizationmetric-"
-               value="66"
+               value="12"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>66</code></p>
+<p>Must be at least 0. Example: <code>12</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>total_tasks</code></b>&nbsp;&nbsp;
@@ -12245,10 +11702,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="total_tasks"                data-endpoint="PUTapi-v1-organization-metrics--organizationmetric-"
-               value="55"
+               value="19"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>55</code></p>
+<p>Must be at least 0. Example: <code>19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>completed_tasks</code></b>&nbsp;&nbsp;
@@ -12256,10 +11713,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="completed_tasks"                data-endpoint="PUTapi-v1-organization-metrics--organizationmetric-"
-               value="59"
+               value="44"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>59</code></p>
+<p>Must be at least 0. Example: <code>44</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>tasks_in_progress</code></b>&nbsp;&nbsp;
@@ -12267,10 +11724,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="tasks_in_progress"                data-endpoint="PUTapi-v1-organization-metrics--organizationmetric-"
-               value="29"
+               value="27"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>29</code></p>
+<p>Must be at least 0. Example: <code>27</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>tasks_overdue</code></b>&nbsp;&nbsp;
@@ -12278,10 +11735,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="tasks_overdue"                data-endpoint="PUTapi-v1-organization-metrics--organizationmetric-"
-               value="60"
+               value="20"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>60</code></p>
+<p>Must be at least 0. Example: <code>20</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>average_task_completion_time</code></b>&nbsp;&nbsp;
@@ -12289,10 +11746,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="average_task_completion_time"                data-endpoint="PUTapi-v1-organization-metrics--organizationmetric-"
-               value="21"
+               value="23"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>21</code></p>
+<p>Must be at least 0. Example: <code>23</code></p>
         </div>
         </form>
 
@@ -12787,6 +12244,424 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Example: <code>application/json</code></p>
             </div>
                         </form>
+
+                <h1 id="user-management">User management</h1>
+
+    <p>APIs for managing users</p>
+
+                                <h2 id="user-management-GETapi-v1-users">Get all users</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-users">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/users" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/users"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-users">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+vary: Origin
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-users" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-users"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-users"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-users" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-users">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-users" data-method="GET"
+      data-path="api/v1/users"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-users', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-users"
+                    onclick="tryItOut('GETapi-v1-users');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-users"
+                    onclick="cancelTryOut('GETapi-v1-users');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-users"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/users</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-users"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-users"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="user-management-GETapi-v1-users--user-">Display a specific user.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-users--user-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/users/eaque" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/users/eaque"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-users--user-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+vary: Origin
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-users--user-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-users--user-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-users--user-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-users--user-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-users--user-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-users--user-" data-method="GET"
+      data-path="api/v1/users/{user}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-users--user-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-users--user-"
+                    onclick="tryItOut('GETapi-v1-users--user-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-users--user-"
+                    onclick="cancelTryOut('GETapi-v1-users--user-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-users--user-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/users/{user}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-users--user-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-users--user-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>user</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="user"                data-endpoint="GETapi-v1-users--user-"
+               value="eaque"
+               data-component="url">
+    <br>
+<p>The user. Example: <code>eaque</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="GETapi-v1-users--user-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the user. Example: <code>1</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="user-management-DELETEapi-v1-users--user-">Delete a specific user.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-v1-users--user-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost/api/v1/users/voluptate" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/users/voluptate"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-v1-users--user-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;data&quot;: {
+        &quot;message&quot;: &quot;User deleted successfully&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-v1-users--user-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-v1-users--user-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-users--user-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-v1-users--user-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-users--user-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-v1-users--user-" data-method="DELETE"
+      data-path="api/v1/users/{user}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-users--user-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-v1-users--user-"
+                    onclick="tryItOut('DELETEapi-v1-users--user-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-v1-users--user-"
+                    onclick="cancelTryOut('DELETEapi-v1-users--user-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-v1-users--user-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/v1/users/{user}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-v1-users--user-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-v1-users--user-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>user</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="user"                data-endpoint="DELETEapi-v1-users--user-"
+               value="voluptate"
+               data-component="url">
+    <br>
+<p>The user. Example: <code>voluptate</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="DELETEapi-v1-users--user-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the user. Example: <code>1</code></p>
+            </div>
+                    </form>
 
             
 
