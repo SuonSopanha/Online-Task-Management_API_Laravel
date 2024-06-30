@@ -34,7 +34,7 @@ paths:
         in: path
         name: user
         description: 'The user.'
-        example: et
+        example: ab
         required: true
         schema:
           type: string
@@ -57,19 +57,19 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: lwaelchi@example.com
+                  example: katarina67@example.net
                 password:
                   type: string
                   description: 'Must be at least 6 characters.'
-                  example: '2V,_lH'
+                  example: '.S/ZG#,efME0gXN/'
                 full_name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: bmie
+                  example: jopeiv
                 photo_url:
                   type: string
                   description: ''
-                  example: 'http://green.org/commodi-quibusdam-aliquid-doloremque-eum'
+                  example: 'https://www.davis.biz/debitis-maiores-cupiditate-sequi-delectus-eos-incidunt'
               required:
                 - email
                 - password
@@ -93,19 +93,19 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: alessandro74@example.com
+                  example: ekuhn@example.com
                 password:
                   type: string
                   description: 'Must be at least 6 characters.'
-                  example: '%5[I+<M%y@?T'
+                  example: d|T>QxzNqb>a%2b==v;
                 full_name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: vdfvykogutf
+                  example: qvzvukyefowekwenfqph
                 photo_url:
                   type: string
                   description: ''
-                  example: 'http://kirlin.org/ipsa-sint-nulla-maxime-sint-animi-ut-ut'
+                  example: 'http://white.com/quos-ut-laudantium-eos'
               required:
                 - email
                 - password
@@ -149,96 +149,6 @@ paths:
       tags:
         - Endpoints
       security: []
-  /api/v1/users:
-    get:
-      summary: ''
-      operationId: getApiV1Users
-      description: ''
-      parameters: []
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Endpoints
-      security: []
-  '/api/v1/users/{user}':
-    get:
-      summary: ''
-      operationId: getApiV1UsersUser
-      description: ''
-      parameters: []
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Endpoints
-      security: []
-    put:
-      summary: ''
-      operationId: putApiV1UsersUser
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: false
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                full_name:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: yqkrgecdfxxthu
-                photo_url:
-                  type: string
-                  description: ''
-                  example: 'http://www.mckenzie.com/'
-                email:
-                  type: string
-                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: dmraz@example.net
-      security: []
-    delete:
-      summary: ''
-      operationId: deleteApiV1UsersUser
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-    parameters:
-      -
-        in: path
-        name: user
-        description: 'The user.'
-        example: repellat
-        required: true
-        schema:
-          type: string
   /api/v1/logout:
     post:
       summary: ''
@@ -355,11 +265,11 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: fc
+                  example: qltklrittlagakp
                 description:
                   type: string
                   description: ''
-                  example: 'Ex consequatur nisi tempore maiores repellat sed dolores nostrum.'
+                  example: 'Dolores nemo beatae harum ut aut fuga possimus.'
               required:
                 - name
       security: []
@@ -403,11 +313,11 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: irowulspxevku
+                  example: ucinhex
                 description:
                   type: string
                   description: ''
-                  example: 'Ea repudiandae sequi provident aperiam.'
+                  example: 'Consequatur illum fuga alias neque assumenda dicta.'
                 owner_id:
                   type: string
                   description: ''
@@ -427,7 +337,7 @@ paths:
         in: path
         name: team
         description: 'The team.'
-        example: dolor
+        example: eligendi
         required: true
         schema:
           type: string
@@ -487,47 +397,47 @@ paths:
                 task_name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: xjncjdstahejmxhzof
+                  example: gaptzfxkilksrvlgkcea
                 description:
                   type: string
                   description: ''
-                  example: 'Voluptatem id recusandae enim voluptates sint perspiciatis quo.'
+                  example: 'Error consequatur doloribus dolorem placeat id.'
                 start_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-06-29T06:23:01'
+                  example: '2024-06-29T06:35:27'
                 due_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-06-29T06:23:01'
+                  example: '2024-06-29T06:35:27'
                 task_category:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: wq
+                  example: aoclf
                 work_hour_required:
                   type: integer
                   description: ''
-                  example: 1
+                  example: 13
                 work_hour:
                   type: integer
                   description: ''
-                  example: 6
+                  example: 7
                 status:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: oassknmrylegtsx
+                  example: oifjirgtdiorpr
                 priority:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: sfpjgvwmsyxfgvyzjqbg
+                  example: vbewx
                 severity:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: yqezklp
+                  example: yukkjsyurtxcdiiidz
                 tag:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: nrsbbpiwmlbfj
+                  example: lcgr
                 assignee_id:
                   type: string
                   description: ''
@@ -535,7 +445,7 @@ paths:
                 assignee_dates:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-06-29T06:23:01'
+                  example: '2024-06-29T06:35:27'
                 complete:
                   type: boolean
                   description: ''
@@ -543,7 +453,7 @@ paths:
                 complete_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-06-29T06:23:01'
+                  example: '2024-06-29T06:35:27'
               required:
                 - task_name
                 - start_date
@@ -581,7 +491,7 @@ paths:
         in: path
         name: task
         description: 'The task.'
-        example: ex
+        example: in
         required: true
         schema:
           type: string
@@ -624,47 +534,47 @@ paths:
                 task_name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: gblkppluhve
+                  example: blbiacnvb
                 description:
                   type: string
                   description: ''
-                  example: 'Voluptatem ut porro quos et aut rerum.'
+                  example: 'Mollitia sed quibusdam dolor eius eligendi error maiores ad.'
                 start_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-06-29T06:23:02'
+                  example: '2024-06-29T06:35:28'
                 due_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-06-29T06:23:02'
+                  example: '2024-06-29T06:35:28'
                 task_category:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: woasfwfumwhwtggerdnpiw
+                  example: regocy
                 work_hour_required:
                   type: integer
                   description: ''
-                  example: 19
+                  example: 11
                 work_hour:
                   type: integer
                   description: ''
-                  example: 7
+                  example: 4
                 status:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ujbenjuclsdladbdnmodw
+                  example: higefzphycvfqgfknpfcyju
                 priority:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: gwmrdsaqyzkws
+                  example: zbehjln
                 severity:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: k
+                  example: zfzbybsexpeutjoykuh
                 tag:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: zyqubvlufebupqfpfy
+                  example: llvtvqcferlwdtoxkv
                 assignee_id:
                   type: string
                   description: ''
@@ -672,15 +582,15 @@ paths:
                 assignee_dates:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-06-29T06:23:02'
+                  example: '2024-06-29T06:35:28'
                 complete:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 complete_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-06-29T06:23:02'
+                  example: '2024-06-29T06:35:28'
       security: []
     delete:
       summary: ''
@@ -771,7 +681,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the tasks by project id.'
-        example: quas
+        example: ipsa
         required: true
         schema:
           type: string
@@ -859,15 +769,15 @@ paths:
                 project_name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: awacxhfuzoco
+                  example: egjhhoatgalaulbkwjpucoqqd
                 start_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-06-29T06:23:05'
+                  example: '2024-06-29T06:35:31'
                 end_date:
                   type: string
                   description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
-                  example: '2105-11-25'
+                  example: '2064-09-13'
                 organization_id:
                   type: string
                   description: ''
@@ -875,11 +785,11 @@ paths:
                 project_status:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: dhtqumybodflmnuoq
+                  example: bjoltjderorxgzelgghyrzvp
                 project_priority:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: adwtljmasviurmuqyybeqrtfj
+                  example: xzturtuqq
               required:
                 - project_name
                 - start_date
@@ -914,7 +824,7 @@ paths:
         in: path
         name: project
         description: 'The project.'
-        example: et
+        example: est
         required: true
         schema:
           type: string
@@ -937,7 +847,7 @@ paths:
                 project_name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: mojtojwuqdozawyvgllcwsc
+                  example: ecqkqlheedlfytybkjjrhyyzj
                 owner_id:
                   type: string
                   description: ''
@@ -945,11 +855,11 @@ paths:
                 start_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-06-29T06:23:06'
+                  example: '2024-06-29T06:35:33'
                 end_date:
                   type: string
                   description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
-                  example: '2098-05-25'
+                  example: '2121-12-22'
                 organization_id:
                   type: string
                   description: ''
@@ -957,11 +867,11 @@ paths:
                 project_status:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: rvdthpwk
+                  example: gtpikztvyibqa
                 project_priority:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: yswqzjhnxyvsg
+                  example: fdjmqhpezglyauwhmxdpzfqe
       security: []
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -1087,15 +997,15 @@ paths:
                 milestone_name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: vagkapjgf
+                  example: slnzboottozyvcifoct
                 start_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-06-29T06:23:09'
+                  example: '2024-06-29T06:35:36'
                 end_date:
                   type: string
                   description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
-                  example: '2076-07-23'
+                  example: '2048-01-12'
               required:
                 - milestone_name
                 - start_date
@@ -1128,7 +1038,7 @@ paths:
         in: path
         name: milestone
         description: 'The milestone.'
-        example: aperiam
+        example: omnis
         required: true
         schema:
           type: string
@@ -1151,15 +1061,15 @@ paths:
                 milestone_name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: htykf
+                  example: oubbjhducbvjqbnajrbmrx
                 start_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-06-29T06:23:11'
+                  example: '2024-06-29T06:35:37'
                 end_date:
                   type: string
                   description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
-                  example: '2026-06-26'
+                  example: '2058-02-02'
       security: []
     delete:
       summary: ''
@@ -1219,15 +1129,15 @@ paths:
                 project_id:
                   type: string
                   description: ''
-                  example: sunt
+                  example: voluptas
                 stage_name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: npajrgwcpydnbzosvkl
+                  example: lfmrivijekep
                 start_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-06-29T06:23:12'
+                  example: '2024-06-29T06:35:38'
                 period:
                   type: integer
                   description: ''
@@ -1235,15 +1145,15 @@ paths:
                 end_date:
                   type: string
                   description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
-                  example: '2112-08-05'
+                  example: '2119-10-22'
                 completed:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 completion_date:
                   type: string
                   description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
-                  example: '2081-01-20'
+                  example: '2099-02-24'
               required:
                 - project_id
                 - stage_name
@@ -1291,27 +1201,27 @@ paths:
                 stage_name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: kdmrttcytdyjq
+                  example: wg
                 start_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-06-29T06:23:13'
+                  example: '2024-06-29T06:35:38'
                 period:
                   type: integer
                   description: ''
-                  example: 10
+                  example: 6
                 end_date:
                   type: string
                   description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
-                  example: '2031-02-08'
+                  example: '2101-05-15'
                 completed:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 completion_date:
                   type: string
                   description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
-                  example: '2026-04-14'
+                  example: '2032-02-11'
       security: []
     delete:
       summary: ''
@@ -1327,7 +1237,7 @@ paths:
         in: path
         name: projectstage
         description: ''
-        example: ut
+        example: temporibus
         required: true
         schema:
           type: string
@@ -1371,11 +1281,11 @@ paths:
                 project_id:
                   type: string
                   description: ''
-                  example: illo
+                  example: labore
                 role:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ypmqtxqdgedlevuucpewgsbug
+                  example: tbyhdgrinepebyggmwycove
               required:
                 - project_id
                 - role
@@ -1428,7 +1338,7 @@ paths:
                 role:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: i
+                  example: jmmxarmz
       security: []
     delete:
       summary: ''
@@ -1444,7 +1354,7 @@ paths:
         in: path
         name: prjectmember
         description: ''
-        example: dicta
+        example: dolores
         required: true
         schema:
           type: string
@@ -1475,7 +1385,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the project members by project id.'
-        example: sunt
+        example: ab
         required: true
         schema:
           type: string
@@ -1498,7 +1408,7 @@ paths:
                 project_id:
                   type: string
                   description: ''
-                  example: distinctio
+                  example: labore
                 members:
                   type: array
                   description: ''
@@ -1510,11 +1420,11 @@ paths:
                       email:
                         type: string
                         description: 'Must be a valid email address.'
-                        example: wunsch.jakayla@example.com
+                        example: zcrooks@example.org
                       role:
                         type: string
                         description: ''
-                        example: eum
+                        example: et
                     required:
                       - email
                       - role
@@ -1562,15 +1472,15 @@ paths:
                 team_id:
                   type: string
                   description: ''
-                  example: exercitationem
+                  example: fuga
                 user_id:
                   type: string
                   description: ''
-                  example: omnis
+                  example: impedit
                 role:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: dbavxaacmwfjegzpt
+                  example: snuwxnkhwltwkftfj
               required:
                 - team_id
                 - user_id
@@ -1624,7 +1534,7 @@ paths:
                 role:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: gtvluuyyysrqdgcqg
+                  example: yilxvwkicn
       security: []
     delete:
       summary: ''
@@ -1640,7 +1550,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the team member.'
-        example: sapiente
+        example: est
         required: true
         schema:
           type: string
@@ -1684,19 +1594,19 @@ paths:
                 team_id:
                   type: string
                   description: ''
-                  example: voluptatem
+                  example: expedita
                 goal_name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: daypmekygk
+                  example: drgubigduyzhnfvsrever
                 description:
                   type: string
                   description: ''
-                  example: 'In ab officiis provident et.'
+                  example: 'Soluta omnis et est sit voluptas.'
                 completed:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
               required:
                 - team_id
                 - goal_name
@@ -1728,7 +1638,7 @@ paths:
         in: path
         name: goal
         description: 'The goal.'
-        example: nemo
+        example: non
         required: true
         schema:
           type: string
@@ -1755,15 +1665,15 @@ paths:
                 goal_name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: mqofhvkimdu
+                  example: snocljpsmhhvpvpnafygzzfvw
                 description:
                   type: string
                   description: ''
-                  example: 'Perspiciatis molestias voluptate deserunt non ab aliquam.'
+                  example: 'Quis eum architecto esse impedit.'
                 completed:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
       security: []
     delete:
       summary: ''
@@ -1823,19 +1733,19 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: goghdxgaadziqzwijtxecybuq
+                  example: arjhgkjxhyrjwqx
                 description:
                   type: string
                   description: ''
-                  example: 'Dolor sed cumque eaque optio.'
+                  example: 'Consectetur voluptatem nihil sunt harum perferendis sunt ratione et.'
                 industry:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: rxdeflbmirldbpeke
+                  example: qbzwganffqdtjqsohojc
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: glover.gia@example.com
+                  example: daniel.augustus@example.net
               required:
                 - name
       security: []
@@ -1866,7 +1776,7 @@ paths:
         in: path
         name: organization
         description: 'The organization.'
-        example: fugit
+        example: provident
         required: true
         schema:
           type: string
@@ -1974,7 +1884,7 @@ paths:
                 org_id:
                   type: string
                   description: ''
-                  example: est
+                  example: dolores
                 members:
                   type: array
                   description: ''
@@ -1986,11 +1896,11 @@ paths:
                       email:
                         type: string
                         description: 'Must be a valid email address.'
-                        example: denis.brekke@example.net
+                        example: rath.grover@example.com
                       role:
                         type: string
                         description: ''
-                        example: ea
+                        example: ut
                     required:
                       - email
                       - role
@@ -2038,31 +1948,31 @@ paths:
                 org_id:
                   type: string
                   description: ''
-                  example: tempore
+                  example: omnis
                 role:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: njfe
+                  example: zotmzbumxkgjsuh
                 is_admin:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 assigned_tasks:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 52
+                  example: 9
                 completed_tasks:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 31
+                  example: 5
                 overdue_tasks:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 2
+                  example: 14
                 worked_hour:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 26
+                  example: 38
               required:
                 - org_id
                 - role
@@ -2081,11 +1991,11 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'The route api/v1/org-members/aliquam could not be found.'
+                  message: 'The route api/v1/org-members/impedit could not be found.'
                 properties:
                   message:
                     type: string
-                    example: 'The route api/v1/org-members/aliquam could not be found.'
+                    example: 'The route api/v1/org-members/impedit could not be found.'
       tags:
         - Endpoints
       security: []
@@ -2111,7 +2021,7 @@ paths:
                 role:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: aoetzobizgsaiqz
+                  example: ygimowsxm
                 is_admin:
                   type: boolean
                   description: ''
@@ -2119,19 +2029,19 @@ paths:
                 assigned_tasks:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 86
+                  example: 21
                 completed_tasks:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 67
+                  example: 22
                 overdue_tasks:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 68
+                  example: 2
                 worked_hour:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 33
+                  example: 30
       security: []
     delete:
       summary: ''
@@ -2147,7 +2057,7 @@ paths:
         in: path
         name: org-member
         description: ''
-        example: aliquam
+        example: impedit
         required: true
         schema:
           type: string
@@ -2170,51 +2080,51 @@ paths:
                 organization_id:
                   type: string
                   description: ''
-                  example: nam
+                  example: quaerat
                 total_users:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 0
+                  example: 34
                 active_users:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 17
+                  example: 76
                 projects_created:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 10
+                  example: 76
                 projects_completed:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 8
+                  example: 62
                 projects_in_progress:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 39
+                  example: 13
                 average_project_completion_time:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 10
+                  example: 87
                 total_tasks:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 63
+                  example: 9
                 completed_tasks:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 8
+                  example: 55
                 tasks_in_progress:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 63
+                  example: 43
                 tasks_overdue:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 12
+                  example: 28
                 average_task_completion_time:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 6
+                  example: 27
               required:
                 - organization_id
                 - total_users
@@ -2269,47 +2179,47 @@ paths:
                 total_users:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 5
+                  example: 18
                 active_users:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 19
+                  example: 42
                 projects_created:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 69
+                  example: 59
                 projects_completed:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 42
+                  example: 12
                 projects_in_progress:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 67
+                  example: 42
                 average_project_completion_time:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 66
+                  example: 12
                 total_tasks:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 55
+                  example: 19
                 completed_tasks:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 59
+                  example: 44
                 tasks_in_progress:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 29
+                  example: 27
                 tasks_overdue:
                   type: integer
                   description: 'Must be at least 0.'
-                  example: 60
+                  example: 20
                 average_task_completion_time:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 21
+                  example: 23
               required:
                 - total_users
                 - active_users
@@ -2337,7 +2247,7 @@ paths:
         in: path
         name: organizationmetric
         description: ''
-        example: repellendus
+        example: tempora
         required: true
         schema:
           type: string
@@ -2407,7 +2317,100 @@ paths:
       tags:
         - Endpoints
       security: []
+  /api/v1/users:
+    get:
+      summary: 'Get all users'
+      operationId: getAllUsers
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'User management'
+      security: []
+  '/api/v1/users/{user}':
+    get:
+      summary: 'Display a specific user.'
+      operationId: displayASpecificUser
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'User management'
+      security: []
+    delete:
+      summary: 'Delete a specific user.'
+      operationId: deleteASpecificUser
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    message: 'User deleted successfully'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: 'User deleted successfully'
+      tags:
+        - 'User management'
+      security: []
+    parameters:
+      -
+        in: path
+        name: user
+        description: 'The user.'
+        example: eaque
+        required: true
+        schema:
+          type: string
+      -
+        in: path
+        name: id
+        description: 'The ID of the user.'
+        example: '1'
+        required: true
+        schema:
+          type: string
 tags:
   -
     name: Endpoints
     description: ''
+  -
+    name: 'User management'
+    description: "\nAPIs for managing users"
